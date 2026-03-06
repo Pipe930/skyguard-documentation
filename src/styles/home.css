@@ -1,0 +1,354 @@
+.home {
+    width: 100%;
+    padding: 48px 32px 80px;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 96px;
+    padding: 100px 0;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 48px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.hero-title {
+    margin: 0;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    padding-bottom: 30px;
+}
+
+.hero-description {
+    max-width: 680px;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+}
+
+.hero-install {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.install-label {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.install-command {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-surface);
+}
+
+.install-command code {
+    font-family:
+        "Fira Code",
+        "JetBrains Mono",
+        "Consolas",
+        monospace;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.icon-copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.icon-copy-button:hover {
+    background: var(--color-bg);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.icon-copy-button:active {
+    transform: scale(0.97);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.btn-secondary {
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo {
+    width: 56%;
+    height: auto;
+    object-fit: contain;
+}
+
+.features,
+.example {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 88px;
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.section-heading p {
+    margin: 0;
+    max-width: 760px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: var(--color-surface);
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg);
+    color: var(--color-primary);
+}
+
+.feature-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.code-block {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: var(--code-bg);
+}
+
+.code-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--code-border);
+    background: var(--code-header-bg);
+    color: var(--code-header-text);
+    font-size: 0.92rem;
+}
+
+.code-content {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.code-content code {
+    font-family:
+        "Fira Code",
+        "JetBrains Mono",
+        "Consolas",
+        monospace;
+    font-size: 0.93rem;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    color: var(--code-text);
+}
+
+.token-import {
+    color: var(--code-import);
+}
+
+.token-keyword {
+    color: var(--code-keyword);
+}
+
+.token-string {
+    color: var(--code-string);
+}
+
+.token-number {
+    color: var(--code-number);
+}
+
+.token-function {
+    color: var(--code-function);
+}
+
+.token-class {
+    color: var(--code-class);
+}
+
+@media (max-width: 1200px) {
+    .features-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .home {
+        padding: 32px 20px 64px;
+    }
+
+    .hero {
+        margin-bottom: 72px;
+    }
+
+    .features,
+    .example {
+        margin-bottom: 72px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .install-command {
+        max-width: 100%;
+    }
+
+    .install-command code {
+        white-space: normal;
+        word-break: break-word;
+    }
+}
