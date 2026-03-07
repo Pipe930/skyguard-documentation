@@ -8,11 +8,7 @@
 
 .docs-content {
     min-width: 0;
-    padding: 40px 48px 16px;
-}
-
-.docs-article {
-    max-width: 860px;
+    padding: 40px 50px 0;
 }
 
 .docs-section {
@@ -64,6 +60,6 @@
 
     .docs-content {
         width: 100%;
-        padding: 28px 20px 88px;
+        padding: 40px 30px 0;
     }
 }

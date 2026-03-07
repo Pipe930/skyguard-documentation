@@ -1,3 +1,34 @@
+import Table from "../components/ui/Table";
+
+interface RouteMethod {
+  method: string;
+  description: string;
+  example: string;
+}
+
+const columnsTable = [
+  { header: "Method", accessor: "method" },
+  { header: "Description", accessor: "description" },
+];
+
+const dataTable: RouteMethod[] = [
+  {
+    method: "GET",
+    description: "Retrieve data from the server",
+    example: "app.get('/users')",
+  },
+  {
+    method: "POST",
+    description: "Create a new resource",
+    example: "app.post('/users')",
+  },
+  {
+    method: "PUT",
+    description: "Update a resource",
+    example: "app.put('/users/:id')",
+  },
+];
+
 function GetStarted() {
   return (
     <>
@@ -76,6 +107,7 @@ app.run(3000, () => {
           Continúa con configuración, seguridad y arquitectura para construir
           servicios más robustos.
         </p>
+        <Table columns={columnsTable} data={dataTable} />
       </section>
     </>
   );
