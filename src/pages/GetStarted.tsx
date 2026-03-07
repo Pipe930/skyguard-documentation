@@ -1,92 +1,84 @@
 function GetStarted() {
+  return (
+    <>
+      <section id="introduction" className="docs-section">
+        <h1>Getting Started</h1>
+        <p>
+          Skyguard JS es un framework orientado a APIs que busca simplicidad,
+          velocidad y una experiencia limpia en TypeScript.
+        </p>
+      </section>
 
-    return (
-        <>
-                <h1>Hola Mundo de get Started</h1>
+      <section id="installation" className="docs-section">
+        <h2>Instalación</h2>
+        <p>Instala el paquete con tu manejador favorito:</p>
+        <pre className="docs-inline-code">
+          <code>npm install skyguard-js</code>
+        </pre>
+      </section>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut odio numquam, vel ipsam, ab aperiam aut nesciunt in magni quod ea iure esse illum quia expedita? Iste error placeat explicabo!
-        Nihil incidunt cupiditate neque consequuntur molestias numquam nemo nesciunt quibusdam iure nisi provident dignissimos suscipit, quam accusamus et? Numquam quo est ullam, ipsa ab omnis nobis nesciunt quisquam hic! Natus.
-        Dolores molestiae vero dicta velit, dolor neque ut sapiente hic ratione quibusdam quaerat doloremque unde quidem, voluptates nulla explicabo reprehenderit nobis maiores dolore temporibus sunt sed repellat tempora. Quas, voluptatibus!
-        Qui ipsum pariatur doloribus perspiciatis. Animi, porro ipsum! Sunt officia commodi autem placeat harum, tempora quis qui molestias dicta odit blanditiis pariatur soluta deleniti ex voluptas sed aperiam iure? Similique!
-        Natus non veniam similique. Magni quisquam laboriosam iusto, et, excepturi quos in cum rerum omnis quae odit aspernatur doloremque accusantium, voluptate id eum assumenda ipsum sequi dolor cupiditate! Quas, iste?
-        Accusantium, laborum? Vero ipsam consequuntur exercitationem possimus quia tempora architecto voluptatem magnam odio itaque suscipit rerum, id porro quisquam quidem, blanditiis accusamus perferendis, quas omnis aspernatur eos et magni placeat!
-        Amet dolorum totam eius maxime sunt quibusdam accusantium, eum quod facere vitae aperiam omnis nesciunt illo voluptatem cupiditate velit blanditiis ea sed veritatis asperiores, quo ipsum saepe! Ratione, qui nesciunt.
-        Repudiandae impedit autem animi ut iste esse fuga at obcaecati, neque quaerat rem hic magni molestias eos deserunt recusandae nulla maxime ratione, ipsum totam. Rem ducimus harum quae cumque ad.
-        Fugiat reiciendis laboriosam sit! Rem ut sequi, sint, consectetur fugiat distinctio laudantium enim voluptatem eos dolores, sunt porro quisquam ipsum alias a doloribus maxime illo quas voluptatibus ratione iusto vero.
-        Repellat cupiditate sequi alias vel rerum unde aut at aspernatur dolorem, optio tempore itaque ex, sint ab? Sequi rem atque, ad eligendi tenetur dolor quam, quibusdam, nesciunt labore sapiente provident.</p>
-        
-        </>
-    )
+      <section id="first-route" className="docs-section">
+        <h2>Tu primera ruta</h2>
+        <p>
+          Crea una aplicación, define una ruta de salud y arranca el servidor en
+          el puerto 3000.
+        </p>
+        <pre className="docs-code-block">
+          <code>{`import { createApp, Response } from "skyguard-js";
+
+const app = createApp();
+
+app.get("/health", () => {
+  return Response.json({ status: "ok" });
+});
+
+app.run(3000, () => {
+  console.log("Server running in port 3000");
+});`}</code>
+        </pre>
+      </section>
+
+      <section id="middleware" className="docs-section">
+        <h2>Middleware</h2>
+        <p>
+          Los middlewares te permiten ejecutar lógica previa a los controladores
+          para validar, registrar o transformar solicitudes.
+        </p>
+
+        <div id="middleware-globales" className="docs-subsection">
+          <h3>Globales</h3>
+          <p>
+            Se aplican a todas las rutas. Útiles para CORS, logging general y
+            verificación de headers comunes.
+          </p>
+        </div>
+
+        <div id="middleware-grupales" className="docs-subsection">
+          <h3>Grupales</h3>
+          <p>
+            Se aplican a grupos de rutas, por ejemplo `/admin/*`, para compartir
+            autenticación y permisos en un módulo completo.
+          </p>
+        </div>
+
+        <div id="middleware-por-ruta" className="docs-subsection">
+          <h3>Por Ruta</h3>
+          <p>
+            Se usan en endpoints puntuales cuando necesitas una validación o
+            regla de negocio específica en un solo handler.
+          </p>
+        </div>
+      </section>
+
+      <section id="next-steps" className="docs-section">
+        <h2>Próximos pasos</h2>
+        <p>
+          Continúa con configuración, seguridad y arquitectura para construir
+          servicios más robustos.
+        </p>
+      </section>
+    </>
+  );
 }
 
 export default GetStarted;

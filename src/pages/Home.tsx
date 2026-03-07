@@ -1,5 +1,5 @@
 import CodeBlock from "../components/ui/CodeBlock";
-import Navbar from "../components/layout/Headerbar";
+import HomeNavbar from "../components/layout/HomeNavbar";
 import { useState } from "react";
 import {
   Box,
@@ -78,7 +78,7 @@ function Home() {
 
   return (
     <>
-    <Navbar />
+    <HomeNavbar />
     <main className="home">
       <section className="hero">
         <div className="hero-content">
