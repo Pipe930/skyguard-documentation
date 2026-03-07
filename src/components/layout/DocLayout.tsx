@@ -1,15 +1,60 @@
-import Sidebar from "./Sidebar";
-import { Outlet } from "react-router-dom";
-import "../../styles/docs-layout.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Headerbar from "./Headerbar";
+import Sidebar from "./Sidebar";
+import TableOfContents, { type TocItem } from "./TableOfContents";
 import Footer from "./Footer";
+import "../../styles/docs-layout.css";
 
 function DocsLayout() {
-    const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const [tocItems, setTocItems] = useState<TocItem[]>([]);
+  const articleRef = useRef<HTMLElement>(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      if (!articleRef.current) {
+        setTocItems([]);
+        return;
+      }
+
+      const headings = Array.from(
+        articleRef.current.querySelectorAll<HTMLHeadingElement>("h1, h2, h3"),
+      );
+
+      const items = headings
+        .map(heading => {
+          const closestWithId = heading.closest<HTMLElement>("[id]");
+          const id = heading.id || closestWithId?.id;
+
+          if (!id) return null;
+
+          const tag = heading.tagName.toLowerCase();
+          const level: 1 | 2 | 3 = tag === "h1" ? 1 : tag === "h2" ? 2 : 3;
+
+          return {
+            id,
+            label: heading.textContent?.trim() || "Sección",
+            level,
+          };
+        })
+        .filter((item): item is TocItem => Boolean(item));
+
+      const uniqueItems = items.filter(
+        (item, index, current) => current.findIndex(entry => entry.id === item.id) === index,
+      );
+
+      setTocItems(uniqueItems);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname]);
+
   return (
     <>
       <Headerbar onToggleSidebar={() => setIsMobileSidebarOpen(true)} />
+
       <div className="docs-layout">
         <Sidebar
           isMobileOpen={isMobileSidebarOpen}
@@ -17,9 +62,13 @@ function DocsLayout() {
         />
 
         <main className="docs-content">
-          <Outlet />
-          <Footer/>
+          <article ref={articleRef} className="docs-article">
+            <Outlet />
+          </article>
+          <Footer />
         </main>
+
+        <TableOfContents items={tocItems} />
       </div>
     </>
   );

@@ -37,7 +37,7 @@ function Headerbar({ onToggleSidebar }: NavbarProps) {
           <Menu size={20} />
         </button>
 
-        <img src="/public/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
+        <img src="/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
         <Link to="/">
           <span className="navbar-title">Skyguard Docs</span>
         </Link>

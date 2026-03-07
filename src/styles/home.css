@@ -1,6 +1,6 @@
 .home {
     width: 100%;
-    padding: 48px 32px 80px;
+    padding: calc(var(--navbar-height) + 48px) 32px 80px;
     background: var(--color-bg);
     color: var(--color-text);
 }
