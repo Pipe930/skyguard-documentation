@@ -124,7 +124,7 @@ function Home() {
 
         <div className="hero-visual">
             <img
-              src="/public/logo-skyguard-js.png"
+              src="/logo-skyguard-js.png"
               alt="Skyguard JS logo"
               className="hero-logo"
               />
