@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
-import { Github, Twitter, Moon, Sun, Search } from "lucide-react";
+import { Github, Moon, Sun, Search, Menu } from "lucide-react";
 import "../../styles/navbar.css";
+import { Link } from "react-router-dom";
 
 type Theme = "light" | "dark";
 
-function Navbar() {
+interface NavbarProps {
+  onToggleSidebar?: () => void;
+}
+
+function Headerbar({ onToggleSidebar }: NavbarProps) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "dark";
     const storedTheme = localStorage.getItem("theme") as Theme | null;
@@ -23,8 +28,19 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-left">
-        <img src="/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
-        <span className="navbar-title">Skyguard Docs</span>
+        <button
+          type="button"
+          className="navbar-menu-button"
+          onClick={onToggleSidebar}
+          aria-label="Abrir menú lateral"
+        >
+          <Menu size={20} />
+        </button>
+
+        <img src="/public/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
+        <Link to="/">
+          <span className="navbar-title">Skyguard Docs</span>
+        </Link>
       </div>
 
       <div className="navbar-center">
@@ -39,12 +55,8 @@ function Navbar() {
       </div>
 
       <div className="navbar-right">
-        <a href="#" className="navbar-icon">
+        <a href="#" className="navbar-icon" aria-label="Github">
           <Github size={20} />
-        </a>
-
-        <a href="#" className="navbar-icon">
-          <Twitter size={20} />
         </a>
 
         <button className="theme-toggle" onClick={toggleTheme}>
@@ -55,4 +67,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Headerbar;

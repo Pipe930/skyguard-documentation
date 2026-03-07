@@ -42,6 +42,10 @@
     padding-bottom: 30px;
 }
 
+.hero-title-color {
+    color: var(--color-primary);
+}
+
 .hero-description {
     max-width: 680px;
     margin: 0;
@@ -58,7 +62,7 @@
 }
 
 .install-label {
-    font-size: 0.92rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -324,6 +328,18 @@
 
     .hero {
         margin-bottom: 72px;
+    }
+
+    .hero-badge {
+        align-self: center;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .install-command {
+        align-self: center;
     }
 
     .features,

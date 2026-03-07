@@ -1,3 +1,5 @@
+import CodeBlock from "../components/ui/CodeBlock";
+import Navbar from "../components/layout/Headerbar";
 import { useState } from "react";
 import {
   Box,
@@ -9,10 +11,9 @@ import {
   Server,
 } from "lucide-react";
 import "../styles/home.css";
-import CodeBlock from "../components/ui/CodeBlock";
+import { Link } from "react-router-dom";
 
 const installationCommand = "npm install skyguard-js";
-
 const rawCode = `import { createApp, Response } from "skyguard-js";
 
 const app = createApp();
@@ -76,12 +77,14 @@ function Home() {
   };
 
   return (
+    <>
+    <Navbar />
     <main className="home">
       <section className="hero">
         <div className="hero-content">
           <span className="hero-badge">Lightweight TypeScript Framework</span>
 
-          <h1 className="hero-title">Skyguard JS</h1>
+          <h1 className="hero-title">Skyguard <span className="hero-title-color">JS</span></h1>
 
           <p className="hero-description">
             Skyguard JS es un framework ligero, sin dependencias y escrito en
@@ -107,9 +110,9 @@ function Home() {
           </div>
 
           <div className="hero-actions">
-            <a href="/docs/getting-started" className="btn btn-primary">
-              Empezar
-            </a>
+            <Link to="/docs" className="btn btn-primary">
+                Empezar
+            </Link>
 
             <a
               href="https://github.com/Pipe930/Skyguard-js"
@@ -176,6 +179,7 @@ function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 

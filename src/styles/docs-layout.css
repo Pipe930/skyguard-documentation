@@ -1,0 +1,18 @@
+.docs-layout {
+    display: flex;
+    min-height: calc(100vh - var(--navbar-height));
+    background: var(--color-bg);
+}
+
+.docs-content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 48px 10px;
+}
+
+@media (max-width: 1024px) {
+    .docs-content {
+        width: 100%;
+        padding: 28px 20px 88px;
+    }
+}
