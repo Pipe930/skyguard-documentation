@@ -5,13 +5,11 @@ import "../../styles/navbar.css";
 type Theme = "light" | "dark";
 
 function Navbar() {
-  const [theme, setTheme] = useState<Theme>("dark");
-
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "dark";
     const storedTheme = localStorage.getItem("theme") as Theme | null;
-
-    if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme);
-  }, []);
+    return storedTheme ?? "dark";
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -25,7 +23,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-left">
-        <img src="/public/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
+        <img src="/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
         <span className="navbar-title">Skyguard Docs</span>
       </div>
 

@@ -5,6 +5,10 @@
   --color-text: #0f172a;
   --color-text-muted: #64748b;
   --color-primary: #555ad9;
+  --code-bg: #f8fafc;
+  --code-border: #e2e8f0;
+  --code-header-bg: #eef2ff;
+  --code-header-text: #334155;
   --radius-sm: 8px;
   --radius-md: 12px;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -23,6 +27,10 @@
   --color-text: #e2e8f0;
   --color-text-muted: #94a3b8;
   --color-primary: #818cf8;
+  --code-bg: #0b1220;
+  --code-border: #1e293b;
+  --code-header-bg: #111827;
+  --code-header-text: #cbd5e1;
 }
 
 * {
