@@ -27,15 +27,12 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
       .map(item => document.getElementById(item.id))
       .filter((node): node is HTMLElement => Boolean(node));
 
-      console.log(observedHeadings)
-
     if (observedHeadings.length === 0) return;
 
     const updateActiveByScrollPosition = () => {
       let currentId = observedHeadings[0].id;
 
       for (const heading of observedHeadings) {
-        console.log(heading)
         const offsetTop = heading.getBoundingClientRect().top;
         if (offsetTop <= 140) {
           currentId = heading.id;
@@ -47,41 +44,36 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
       setActiveId(currentId);
     };
 
-    const observer = new IntersectionObserver(
-      entries => {
-        const visibleEntries = entries
-          .filter(entry => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top,
-          );
+    let rafId: number | null = null;
 
-        if (visibleEntries.length > 0) {
-          setActiveId(visibleEntries[0].target.id);
-        } else {
-          updateActiveByScrollPosition();
-        }
-      },
-      {
-        root: null,
-        rootMargin: "-15% 0px -65% 0px",
-        threshold: [0, 1],
-      },
-    );
+    const onScrollOrResize = () => {
+      if (rafId !== null) return;
 
-    observedHeadings.forEach(heading => observer.observe(heading));
-    updateActiveByScrollPosition();
+      rafId = window.requestAnimationFrame(() => {
+        updateActiveByScrollPosition();
+        rafId = null;
+      });
+    };
+
+    onScrollOrResize();
 
     const onHashChange = () => {
       const hash = window.location.hash.slice(1);
       if (hash) setActiveId(hash);
     };
 
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
     window.addEventListener("hashchange", onHashChange);
 
     return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
       window.removeEventListener("hashchange", onHashChange);
-      observer.disconnect();
     };
   }, [validItems]);
 
