@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Github, Moon, Sun, Search, Menu } from "lucide-react";
 import "../../styles/navbar.css";
 import { Link } from "react-router-dom";
+import SearchModal from "./SearchModal";
 
 type Theme = "light" | "dark";
 
@@ -15,6 +16,7 @@ function Headerbar({ onToggleSidebar }: NavbarProps) {
     const storedTheme = localStorage.getItem("theme") as Theme | null;
     return storedTheme ?? "dark";
   });
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -26,8 +28,9 @@ function Headerbar({ onToggleSidebar }: NavbarProps) {
   };
 
   return (
-    <header className="navbar">
-      <div className="navbar-left">
+    <>
+      <header className="navbar">
+        <div className="navbar-left">
         <button
           type="button"
           className="navbar-menu-button"
@@ -41,29 +44,32 @@ function Headerbar({ onToggleSidebar }: NavbarProps) {
         <Link to="/">
           <span className="navbar-title">Skyguard Docs</span>
         </Link>
-      </div>
-
-      <div className="navbar-center">
-        <div className="search-box">
-          <Search size={18} className="search-icon" />
-          <input
-            type="search"
-            placeholder="Search documentation..."
-            className="search-input"
-          />
         </div>
-      </div>
 
-      <div className="navbar-right">
-        <a href="#" className="navbar-icon" aria-label="Github">
-          <Github size={20} />
-        </a>
+        <div className="navbar-center">
+          <button
+            type="button"
+            className="search-box search-trigger"
+            onClick={() => setIsSearchOpen(true)}
+          >
+            <Search size={18} className="search-icon" />
+            <span className="search-placeholder">Search documentation...</span>
+          </button>
+        </div>
 
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
-        </button>
-      </div>
-    </header>
+        <div className="navbar-right">
+          <a href="#" className="navbar-icon" aria-label="Github">
+            <Github size={20} />
+          </a>
+
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+        </div>
+      </header>
+
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+    </>
   );
 }
 
