@@ -53,13 +53,12 @@
 
 .search-box {
     position: relative;
-    width: 420px;
+    width: 500px;
 }
 
 .search-trigger {
     display: flex;
     align-items: center;
-    width: 100%;
     padding: 8px 14px 8px 38px;
     border-radius: 8px;
     border: 1px solid var(--color-border);
