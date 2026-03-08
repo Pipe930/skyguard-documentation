@@ -61,7 +61,6 @@ const features = [
 
 function Home() {
   const [installCopied, setInstallCopied] = useState(false);
-  const [codeCopied, setCodeCopied] = useState(false);
 
   const copyText = async (
     value: string,
@@ -160,23 +159,7 @@ function Home() {
           <p>Así de simple puede ser levantar un servidor con Skyguard JS.</p>
         </div>
 
-        <div className="code-block">
-            <div className="code-block-header">
-                <span>example.ts</span>
-
-                <button
-                type="button"
-                className="icon-copy-button"
-                onClick={() => copyText(rawCode, setCodeCopied)}
-                aria-label="Copiar código"
-                title="Copiar código"
-                >
-                {codeCopied ? <Check size={16} /> : <Copy size={16} />}
-                </button>
-            </div>
-
-            <CodeBlock code={rawCode} />
-        </div>
+        <CodeBlock title="example.ts" code={rawCode}/>
       </section>
     </main>
     </>

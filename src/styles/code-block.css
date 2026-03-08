@@ -1,0 +1,61 @@
+.code-block {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: var(--code-bg);
+    margin-top: 18px;
+}
+
+.code-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--code-border);
+    background: var(--code-header-bg);
+    color: var(--code-header-text);
+    font-size: 0.92rem;
+}
+
+.code-content {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.code-content code {
+    font-family:
+        "Fira Code",
+        "JetBrains Mono",
+        "Consolas",
+        monospace;
+    font-size: 0.93rem;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    color: var(--code-text);
+}
+
+.token-import {
+    color: var(--code-import);
+}
+
+.token-keyword {
+    color: var(--code-keyword);
+}
+
+.token-string {
+    color: var(--code-string);
+}
+
+.token-number {
+    color: var(--code-number);
+}
+
+.token-function {
+    color: var(--code-function);
+}
+
+.token-class {
+    color: var(--code-class);
+}

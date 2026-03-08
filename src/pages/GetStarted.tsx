@@ -1,5 +1,6 @@
 import Table, { type TableColumn } from "../components/ui/Table";
 import Callout from "../components/ui/Callout";
+import CodeBlock from "../components/ui/CodeBlock";
 
 interface RouteMethod {
   method: string;
@@ -39,14 +40,18 @@ function GetStarted() {
           Skyguard JS es un framework orientado a APIs que busca simplicidad,
           velocidad y una experiencia limpia en TypeScript.
         </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quod delectus autem, eum et quis hic at neque doloribus provident corporis temporibus dolorum blanditiis vitae illum quo esse minima consectetur!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sapiente similique obcaecati, enim iste rem dolore excepturi dolores? Atque temporibus quae libero aperiam maxime illum consequatur cum doloribus dolore accusantium.
+        </p>
       </section>
 
       <section id="installation" className="docs-section">
         <h2>Instalación</h2>
         <p>Instala el paquete con tu manejador favorito:</p>
-        <pre className="docs-inline-code">
-          <code>npm install skyguard-js</code>
-        </pre>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quod delectus autem, eum et quis hic at neque doloribus provident corporis temporibus dolorum blanditiis vitae illum quo esse minima consectetur!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sapiente similique obcaecati, enim iste rem dolore excepturi dolores? Atque temporibus quae libero aperiam maxime illum consequatur cum doloribus dolore accusantium.
+        </p>
+        <CodeBlock title="npm" code="npm install skyguard-js" />
 
         <Callout variant="tip">
           Parameters are always strings. Usa validaciones para convertirlos al tipo que necesitas.
@@ -59,8 +64,16 @@ function GetStarted() {
           Crea una aplicación, define una ruta de salud y arranca el servidor en
           el puerto 3000.
         </p>
-        <pre className="docs-code-block">
-          <code>{`import { createApp, Response } from "skyguard-js";
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quod delectus autem, eum et quis hic at neque doloribus provident corporis temporibus dolorum blanditiis vitae illum quo esse minima consectetur!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sapiente similique obcaecati, enim iste rem dolore excepturi dolores? Atque temporibus quae libero aperiam maxime illum consequatur cum doloribus dolore accusantium.
+        </p>
+        
+        <br />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quibusdam, excepturi cumque ad, maiores dignissimos voluptatum nesciunt repellat eum repellendus, sed ratione pariatur totam aperiam aliquam optio voluptas! Alias, asperiores.
+        </p>
+        <CodeBlock title="main.ts" code={
+          `import { createApp, Response } from "skyguard-js";
 
 const app = createApp();
 
@@ -70,8 +83,8 @@ app.get("/health", () => {
 
 app.run(3000, () => {
   console.log("Server running in port 3000");
-});`}</code>
-        </pre>
+});`
+        } />
 
         <Callout variant="note">
           All response methods automatically set appropriate Content-Type headers.

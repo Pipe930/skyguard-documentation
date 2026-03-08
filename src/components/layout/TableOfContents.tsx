@@ -27,12 +27,15 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
       .map(item => document.getElementById(item.id))
       .filter((node): node is HTMLElement => Boolean(node));
 
+      console.log(observedHeadings)
+
     if (observedHeadings.length === 0) return;
 
     const updateActiveByScrollPosition = () => {
       let currentId = observedHeadings[0].id;
 
       for (const heading of observedHeadings) {
+        console.log(heading)
         const offsetTop = heading.getBoundingClientRect().top;
         if (offsetTop <= 140) {
           currentId = heading.id;
