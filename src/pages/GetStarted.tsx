@@ -51,7 +51,7 @@ function GetStarted() {
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quod delectus autem, eum et quis hic at neque doloribus provident corporis temporibus dolorum blanditiis vitae illum quo esse minima consectetur!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sapiente similique obcaecati, enim iste rem dolore excepturi dolores? Atque temporibus quae libero aperiam maxime illum consequatur cum doloribus dolore accusantium.
         </p>
-        <CodeBlock title="npm" code="npm install skyguard-js" />
+        <CodeBlock code="npm install skyguard-js" />
 
         <Callout variant="tip">
           Parameters are always strings. Usa validaciones para convertirlos al tipo que necesitas.
@@ -72,7 +72,7 @@ function GetStarted() {
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quibusdam, excepturi cumque ad, maiores dignissimos voluptatum nesciunt repellat eum repellendus, sed ratione pariatur totam aperiam aliquam optio voluptas! Alias, asperiores.
         </p>
-        <CodeBlock title="main.ts" code={
+        <CodeBlock code={
           `import { createApp, Response } from "skyguard-js";
 
 const app = createApp();

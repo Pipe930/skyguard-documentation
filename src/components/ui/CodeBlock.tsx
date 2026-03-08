@@ -52,7 +52,7 @@ function CodeBlock({ code }: { code: string }) {
           aria-label="Copiar código"
           title="Copiar código"
         >
-          {codeCopied ? <Check size={20} /> : <Copy size={20} />}
+          {codeCopied ? <Check size={19} /> : <Copy size={19} />}
         </button>
 
         <SyntaxHighlighter

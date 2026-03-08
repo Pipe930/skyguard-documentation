@@ -6,9 +6,9 @@ const packageManagers = ["npm", "pnpm", "yarn"] as const;
 type PackageManager = (typeof packageManagers)[number];
 
 const commandByManager: Record<PackageManager, string> = {
-  npm: "npm install kitojs",
-  pnpm: "pnpm add kitojs",
-  yarn: "yarn add kitojs",
+  npm: "npm install skyguard-js",
+  pnpm: "pnpm add skyguard-js",
+  yarn: "yarn add skyguard-js",
 };
 
 function InstallCommandTabs() {

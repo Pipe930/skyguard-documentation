@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import {
-  AlertTriangle,
+  Book,
   Info,
   Lightbulb,
   ShieldAlert,
@@ -30,11 +30,11 @@ const CALLOUT_CONFIG: Record<CalloutVariant, CalloutConfig> = {
     label: "Danger",
   },
   note: {
-    icon: Info,
+    icon: Book,
     label: "Note",
   },
   info: {
-    icon: AlertTriangle,
+    icon: Info,
     label: "Info",
   },
 };

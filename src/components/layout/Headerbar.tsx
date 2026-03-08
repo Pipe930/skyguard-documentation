@@ -60,7 +60,7 @@ function Headerbar({ onToggleSidebar }: NavbarProps) {
         </a>
 
         <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
+          {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
         </button>
       </div>
     </header>

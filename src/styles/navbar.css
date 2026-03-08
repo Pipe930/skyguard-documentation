@@ -99,6 +99,15 @@
     font-weight: 500;
 }
 
+.navbar-home-link.github-link {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-home-link span {
+    margin-right: 4px;
+}
+
 .navbar-home-link:hover {
     color: var(--color-primary);
 }
@@ -113,9 +122,11 @@
 }
 
 .theme-toggle {
+    display: flex;
+    align-items: center;
     border: none;
     background: var(--color-surface);
-    padding: 6px 8px;
+    padding: 8px;
     border-radius: 8px;
     cursor: pointer;
 }

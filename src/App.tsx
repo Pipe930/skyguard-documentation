@@ -4,6 +4,7 @@ import "./globals.css";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import Installation from "./pages/Installation";
+import Introduction from "./pages/Introduction";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Navigate to="getting-started" replace />} />
           <Route path="getting-started" element={<GetStarted />} />
           <Route path="installation" element={<Installation />} />
+          <Route path="introduction" element={<Introduction />} />
         </Route>
       </Routes>
     </BrowserRouter>

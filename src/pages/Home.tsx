@@ -13,13 +13,14 @@ import {
 import "../styles/home.css";
 import { Link } from "react-router-dom";
 import Footer from "../components/layout/Footer";
+import Card from "../components/ui/Card";
 
 const installationCommand = "npm install skyguard-js";
 const rawCode = `import { createApp, Response } from "skyguard-js";
 
 const app = createApp();
 
-app.get("/health", () => {
+app.get("/", () => {
   return Response.json({ status: "ok" });
 });
 
@@ -99,7 +100,7 @@ function Home() {
 
               <button
                 type="button"
-                className="icon-copy-button"
+                className="icon-copy-button-home"
                 onClick={() => copyText(installationCommand, setInstallCopied)}
                 aria-label="Copiar comando de instalación"
                 title="Copiar comando"
@@ -110,7 +111,7 @@ function Home() {
           </div>
 
           <div className="hero-actions">
-            <Link to="/docs" className="btn btn-primary">
+            <Link to="/docs/introduction" className="btn btn-primary">
                 Empezar
             </Link>
 
@@ -145,11 +146,7 @@ function Home() {
 
         <div className="features-grid">
           {features.map(feature => (
-            <article key={feature.title} className="feature-card">
-              <div className="feature-icon">{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </article>
+            <Card key={feature.title} title={feature.title} description={feature.description} icon={feature.icon} />
           ))}
         </div>
       </section>

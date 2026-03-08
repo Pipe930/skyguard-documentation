@@ -51,7 +51,6 @@ html {
 }
 
 body {
-  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 
@@ -70,7 +69,6 @@ a {
   text-decoration: none;
   font-family: inherit;
   font-size: inherit;
-  display: block;
   color: inherit;
 }
 
@@ -129,4 +127,8 @@ h6 {
 code,
 pre {
   font-family: "JetBrains Mono", monospace;
+}
+
+hr {
+  color: #000000 !important;
 }
