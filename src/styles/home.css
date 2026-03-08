@@ -1,6 +1,6 @@
 .home {
     width: 100%;
-    padding: calc(var(--navbar-height) + 48px) 32px 80px;
+    padding: calc(var(--navbar-height) + 48px) 32px 10px;
     background: var(--color-bg);
     color: var(--color-text);
 }
@@ -78,42 +78,10 @@
 }
 
 .install-command code {
-    font-family:
-        "Fira Code",
-        "JetBrains Mono",
-        "Consolas",
-        monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.85rem;
     color: var(--color-text);
     white-space: nowrap;
-}
-
-.icon-copy-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 31px;
-    height: 31px;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    background: transparent;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.icon-copy-button:hover {
-    background: var(--color-bg);
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-}
-
-.icon-copy-button:active {
-    transform: scale(0.97);
 }
 
 .hero-actions {

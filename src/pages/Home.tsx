@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
+import Footer from "../components/layout/Footer";
 
 const installationCommand = "npm install skyguard-js";
 const rawCode = `import { createApp, Response } from "skyguard-js";
@@ -159,9 +160,10 @@ function Home() {
           <p>Así de simple puede ser levantar un servidor con Skyguard JS.</p>
         </div>
 
-        <CodeBlock title="example.ts" code={rawCode}/>
+        <CodeBlock code={rawCode}/>
       </section>
     </main>
+    <Footer/>
     </>
   );
 }

@@ -1,22 +1,48 @@
 .code-block {
+    position: relative;
     overflow: hidden;
     border: 1px solid var(--color-border);
-    border-radius: 18px;
+    border-radius: 10px;
     background: var(--code-bg);
     margin-top: 18px;
 }
 
-.code-block-header {
-    display: flex;
+.icon-copy-button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 50px;
-    padding: 0 16px;
-    border-bottom: 1px solid var(--code-border);
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    border: 1px solid var(--color-border);
     background: var(--code-header-bg);
-    color: var(--code-header-text);
-    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
 }
+
+.icon-copy-button:hover {
+    background: var(--color-bg);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.icon-copy-button:active {
+    transform: scale(0.97);
+}
+
+.code-block:hover .icon-copy-button,
+.code-block:focus-within .icon-copy-button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 .code-content {
     margin: 0;
@@ -25,12 +51,7 @@
 }
 
 .code-content code {
-    font-family:
-        "Fira Code",
-        "JetBrains Mono",
-        "Consolas",
-        monospace;
-    font-size: 0.93rem;
+    font-size: 0.9rem;
     line-height: 1.75;
     white-space: pre-wrap;
     color: var(--code-text);

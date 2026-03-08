@@ -1,0 +1,44 @@
+.install-tabs {
+    margin-top: 16px;
+}
+
+.install-tabs-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 10px;
+}
+
+.install-tab-button {
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px 10px;
+    margin-bottom: -10px;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    line-height: 1;
+    transition: color 200ms ease, border-color 200ms ease;
+}
+
+.install-tab-button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.install-tab-button-active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.install-tabs-code-block {
+    margin-top: 28px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: #070f1e;
+    padding: 20px 22px;
+    color: var(--color-text-muted);
+    overflow-x: auto;
+}

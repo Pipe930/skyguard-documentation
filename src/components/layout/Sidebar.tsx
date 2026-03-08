@@ -21,14 +21,14 @@ const docsNavigation = [
         icon: <BookOpen size={16} />,
       },
       {
-        label: "Quick Start",
-        to: "/docs/getting-started",
-        icon: <Rocket size={16} />,
-      },
-      {
         label: "Installation",
         to: "/docs/installation",
         icon: <Files size={16} />,
+      },
+      {
+        label: "Quick Start",
+        to: "/docs/getting-started",
+        icon: <Rocket size={16} />,
       },
     ],
   },

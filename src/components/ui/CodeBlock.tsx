@@ -7,12 +7,7 @@ import "../../styles/code-block.css"
 
 type Theme = "light" | "dark";
 
-interface CodeBlockProps {
-  title: string;
-  code: string;
-}
-
-function CodeBlock({ title, code }: CodeBlockProps) {
+function CodeBlock({ code }: { code: string }) {
   const [theme, setTheme] = useState<Theme>("dark");
   const [codeCopied, setCodeCopied] = useState(false);
 
@@ -50,19 +45,15 @@ function CodeBlock({ title, code }: CodeBlockProps) {
   return (
 
     <div className="code-block">
-        <div className="code-block-header">
-            <span>{title}</span>
-
-            <button
-            type="button"
-            className="icon-copy-button"
-            onClick={() => copyText(code, setCodeCopied)}
-            aria-label="Copiar código"
-            title="Copiar código"
-            >
-            {codeCopied ? <Check size={16} /> : <Copy size={16} />}
-            </button>
-        </div>
+        <button
+          type="button"
+          className="icon-copy-button"
+          onClick={() => copyText(code, setCodeCopied)}
+          aria-label="Copiar código"
+          title="Copiar código"
+        >
+          {codeCopied ? <Check size={20} /> : <Copy size={20} />}
+        </button>
 
         <SyntaxHighlighter
           language="typescript"
@@ -74,7 +65,6 @@ function CodeBlock({ title, code }: CodeBlockProps) {
           }}
           codeTagProps={{
             style: {
-              fontFamily: '"JetBrains Mono", monospace',
               fontSize: "0.9rem",
             },
           }}

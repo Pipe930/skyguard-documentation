@@ -1,3 +1,5 @@
+import InstallCommandTabs from "../components/ui/CommandTabs";
+
 function Installation() {
   return (
     <>
@@ -9,18 +11,10 @@ function Installation() {
         </p>
       </section>
 
-      <section id="npm" className="docs-section">
-        <h2>Instalar con npm</h2>
-        <pre className="docs-inline-code">
-          <code>npm install skyguard-js</code>
-        </pre>
-      </section>
-
-      <section id="pnpm" className="docs-section">
-        <h2>Instalar con pnpm</h2>
-        <pre className="docs-inline-code">
-          <code>pnpm add skyguard-js</code>
-        </pre>
+      <section id="quick-install" className="docs-section">
+        <h2>Comandos de instalación</h2>
+        <p>Selecciona tu manejador de paquetes para copiar el comando de instalación.</p>
+        <InstallCommandTabs />
       </section>
 
       <section id="verify" className="docs-section">
