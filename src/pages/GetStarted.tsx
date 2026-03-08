@@ -1,4 +1,5 @@
-import Table from "../components/ui/Table";
+import Table, { type TableColumn } from "../components/ui/Table";
+import Callout from "../components/ui/Callout";
 
 interface RouteMethod {
   method: string;
@@ -6,7 +7,7 @@ interface RouteMethod {
   example: string;
 }
 
-const columnsTable = [
+const columnsTable: TableColumn<RouteMethod>[] = [
   { header: "Method", accessor: "method" },
   { header: "Description", accessor: "description" },
 ];
@@ -46,6 +47,10 @@ function GetStarted() {
         <pre className="docs-inline-code">
           <code>npm install skyguard-js</code>
         </pre>
+
+        <Callout variant="tip">
+          Parameters are always strings. Usa validaciones para convertirlos al tipo que necesitas.
+        </Callout>
       </section>
 
       <section id="first-route" className="docs-section">
@@ -67,6 +72,10 @@ app.run(3000, () => {
   console.log("Server running in port 3000");
 });`}</code>
         </pre>
+
+        <Callout variant="note">
+          All response methods automatically set appropriate Content-Type headers.
+        </Callout>
       </section>
 
       <section id="middleware" className="docs-section">
