@@ -9,8 +9,24 @@ import "../../styles/docs-layout.css";
 function DocsLayout() {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [tocItems, setTocItems] = useState<TocItem[]>([]);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const articleRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -66,6 +82,17 @@ function DocsLayout() {
             <Outlet />
           </article>
           <Footer />
+
+          {showScrollTop ? (
+            <button
+              type="button"
+              className="scroll-top-button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Volver al inicio"
+            >
+              ↑
+            </button>
+          ) : null}
         </main>
 
         <TableOfContents items={tocItems} />
