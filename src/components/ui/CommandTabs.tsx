@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import "../../styles/command-tabs.css";
+import CodeBlock from "./CodeBlock";
 
 const packageManagers = ["npm", "pnpm", "yarn"] as const;
 
@@ -36,9 +37,7 @@ function InstallCommandTabs() {
         ))}
       </div>
 
-      <pre className="install-tabs-code-block">
-        <code>{command}</code>
-      </pre>
+      <CodeBlock code={command}/>
     </div>
   );
 }

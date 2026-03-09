@@ -34,13 +34,13 @@ function renderInlineFormatting(value: string): ReactNode {
       nodes.push(<strong key={`${matchStart}-strong`}>{match[2]}</strong>);
     } else if (match[3]) {
       nodes.push(
-        <mark key={`${matchStart}-highlight`} className="table-highlight">
+        <mark key={`${matchStart}-highlight`} className="docs-highlight">
           {match[3]}
         </mark>,
       );
     } else if (match[4]) {
       nodes.push(
-        <code key={`${matchStart}-code`} className="table-inline-code">
+        <code key={`${matchStart}-code`} className="docs-inline-code">
           {match[4]}
         </code>,
       );

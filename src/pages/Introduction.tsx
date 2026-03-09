@@ -63,43 +63,43 @@ const dataTable: ContentTable[] = [
     caracterist: "Filosofía",
     express: "“Incluye lo básico”",
     koa: "Minimalista / Base",
-    skyguardjs: "**Fuertemente Tipado** / ==Minimalista=="
+    skyguardjs: "Fuertemente Tipado / Minimalista"
   },
   {
     caracterist: "Validación",
-    express: "Requiere [express-validator](https://www.npmjs.com/package/express-validator)",
+    express: "Requiere `express-validator`",
     koa: "Requiere terceros",
-    skyguardjs: "**Integración nativa** con ==Zod=="
+    skyguardjs: "Esquemas de validación nativos"
   },
   {
     caracterist: "Middlewares",
     express: "Basados en callbacks",
     koa: "Async (Modelo Cebolla)",
-    skyguardjs: "**Async** (Modelo Cebolla)"
+    skyguardjs: "Async (Modelo Cebolla)"
   },
   {
     caracterist: "Cookies",
     express: "Requiere `cookie-parser`",
     koa: "Integrado",
-    skyguardjs: "**Nativo** + Esquema ==Zod=="
+    skyguardjs: "Soporte nativo de Cookies"
   },
   {
     caracterist: "Sesiones",
     express: "Requiere `express-session`",
     koa: "Requiere `koa-session`",
-    skyguardjs: "==Nativo== para sesiones"
+    skyguardjs: "Soporte nativo de Sesiones"
   },
   {
     caracterist: "Typescript",
     express: "Vía `@types/express`",
     koa: "Vía `@types/koa`",
-    skyguardjs: "==Nativo== (Soporte de primera)"
+    skyguardjs: "Soporte nativo de Typescript"
   },
   {
     caracterist: "Dependencias",
     express: "~30+ transitivas",
     koa: "~20+ transitivas",
-    skyguardjs: "**1 (`zod`)**"
+    skyguardjs: "0 Dependencias"
   },
 ];
 
@@ -109,12 +109,12 @@ function Introduction() {
     return (
         <>
         <section id="introduction" className="docs-section">
-            <h1>Introduction</h1>
+            <h1>Introducción</h1>
             <p>Bienvenidos a Skyguard JS, un framework minimalista escrito en typescript sin dependencias de terceros.</p>
         </section>
         <section id="what-is-skyguard-js" className="docs-section">
-            <h2>What is Skyguard JS?</h2>
-            <p>Skyguard JS es un framework minimalista fuertemente tipado escrito en typescript sin dependencias de terceros, para aplicaciones en el entorno de ejecución de NodeJS. Ofrece distintas funcionalidades integradas, hechas con dependencias nativas de NodeJS para no tener dependencias de terceros y tener mucho más control del proyecto.</p>
+            <h2>¿Qué es Skyguard JS?</h2>
+            <p>Skyguard JS es un framework minimalista fuertemente tipado escrito en typescript sin dependencias de terceros, para aplicaciones en el entorno de ejecución de <mark className="docs-highlight">NodeJS</mark>. Ofrece distintas funcionalidades integradas, hechas con dependencias nativas de NodeJS para no tener dependencias de terceros y tener mucho más control del proyecto.</p>
             <br />
             <p>Nuestra filosofia se basa en tener un framework minimalista sin dependencias de terceros, para escribir APIs o aplicaciones web que corran desde el servidor.</p>
             <div className="container-cards">
@@ -126,7 +126,7 @@ function Introduction() {
 
         </section>
         <section id="quick-example" className="docs-section">
-            <h2>Quick Example</h2>
+            <h2>Ejemplo rápido</h2>
             <CodeBlock code={codeExample} />
         </section>
         <section id="advantages" className="docs-section">
