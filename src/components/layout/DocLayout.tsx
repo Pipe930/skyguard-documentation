@@ -11,11 +11,26 @@ function DocsLayout() {
   const [tocItems, setTocItems] = useState<TocItem[]>([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const articleRef = useRef<HTMLElement>(null);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
+
+    const targetId = hash.slice(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.requestAnimationFrame(() => {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      return;
+    }
+
     window.scrollTo({ top: 0, behavior: "auto" });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   useEffect(() => {
     const handleScroll = () => {
