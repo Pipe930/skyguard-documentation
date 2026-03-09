@@ -31,3 +31,33 @@
 .table tbody tr:hover {
     background: var(--color-surface);
 }
+
+.table-cell-emphasis {
+    font-weight: 700;
+    color: var(--color-text) !important;
+}
+
+.table-highlight {
+    padding: 1px 6px;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    color: color-mix(in srgb, var(--color-primary) 88%, var(--color-text));
+}
+
+.table-inline-code {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--color-surface) 78%, var(--color-border));
+    border: 1px solid color-mix(in srgb, var(--color-border) 85%, var(--color-bg));
+    color: var(--color-text);
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 0.85em;
+}
+
+.table-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 500;
+}
