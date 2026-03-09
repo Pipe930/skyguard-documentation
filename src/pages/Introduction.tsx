@@ -35,66 +35,71 @@ interface ContentTable {
 }
 
 const tableColumns: TableColumn<ContentTable>[] = [
-    {
-        header: "Caracteristicas",
-        accessor: "caracterist"
-    },
-    {
-        header: "Express.js",
-        accessor: "express"
-    },
-    {
-        header: "Koa.js",
-        accessor: "koa"
-    },
-    {
-        header: "Skyguard.js",
-        accessor: "skyguardjs"
-    }
-]
+  {
+    header: "Caracteristicas",
+    accessor: "caracterist",
+    emphasis: true,
+  },
+  {
+    header: "Express.js",
+    accessor: "express",
+    enableFormatting: true,
+  },
+  {
+    header: "Koa.js",
+    accessor: "koa",
+    enableFormatting: true,
+  },
+  {
+    header: "Skyguard.js",
+    accessor: "skyguardjs",
+    enableFormatting: true,
+    emphasis: true,
+  },
+];
 
 const dataTable: ContentTable[] = [
   {
     caracterist: "Filosofía",
-    express: "”Incluye lo básico”",
+    express: "“Incluye lo básico”",
     koa: "Minimalista / Base",
-    skyguardjs: "Fuertemente Tipado / Minimalista"
+    skyguardjs: "**Fuertemente Tipado** / ==Minimalista=="
   },
   {
     caracterist: "Validación",
-    express: "Requiere express-validator",
-    koa: "Requiere koa-validate",
-    skyguardjs: "Esquemas de validación nativos"
+    express: "Requiere [express-validator](https://www.npmjs.com/package/express-validator)",
+    koa: "Requiere terceros",
+    skyguardjs: "**Integración nativa** con ==Zod=="
   },
   {
     caracterist: "Middlewares",
     express: "Basados en callbacks",
     koa: "Async (Modelo Cebolla)",
-    skyguardjs: "Async (Modelo Cebolla)"
+    skyguardjs: "**Async** (Modelo Cebolla)"
   },
   {
     caracterist: "Cookies",
-    express: "Requiere cookie-parser",
+    express: "Requiere `cookie-parser`",
     koa: "Integrado",
-    skyguardjs: "Manejo nativo de Cookies"
+    skyguardjs: "**Nativo** + Esquema ==Zod=="
   },
   {
     caracterist: "Sesiones",
-    express: "Requiere express-session",
-    koa: "Requiere koa-session",
-    skyguardjs: "Manejo nativo de Sesiones"
+    express: "Requiere `express-session`",
+    koa: "Requiere `koa-session`",
+    skyguardjs: "==Nativo== para sesiones"
   },
   {
     caracterist: "Typescript",
-    express: "Vía @types/express",
-    koa: "Vía @types/koa",
-    skyguardjs: "Soporte nativo con Typescript"
+    express: "Vía `@types/express`",
+    koa: "Vía `@types/koa`",
+    skyguardjs: "==Nativo== (Soporte de primera)"
   },
   {
     caracterist: "Dependencias",
     express: "~30+ transitivas",
     koa: "~20+ transitivas",
-    skyguardjs: "Sin dependencias"
+    skyguardjs: "**1 (`zod`)**"
   },
 ];
 
