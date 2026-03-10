@@ -32,7 +32,7 @@ app.run();`
 function Installation() {
   return (
     <>
-      <section id="requirements" className="docs-section">
+      <section id="installation" className="docs-section">
         <h1>Instalación</h1>
         <p>
           En este apartado aprenderas a instalar y configurar SkyguardJS en su proyecto
@@ -93,7 +93,7 @@ function Installation() {
             <Link to="/docs/getting-started" className="docs-links">Guía de inicio rápido</Link> - Crea tu primera aplicación con Skyguard JS
           </li>
           <li>
-            <a href="" className="docs-links">Conceptos básicos</a> - Aprenda lo básico sobre el enrutamiento, middleware, seguridad, etc.
+            <Link to="/docs/routing" className="docs-links">Conceptos básicos</Link> - Aprenda lo básico sobre el enrutamiento, middlewares, seguridad, etc.
           </li>
           <li>
             <a href="" className="docs-links">Conceptos avanzados</a> - Aprenda conceptos mas avanzados como clustering, stream, websockets, etc.

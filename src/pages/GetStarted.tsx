@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CodeBlock from "../components/ui/CodeBlock";
 import InstallCommandTabs from "../components/ui/CommandTabs";
 import { codeExample, codeExampleMiddleware, codeExampleRequest, codeExampleRoutes, codeExampleValidation, codeRunServer } from "../data/dataGetStarted";
@@ -89,7 +90,7 @@ function GetStarted() {
         <h2>Próximos Pasos</h2>
         <ul className="docs-lists">
           <li>
-            <a href="" className="docs-links">Routing</a> - Aprende a manejar rutas dinámicas y patrones de ruta
+            <Link to="/docs/routing" className="docs-links">Routing</Link> - Aprende a manejar rutas dinámicas y patrones de ruta
           </li>
           <li>
             <a href="" className="docs-links">Middlewares</a> - Cree funciones reutilizables para ejecutarlas en diferentes rutas
