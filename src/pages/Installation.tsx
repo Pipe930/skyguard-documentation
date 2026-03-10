@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
 import InstallCommandTabs from "../components/ui/CommandTabs";
@@ -22,7 +23,7 @@ const createApp = `import { createApp, Response } from "skyguard-js";
 
 const app = createApp();
 
-app.get("", () => {
+app.get("/", () => {
   return Response.json({ message: "Hello World!!!" });
 });
 
@@ -37,6 +38,8 @@ function Installation() {
           En este apartado aprenderas a instalar y configurar SkyguardJS en su proyecto
         </p>
       </section>
+
+      <hr />
 
       <section id="prerequisites" className="docs-section">
         <h2>Prerequisitos</h2>
@@ -87,7 +90,7 @@ function Installation() {
         <h2>Próximos Pasos</h2>
         <ul className="docs-lists">
           <li>
-            <a href="" className="docs-links">Guía de inicio rápido</a> - Crea tu primera aplicación con Skyguard JS
+            <Link to="/docs/getting-started" className="docs-links">Guía de inicio rápido</Link> - Crea tu primera aplicación con Skyguard JS
           </li>
           <li>
             <a href="" className="docs-links">Conceptos básicos</a> - Aprenda lo básico sobre el enrutamiento, middleware, seguridad, etc.

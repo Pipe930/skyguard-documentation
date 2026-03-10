@@ -14,7 +14,7 @@ interface TableOfContentsProps {
 
 function TableOfContents({ title = "En esta página", items }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
-
+  const getActivationOffset = () => Math.min(230, Math.max(140, window.innerHeight * 0.3));
   const validItems = useMemo(
     () => items.filter(item => Boolean(document.getElementById(item.id))),
     [items],
@@ -31,10 +31,11 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
 
     const updateActiveByScrollPosition = () => {
       let currentId = observedHeadings[0].id;
+      const activationOffset = getActivationOffset();
 
       for (const heading of observedHeadings) {
         const offsetTop = heading.getBoundingClientRect().top;
-        if (offsetTop <= 140) {
+        if (offsetTop <= activationOffset) {
           currentId = heading.id;
         } else {
           break;

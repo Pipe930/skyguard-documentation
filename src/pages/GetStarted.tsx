@@ -1,135 +1,106 @@
-import Table, { type TableColumn } from "../components/ui/Table";
-import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
-
-interface RouteMethod {
-  method: string;
-  description: string;
-  example: string;
-}
-
-const columnsTable: TableColumn<RouteMethod>[] = [
-  { header: "Method", accessor: "method" },
-  { header: "Description", accessor: "description" },
-];
-
-const dataTable: RouteMethod[] = [
-  {
-    method: "GET",
-    description: "Retrieve data from the server",
-    example: "app.get('/users')",
-  },
-  {
-    method: "POST",
-    description: "Create a new resource",
-    example: "app.post('/users')",
-  },
-  {
-    method: "PUT",
-    description: "Update a resource",
-    example: "app.put('/users/:id')",
-  },
-];
+import InstallCommandTabs from "../components/ui/CommandTabs";
+import { codeExample, codeExampleMiddleware, codeExampleRequest, codeExampleRoutes, codeExampleValidation, codeRunServer } from "../data/dataGetStarted";
 
 function GetStarted() {
   return (
     <>
-      <section id="introduction" className="docs-section">
-        <h1>Getting Started</h1>
+      <section id="getting-started" className="docs-section">
+        <h1>Inicio Rápido</h1>
         <p>
-          Skyguard JS es un framework orientado a APIs que busca simplicidad,
-          velocidad y una experiencia limpia en TypeScript.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quod delectus autem, eum et quis hic at neque doloribus provident corporis temporibus dolorum blanditiis vitae illum quo esse minima consectetur!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sapiente similique obcaecati, enim iste rem dolore excepturi dolores? Atque temporibus quae libero aperiam maxime illum consequatur cum doloribus dolore accusantium.
+          Crea un servidor con Skyguard JS en segundos.
         </p>
       </section>
+      <hr />
 
-      <section id="installation" className="docs-section">
-        <h2>Instalación</h2>
-        <p>Instala el paquete con tu manejador favorito:</p>
+      <section id="create-first-server" className="docs-section">
+        <h2>Crea tu primer servidor</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quod delectus autem, eum et quis hic at neque doloribus provident corporis temporibus dolorum blanditiis vitae illum quo esse minima consectetur!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sapiente similique obcaecati, enim iste rem dolore excepturi dolores? Atque temporibus quae libero aperiam maxime illum consequatur cum doloribus dolore accusantium.
+          Si ya tienes <mark className="docs-highlight">NodeJS</mark> instalado en tu maquina, estos son los pasos sencillos para utilizar SkyguardJS:
         </p>
-        <CodeBlock code="npm install skyguard-js" />
-
-        <Callout variant="tip">
-          Parameters are always strings. Usa validaciones para convertirlos al tipo que necesitas.
-        </Callout>
+        <ol className="docs-list-ol">
+          <li>
+            <p>
+              <strong>Crea el archivo package.json</strong>
+            </p>
+            <CodeBlock code="npm init -y" />
+          </li>
+          <li>
+            <p>
+              <strong>Instalar Skyguard JS</strong>
+            </p>
+            <InstallCommandTabs/>
+          </li>
+          <li>
+            <p>
+              <strong>Crea un archivo de Typescript</strong>
+            </p>
+            <br />
+            <p>
+              Crea un nuevo archivo <mark className="docs-highlight">server.ts</mark>
+            </p>
+            <CodeBlock code={codeExample} />
+          </li>
+          <li>
+            <p>
+              <strong>Ejecuta tu servidor</strong>
+            </p>
+            <CodeBlock code={codeRunServer} />
+          </li>
+          <li>
+            <p>
+              <strong>Prueba tu servidor</strong>
+            </p>
+            <br />
+            <p>
+              Abre tu navegador y visita la url <mark className="docs-highlight">http://localhost:3000/</mark> o utiliza curl o postnam o insomnia:
+            </p>
+            <CodeBlock code={`curl http://localhost:3000
+# Output: Hello World!!!`} />
+          </li>
+        </ol>
       </section>
 
-      <section id="first-route" className="docs-section">
-        <h2>Tu primera ruta</h2>
-        <p>
-          Crea una aplicación, define una ruta de salud y arranca el servidor en
-          el puerto 3000.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quod delectus autem, eum et quis hic at neque doloribus provident corporis temporibus dolorum blanditiis vitae illum quo esse minima consectetur!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sapiente similique obcaecati, enim iste rem dolore excepturi dolores? Atque temporibus quae libero aperiam maxime illum consequatur cum doloribus dolore accusantium.
-        </p>
-        
-        <br />
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit quibusdam, excepturi cumque ad, maiores dignissimos voluptatum nesciunt repellat eum repellendus, sed ratione pariatur totam aperiam aliquam optio voluptas! Alias, asperiores.
-        </p>
-        <CodeBlock code={
-          `import { createApp, Response } from "skyguard-js";
-
-const app = createApp();
-
-app.get("/health", () => {
-  return Response.json({ status: "ok" });
-});
-
-app.run(3000, () => {
-  console.log("Server running in port 3000");
-});`
-        } />
-
-        <Callout variant="note">
-          All response methods automatically set appropriate Content-Type headers.
-        </Callout>
+      <section id="add-more-routes" className="docs-section">
+        <h2>Añadir más rutas</h2>
+        <p>Skyguard facilita la adición de múltiples routes con diferentes metodos HTTP.</p>
+        <CodeBlock code={codeExampleRoutes} />
       </section>
 
-      <section id="middleware" className="docs-section">
-        <h2>Middleware</h2>
-        <p>
-          Los middlewares te permiten ejecutar lógica previa a los controladores
-          para validar, registrar o transformar solicitudes.
-        </p>
+        <section id="handle-request-data" className="docs-section">
+        <h2>Gestionar datos de Request</h2>
+        <p>Para acceder a los parametros, queries, cuerpo, cabeceras de las peticion, acceda con el objeto request que se ingresa como parametro en la función handle.</p>
+        <CodeBlock code={codeExampleRequest} />
+      </section>
 
-        <div id="middleware-globales" className="docs-subsection">
-          <h3>Globales</h3>
-          <p>
-            Se aplican a todas las rutas. Útiles para CORS, logging general y
-            verificación de headers comunes.
-          </p>
-        </div>
+      <section id="add-validation" className="docs-section">
+        <h2>Añadir validación</h2>
+        <p>Skyguard incluye una validación integrada sin depender de librerias externas.</p>
+        <CodeBlock code={codeExampleValidation} />
+      </section>
 
-        <div id="middleware-grupales" className="docs-subsection">
-          <h3>Grupales</h3>
-          <p>
-            Se aplican a grupos de rutas, por ejemplo `/admin/*`, para compartir
-            autenticación y permisos en un módulo completo.
-          </p>
-        </div>
-
-        <div id="middleware-por-ruta" className="docs-subsection">
-          <h3>Por Ruta</h3>
-          <p>
-            Se usan en endpoints puntuales cuando necesitas una validación o
-            regla de negocio específica en un solo handler.
-          </p>
-        </div>
+      <section id="use-middleware" className="docs-section">
+        <h2>Usar middlewares</h2>
+        <p>Agregue middleware para manejar inquietudes transversales.</p>
+        <CodeBlock code={codeExampleMiddleware} />
       </section>
 
       <section id="next-steps" className="docs-section">
-        <h2>Próximos pasos</h2>
-        <p>
-          Continúa con configuración, seguridad y arquitectura para construir
-          servicios más robustos.
-        </p>
-        <Table columns={columnsTable} data={dataTable} />
+        <h2>Próximos Pasos</h2>
+        <ul className="docs-lists">
+          <li>
+            <a href="" className="docs-links">Routing</a> - Aprende a manejar rutas dinámicas y patrones de ruta
+          </li>
+          <li>
+            <a href="" className="docs-links">Middlewares</a> - Cree funciones reutilizables para ejecutarlas en diferentes rutas
+          </li>
+          <li>
+            <a href="" className="docs-links">Validaciones</a> - Como hacer validaciones con los esquemas
+          </li>
+          <li>
+            <a href="" className="docs-links">Request & Response</a> - Aprenda a utilizar los objetos de Request y Response
+          </li>
+        </ul>
       </section>
     </>
   );
