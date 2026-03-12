@@ -6,9 +6,9 @@ import {
   Shield,
   Plug,
   Files,
-  Settings,
   X,
   ListChecks,
+  ArrowRightLeft,
 } from "lucide-react";
 import "../../styles/sidebar.css";
 import type { SidebarProps } from "../../interfaces/sidebar.interface";
@@ -53,19 +53,14 @@ const docsNavigation = [
         icon: <ListChecks size={18} />,
       },
       {
+        label: "Request & Response",
+        to: "/docs/request-response",
+        icon: <ArrowRightLeft size={18} />,
+      },
+      {
         label: "Security",
         to: "/docs/security",
         icon: <Shield size={18} />,
-      },
-    ],
-  },
-  {
-    title: "Advanced",
-    links: [
-      {
-        label: "Configuration",
-        to: "/docs/configuration",
-        icon: <Settings size={16} />,
       },
     ],
   },

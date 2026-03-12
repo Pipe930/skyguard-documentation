@@ -60,13 +60,10 @@ export const codeExampleValidation = `const userSchema = schema({
   },
 });
 
-app.post(
-  "/users",
-  (request: Request) => {
+app.post("/users", [validateRequest(userSchema)], (request: Request) => {
     const data = request.body;
     return json(data).setStatusCode(201);
   },
-  [validateRequest(userSchema)],
 );`;
 
 export const codeExampleMiddleware = `const authMiddleware = async (request, next) => {
@@ -79,6 +76,7 @@ export const codeExampleMiddleware = `const authMiddleware = async (request, nex
 // Middleware global
 app.middlewares(authMiddleware);
 
-app.get("/profile", () => {
+// Middleware por ruta
+app.get("/profile", [authMiddleware], () => {
   return Response.json({ message: "Welcome to profile" })
-}, [authMiddleware]); // Middleware por ruta`;
+});`;

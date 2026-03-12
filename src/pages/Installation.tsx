@@ -82,7 +82,7 @@ function Installation() {
           }
         }>Ejecuta tu servidor:</p>
         <CodeBlock code={"tsx src/server.ts"}/>
-        <Callout variant="note" title="Nota">
+        <Callout variant="note">
           Por defecto si no le indicas un puerto en la función run, se ejecuta el servidor en el puerto 3000.
         </Callout>
       </section>

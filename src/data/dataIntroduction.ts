@@ -1,5 +1,10 @@
-import type { TableColumn } from "../components/ui/Table";
-import type { ContentTable } from "../interfaces/contentTable";
+import type { TableColumn } from "../interfaces/table.interface";
+interface ContentTable {
+  caracterist: string;
+  express: string;
+  koa: string;
+  skyguardjs: string;
+}
 
 export const codeExample = `import { createApp, json, schema, v, validateRequest } from "skyguard-js";
 
@@ -12,11 +17,11 @@ const userSchema = schema({
   }
 });
 
-app.post("/user/create", (request) => {
+app.post("/user/create", [validateRequest(userSchema)], (request) => {
   const { username, email } = request.body;
 
   return json({ username, email }).setStatusCode(201);
-}, [validateRequest(userSchema)]);
+});
 
 app.run(3000, () => {
   console.log("Server running in port 3000");
