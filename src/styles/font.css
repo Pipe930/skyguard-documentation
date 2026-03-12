@@ -1,193 +1,74 @@
-/* INTER FONT */
+/* INTER */
 @font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-Regular.ttf") format("truetype");
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Inter";
+  src: url("/font/Inter/Inter_24pt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Inter";
+  src: url("/font/Inter/Inter_24pt-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Inter";
+  src: url("/font/Inter/Inter_24pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
+  font-family: "Inter";
+  src: url("/font/Inter/Inter_24pt-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* MONTSERRAT */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/font/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Montserrat";
+  src: url("/font/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* JETBRAINS MONO */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/font/JetBrains_Mono/JetBrainsMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-Italic.ttf") format("truetype");
-    font-weight: 400;
-    font-style: italic;
+  font-family: "JetBrains Mono";
+  src: url("/font/JetBrains_Mono/JetBrainsMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-MediumItalic.ttf") format("truetype");
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-SemiBoldItalic.ttf") format("truetype");
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("/public/font/Inter/Inter_24pt-BoldItalic.ttf") format("truetype");
-    font-weight: 700;
-    font-style: italic;
-}
-
-/* MONTSERRAT FONT */
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-Regular.ttf") format("truetype");
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-Italic.ttf") format("truetype");
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-MediumItalic.ttf") format("truetype");
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-SemiBoldItalic.ttf") format("truetype");
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("/public/font/Montserrat/Montserrat-BoldItalic.ttf") format("truetype");
-    font-weight: 700;
-    font-style: italic;
-}
-
-/* JET BREINS MONO FONT */
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-Regular.ttf") format("truetype");
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-Italic.ttf") format("truetype");
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-MediumItalic.ttf") format("truetype");
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-SemiBoldItalic.ttf") format("truetype");
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/public/font/JetBrains_Mono/JetBrainsMono-BoldItalic.ttf") format("truetype");
-    font-weight: 700;
-    font-style: italic;
+  font-family: "JetBrains Mono";
+  src: url("/font/JetBrains_Mono/JetBrainsMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }

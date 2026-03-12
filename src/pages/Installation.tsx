@@ -96,7 +96,7 @@ function Installation() {
             <Link to="/docs/routing" className="docs-links">Conceptos básicos</Link> - Aprenda lo básico sobre el enrutamiento, middlewares, seguridad, etc.
           </li>
           <li>
-            <a href="" className="docs-links">Conceptos avanzados</a> - Aprenda conceptos mas avanzados como clustering, stream, websockets, etc.
+            <Link to="/docs/configuration" className="docs-links">Conceptos avanzados</Link> - Aprenda conceptos mas avanzados como clustering, stream, websockets, etc.
           </li>
         </ul>
       </section>

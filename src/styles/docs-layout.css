@@ -22,7 +22,6 @@
 .docs-lists {
     margin-left: 25px;
     list-style: circle;
-    padding-top: 20px;
 }
 
 .docs-lists li {
@@ -91,8 +90,9 @@
 }
 
 .docs-section h1,
-.docs-section h2 {
-    margin-bottom: 12px;
+.docs-section h2,
+.docs-section h3 {
+    margin-bottom: 20px;
 }
 
 .docs-section p {

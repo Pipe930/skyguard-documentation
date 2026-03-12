@@ -8,8 +8,10 @@ import {
   Files,
   Settings,
   X,
+  ListChecks,
 } from "lucide-react";
 import "../../styles/sidebar.css";
+import type { SidebarProps } from "../../interfaces/sidebar.interface";
 
 const docsNavigation = [
   {
@@ -18,17 +20,17 @@ const docsNavigation = [
       {
         label: "Introduction",
         to: "/docs/introduction",
-        icon: <BookOpen size={16} />,
+        icon: <BookOpen size={18} />,
       },
       {
         label: "Installation",
         to: "/docs/installation",
-        icon: <Files size={16} />,
+        icon: <Files size={18} />,
       },
       {
         label: "Quick Start",
         to: "/docs/getting-started",
-        icon: <Rocket size={16} />,
+        icon: <Rocket size={18} />,
       },
     ],
   },
@@ -38,17 +40,22 @@ const docsNavigation = [
       {
         label: "Routing",
         to: "/docs/routing",
-        icon: <Route size={16} />,
+        icon: <Route size={18} />,
       },
       {
-        label: "Middleware",
-        to: "/docs/middleware",
-        icon: <Plug size={16} />,
+        label: "Middlewares",
+        to: "/docs/middlewares",
+        icon: <Plug size={18} />,
+      },
+      {
+        label: "Validation",
+        to: "/docs/validation",
+        icon: <ListChecks size={18} />,
       },
       {
         label: "Security",
         to: "/docs/security",
-        icon: <Shield size={16} />,
+        icon: <Shield size={18} />,
       },
     ],
   },
@@ -63,11 +70,6 @@ const docsNavigation = [
     ],
   },
 ];
-
-interface SidebarProps {
-  isMobileOpen: boolean;
-  onCloseMobile: () => void;
-}
 
 function Sidebar({ isMobileOpen, onCloseMobile }: SidebarProps) {
   return (

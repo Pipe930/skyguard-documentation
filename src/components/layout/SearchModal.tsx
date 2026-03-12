@@ -1,16 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, X } from "lucide-react";
-import { normalizeSearchText, searchEntries } from "../../data/searchIndex";
-
-interface SearchModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { normalizeSearchText, searchEntries } from "../../data/dataSearch";
 
 const INITIAL_RESULTS_LIMIT = 3;
 
-function SearchModal({ isOpen, onClose }: SearchModalProps) {
+function SearchModal({ isOpen, onClose }: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [visibleResults, setVisibleResults] = useState(INITIAL_RESULTS_LIMIT);

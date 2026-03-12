@@ -1,11 +1,5 @@
-import type { ReactNode } from "react";
 import "../../styles/card.css"
-
-interface CardProps {
-    title: string;
-    description: string;
-    icon: ReactNode;
-}
+import type { CardProps } from "../../interfaces/card.interface";
 
 function Card ({ title, description, icon }: CardProps) {
     return (

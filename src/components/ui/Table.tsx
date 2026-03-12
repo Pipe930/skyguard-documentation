@@ -1,20 +1,6 @@
 import { Fragment, type ReactNode } from "react";
 import "../../styles/table.css";
-
-export interface TableColumn<T> {
-  header: string;
-  accessor: keyof T | ((row: T) => ReactNode);
-  width?: string;
-  emphasis?: boolean;
-  enableFormatting?: boolean;
-  headerClassName?: string;
-  cellClassName?: string;
-}
-
-interface TableProps<T> {
-  columns: TableColumn<T>[];
-  data: T[];
-}
+import type { TableProps } from "../../interfaces/table.interface";
 
 const INLINE_FORMAT_PATTERN = /(\*\*([^*]+)\*\*|==([^=]+)==|`([^`]+)`|\[([^\]]+)\]\((https?:\/\/[^\s)]+)\))/g;
 

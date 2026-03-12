@@ -1,33 +1,20 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import "../../styles/table-of-contents.css";
-
-export interface TocItem {
-  id: string;
-  label: string;
-  level: 1 | 2 | 3;
-}
-
-interface TableOfContentsProps {
-  title?: string;
-  items: TocItem[];
-}
+import type { TableOfContentsProps } from "../../interfaces/tableOfContent.interface";
 
 function TableOfContents({ title = "En esta página", items }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
   const getActivationOffset = () => Math.min(230, Math.max(140, window.innerHeight * 0.3));
-  const validItems = useMemo(
-    () => items.filter(item => Boolean(document.getElementById(item.id))),
-    [items],
-  );
 
   useEffect(() => {
-    if (validItems.length === 0) return;
-
-    const observedHeadings = validItems
+    const observedHeadings = items
       .map(item => document.getElementById(item.id))
       .filter((node): node is HTMLElement => Boolean(node));
 
-    if (observedHeadings.length === 0) return;
+    if (observedHeadings.length === 0) {
+      setActiveId("");
+      return;
+    }
 
     const updateActiveByScrollPosition = () => {
       let currentId = observedHeadings[0].id;
@@ -76,7 +63,7 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
       window.removeEventListener("resize", onScrollOrResize);
       window.removeEventListener("hashchange", onHashChange);
     };
-  }, [validItems]);
+  }, [items]);
 
   return (
     <aside className="table-of-contents" aria-label="Tabla de contenidos">

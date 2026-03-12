@@ -1,20 +1,12 @@
-import type { ReactNode } from "react";
 import {
   Book,
   Info,
   Lightbulb,
   ShieldAlert,
   TriangleAlert,
-  type LucideIcon,
 } from "lucide-react";
 import "../../styles/callout.css";
-
-type CalloutVariant = "tip" | "warn" | "danger" | "note" | "info";
-
-interface CalloutConfig {
-  icon: LucideIcon;
-  label: string;
-}
+import type { CalloutConfig, CalloutProps, CalloutVariant } from "../../interfaces/callout.interface";
 
 const CALLOUT_CONFIG: Record<CalloutVariant, CalloutConfig> = {
   tip: {
@@ -39,12 +31,6 @@ const CALLOUT_CONFIG: Record<CalloutVariant, CalloutConfig> = {
   },
 };
 
-interface CalloutProps {
-  variant: CalloutVariant;
-  title?: string;
-  children: ReactNode;
-}
-
 function Callout({ variant, title, children }: CalloutProps) {
   const { icon: Icon, label } = CALLOUT_CONFIG[variant];
 
@@ -60,4 +46,3 @@ function Callout({ variant, title, children }: CalloutProps) {
 }
 
 export default Callout;
-export type { CalloutVariant };

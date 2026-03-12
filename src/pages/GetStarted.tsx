@@ -93,13 +93,13 @@ function GetStarted() {
             <Link to="/docs/routing" className="docs-links">Routing</Link> - Aprende a manejar rutas dinámicas y patrones de ruta
           </li>
           <li>
-            <a href="" className="docs-links">Middlewares</a> - Cree funciones reutilizables para ejecutarlas en diferentes rutas
+            <Link to="/docs/middlewares" className="docs-links">Middlewares</Link> - Cree funciones reutilizables para ejecutarlas en diferentes rutas
           </li>
           <li>
-            <a href="" className="docs-links">Validaciones</a> - Como hacer validaciones con los esquemas
+            <Link to="/docs/validation" className="docs-links">Validaciones</Link> - Como hacer validaciones con los esquemas
           </li>
           <li>
-            <a href="" className="docs-links">Request & Response</a> - Aprenda a utilizar los objetos de Request y Response
+            <Link to="/docs/security" className="docs-links">Seguridad</Link> - Buenas prácticas para proteger tus APIs
           </li>
         </ul>
       </section>

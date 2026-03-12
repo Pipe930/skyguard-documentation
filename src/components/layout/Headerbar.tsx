@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Github, Moon, Sun, Search, Menu } from "lucide-react";
 import "../../styles/navbar.css";
 import { Link } from "react-router-dom";
-import SearchModal from "./SearchModal";
+import type { Theme } from "../../types";
 
-type Theme = "light" | "dark";
+const SearchModal = lazy(() => import("./SearchModal"));
 
-interface NavbarProps {
-  onToggleSidebar?: () => void;
-}
-
-function Headerbar({ onToggleSidebar }: NavbarProps) {
+function Headerbar({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "dark";
     const storedTheme = localStorage.getItem("theme") as Theme | null;
@@ -58,17 +54,32 @@ function Headerbar({ onToggleSidebar }: NavbarProps) {
         </div>
 
         <div className="navbar-right">
-          <a href="#" className="navbar-icon" aria-label="Github">
+          <a
+            href="https://github.com/Pipe930/Skyguard-js"
+            target="_blank"
+            rel="noreferrer"
+            className="navbar-icon"
+            aria-label="Github"
+          >
             <Github size={20} />
           </a>
 
-          <button className="theme-toggle" onClick={toggleTheme}>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Cambiar tema"
+          >
             {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
           </button>
         </div>
       </header>
 
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {isSearchOpen ? (
+        <Suspense fallback={null}>
+          <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+        </Suspense>
+      ) : null}
     </>
   );
 }

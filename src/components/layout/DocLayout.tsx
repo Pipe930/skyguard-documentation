@@ -34,11 +34,12 @@ function DocsLayout() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
+      const nextState = window.scrollY > 300;
+      setShowScrollTop(current => (current === nextState ? current : nextState));
     };
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
