@@ -62,7 +62,7 @@ function Routing() {
         </section>
 
         <section id="query-parameters" className="docs-section">
-            <h2>Query Parameters</h2>
+            <h2>Rutas con Queries</h2>
             <p>Para acceder a las query parameters de las peticiones, se utiliza la propiedad query del objeto request</p>
             <CodeBlock code={codeExampleRoutesQuery}/>
         </section>

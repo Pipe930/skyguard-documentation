@@ -3,12 +3,13 @@ import {
   BookOpen,
   Rocket,
   Route,
-  Shield,
   Plug,
   Files,
   X,
   ListChecks,
   ArrowRightLeft,
+  Settings,
+  Code,
 } from "lucide-react";
 import "../../styles/sidebar.css";
 import type { SidebarProps } from "../../interfaces/sidebar.interface";
@@ -57,10 +58,20 @@ const docsNavigation = [
         to: "/docs/request-response",
         icon: <ArrowRightLeft size={18} />,
       },
+    ],
+  },
+  {
+    title: "Configuration",
+    links: [
       {
-        label: "Security",
-        to: "/docs/security",
-        icon: <Shield size={18} />,
+        label: "Basic Configuration",
+        to: "/docs/basic-configuration",
+        icon: <Settings size={18} />,
+      },
+      {
+        label: "Engine Templates",
+        to: "/docs/engine-temapltes",
+        icon: <Code size={18} />,
       },
     ],
   },

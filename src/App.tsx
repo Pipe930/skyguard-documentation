@@ -10,6 +10,7 @@ const Introduction = lazy(() => import("./pages/Introduction"));
 const Routing = lazy(() => import("./pages/Routing"));
 const Middlewares = lazy(() => import("./pages/Middlewares"));
 const Validation = lazy(() => import("./pages/Validation"));
+const RequestResponse = lazy(() => import("./pages/RequestResponse"));
 const Security = lazy(() => import("./pages/Security"));
 const Configuration = lazy(() => import("./pages/Configuration"));
 
@@ -28,8 +29,9 @@ function App() {
             <Route path="routing" element={<Routing />} />
             <Route path="middlewares" element={<Middlewares />} />
             <Route path="validation" element={<Validation />} />
+            <Route path="request-response" element={<RequestResponse />} />
             <Route path="security" element={<Security />} />
-            <Route path="configuration" element={<Configuration />} />
+            <Route path="basic-configuration" element={<Configuration />} />
           </Route>
         </Routes>
       </Suspense>
