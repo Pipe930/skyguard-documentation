@@ -70,7 +70,7 @@ const docsNavigation = [
       },
       {
         label: "Engine Templates",
-        to: "/docs/engine-temapltes",
+        to: "/docs/engine-templates",
         icon: <Code size={18} />,
       },
     ],

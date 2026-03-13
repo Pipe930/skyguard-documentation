@@ -63,13 +63,13 @@ export const codeExampleTypeLiteral = `v.literal("admin")
 v.literal(56)
 v.literal(true)`;
 
-export const codeExampleTypeUnion = `v.union(v.string(), v.number())
+export const codeExampleTypeUnion = `v.union([v.string(), v.number()])
 
-v.union(
+v.union([
   v.literal("admin"),
   v.literal("user"),
   v.literal("staff")
-)`;
+])`;
 
 export const codeExampleOptionalFields = `const schemaUser = v.object({
   username: v.string(),                  // Required

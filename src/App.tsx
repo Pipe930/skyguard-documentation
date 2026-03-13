@@ -13,6 +13,7 @@ const Validation = lazy(() => import("./pages/Validation"));
 const RequestResponse = lazy(() => import("./pages/RequestResponse"));
 const Security = lazy(() => import("./pages/Security"));
 const Configuration = lazy(() => import("./pages/Configuration"));
+const EngineTemplates = lazy(() => import("./pages/EngineTemplates"));
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="request-response" element={<RequestResponse />} />
             <Route path="security" element={<Security />} />
             <Route path="basic-configuration" element={<Configuration />} />
+            <Route path="engine-templates" element={<EngineTemplates />} />
           </Route>
         </Routes>
       </Suspense>

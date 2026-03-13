@@ -120,7 +120,7 @@ function RequestResponse() {
         <CodeBlock code={codeExampleRequestBasics} />
       </section>
       <section id="request-body-state" className="docs-section">
-        <h2>Body, State y Session</h2>
+        <h2>Body y State</h2>
         <p>
           Con <mark className="docs-highlight">request.body</mark> obtiene el
           payload enviado por el cliente y con{" "}
@@ -128,10 +128,6 @@ function RequestResponse() {
           datos entre middlewares y handlers.
         </p>
         <CodeBlock code={codeExampleRequestBodyAndState} />
-        <Callout variant="info">
-          <mark className="docs-highlight">request.state</mark> dura solo durante
-          la petición actual. No reemplaza sesiones ni almacenamiento persistente.
-        </Callout>
       </section>
       <section id="request-cookies" className="docs-section">
         <h2>Cookies</h2>

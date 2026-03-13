@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Headerbar from "./Headerbar";
 import Sidebar from "./Sidebar";
-import TableOfContents, { type TocItem } from "./TableOfContents";
+import TableOfContents from "./TableOfContents";
 import Footer from "./Footer";
+import type { TocItem } from "../../interfaces/tableOfContent.interface";
 import "../../styles/docs-layout.css";
 
 function DocsLayout() {
