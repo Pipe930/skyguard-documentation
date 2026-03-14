@@ -15,6 +15,7 @@ import {
   Globe,
   ShieldAlert,
   GaugeCircle,
+  TriangleAlert,
 } from "lucide-react";
 import "../../styles/sidebar.css";
 import type { SidebarProps } from "../../interfaces/sidebar.interface";
@@ -62,6 +63,11 @@ const docsNavigation = [
         label: "Request & Response",
         to: "/docs/request-response",
         icon: <ArrowRightLeft size={18} />,
+      },
+      {
+        label: "Exceptions",
+        to: "/docs/exceptions",
+        icon: <TriangleAlert size={18} />,
       },
     ],
   },

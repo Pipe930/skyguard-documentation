@@ -218,6 +218,27 @@ export const searchEntries: SearchEntry[] = [
     "Request & Response",
   ),
   createEntry(
+    "exceptions-main",
+    "Exceptions",
+    "/docs/exceptions",
+    "Excepciones HTTP integradas para lanzar errores consistentes desde rutas y middlewares.",
+    "Core Concepts",
+  ),
+  createEntry(
+    "exceptions-usage",
+    "Ejemplo de uso de excepciones",
+    "/docs/exceptions#exceptions-usage",
+    "Uso de NotFoundError e InternalServerError para controlar errores de negocio y errores inesperados.",
+    "Exceptions",
+  ),
+  createEntry(
+    "exceptions-types",
+    "Tipos de Excepciones",
+    "/docs/exceptions#exceptions-types",
+    "Tabla completa con BadRequestError, UnauthorizedError, ForbiddenError, NotFoundError y excepciones 5xx.",
+    "Exceptions",
+  ),
+  createEntry(
     "configuration-logger",
     "Logger",
     "/docs/configuration#configuration-logger",
