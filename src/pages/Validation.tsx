@@ -1,6 +1,6 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
-import { codeExampleArrayValidation, codeExampleCompleteSchema, codeExampleErrorHandling, codeExampleNestedOjects, codeExampleOptionalFields, codeExampleTypeArray, codeExampleTypeBigint, codeExampleTypeBoolean, codeExampleTypeDate, codeExampleTypeLiteral, codeExampleTypeNumber, codeExampleTypeObject, codeExampleTypeString, codeExampleTypeUnion, codeExampleValidation } from "../data/dataValidation";
+import { codeExampleArrayValidation, codeExampleCompleteSchema, codeExampleConverteTypes, codeExampleErrorHandling, codeExampleNestedOjects, codeExampleOptionalFields, codeExampleTypeArray, codeExampleTypeBigint, codeExampleTypeBoolean, codeExampleTypeDate, codeExampleTypeLiteral, codeExampleTypeNumber, codeExampleTypeObject, codeExampleTypeString, codeExampleTypeUnion, codeExampleValidation } from "../data/dataValidation";
 
 function Validation() {
   return (
@@ -65,6 +65,14 @@ function Validation() {
         <h2>Campos Opcionales</h2>
         <p>Puedes indicar que los campos sean opcionales o que tengan algun valor por defecto, ya que, por defecto son requeridos:</p>
         <CodeBlock code={codeExampleOptionalFields} />
+      </section>
+      <section id="converter-fields" className="docs-section">
+        <h2>Convertidor de Tipos</h2>
+        <p>Skyguard ofrece un convertidor de tipos, convierte el valor de entrada en el tipo de dato que le indiques:</p>
+        <CodeBlock code={codeExampleConverteTypes} />
+        <Callout variant="tip">
+          Puedes utilizar el convertidor de tipos para validar params o queries en las peticiones.
+        </Callout>
       </section>
       <section id="validating-different-parts" className="docs-section">
         <h2>Validación de Diferentes Partes</h2>

@@ -77,6 +77,12 @@ export const codeExampleOptionalFields = `const schemaUser = v.object({
   active: v.boolean().default(true)      // Optional with default value
 })`;
 
+export const codeExampleConverteTypes = `const schemaUser = v.object({
+  username: v.convert.string(),
+  age: v.convert.number(),
+  active: v.convert.boolean()
+})`;
+
 export const codeExampleCompleteSchema = `const completeSchema = schema({
   params: {
     id: v.string().uuid()

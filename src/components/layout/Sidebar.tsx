@@ -10,6 +10,11 @@ import {
   ArrowRightLeft,
   Settings,
   Code,
+  Lock,
+  ShieldCheck,
+  Globe,
+  ShieldAlert,
+  GaugeCircle,
 } from "lucide-react";
 import "../../styles/sidebar.css";
 import type { SidebarProps } from "../../interfaces/sidebar.interface";
@@ -72,6 +77,36 @@ const docsNavigation = [
         label: "Engine Templates",
         to: "/docs/engine-templates",
         icon: <Code size={18} />,
+      },
+    ],
+  },
+  {
+    title: "Security",
+    links: [
+      {
+        label: "Authentication",
+        to: "/docs/authentication",
+        icon: <ShieldCheck size={18} />,
+      },
+      {
+        label: "Encryption and Hashing",
+        to: "/docs/encryption-hashing",
+        icon: <Lock size={18} />,
+      },
+      {
+        label: "CORS",
+        to: "/docs/cors",
+        icon: <Globe size={18} />,
+      },
+      {
+        label: "CSRF Protection",
+        to: "/docs/csrf-protection",
+        icon: <ShieldAlert size={18} />,
+      },
+      {
+        label: "Rate Limiting",
+        to: "/docs/rate-limiting",
+        icon: <GaugeCircle size={18} />,
       },
     ],
   },
