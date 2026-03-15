@@ -1,6 +1,6 @@
-import CodeBlock from "../components/ui/CodeBlock";
 import HomeNavbar from "../components/layout/HomeNavbar";
-import { useState } from "react";
+import type { CSSProperties } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Copy,
@@ -15,19 +15,31 @@ import "../styles/home.css";
 import { Link } from "react-router-dom";
 import Footer from "../components/layout/Footer";
 import Card from "../components/ui/Card";
+import type { LoadedHighlighter, Theme } from "../types";
 
 const installationCommand = "npm install skyguard-js";
-const rawCode = `import { createApp, Response } from "skyguard-js";
 
-const app = createApp();
+let highlighterLoader: Promise<LoadedHighlighter> | null = null;
 
-app.get("/", () => {
-  return Response.json({ status: "ok" });
-});
+function loadHighlighter() {
+  if (!highlighterLoader) {
+    highlighterLoader = Promise.all([
+      import("react-syntax-highlighter/dist/esm/prism-light"),
+      import("react-syntax-highlighter/dist/esm/languages/prism/typescript"),
+      import("react-syntax-highlighter/dist/esm/styles/prism"),
+    ]).then(([highlighterModule, typescriptModule, styleModule]) => {
+      highlighterModule.default.registerLanguage("typescript", typescriptModule.default);
 
-app.run(3000, () => {
-  console.log("Server running in port 3000");
-});`;
+      return {
+        PrismLight: highlighterModule.default,
+        oneLight: styleModule.oneLight as Record<string, CSSProperties>,
+        oneDark: styleModule.oneDark as Record<string, CSSProperties>,
+      };
+    });
+  }
+
+  return highlighterLoader;
+}
 
 const showcaseItems = [
   {
@@ -49,13 +61,13 @@ const showcaseItems = [
           "Evolve your codebase safely while the type system highlights impacted paths instantly.",
       },
     ],
-    codeLabel: "basic.ts",
-    code: `import { createApp } from "skyguard-js";
+    codeLabel: "server.ts",
+    code: `import { createApp, Response } from "skyguard-js";
 
 const app = createApp();
 
 app.get("/", () => {
-  return { message: "hello world" };
+  return Response.json({ status: "ok" });
 });
 
 app.run(3000);`,
@@ -80,17 +92,19 @@ app.run(3000);`,
       },
     ],
     codeLabel: "validation.ts",
-    code: `import { createApp, z } from "skyguard-js";
+    code: `import { createApp, v, schema, validatorRequest } from "skyguard-js";
 
 const app = createApp();
 
-const userSchema = z.object({
-  name: z.string().min(3),
-  email: z.string().email(),
+const userSchema = schema({
+  body: {  
+    name: v.string({ minLength: 3 }),
+    email: v.string().email(),
+  }
 });
 
-app.post("/users", { body: userSchema }, ({ body }) => {
-  return { created: true, user: body };
+app.post("/users", [validatorRequest(userSchema)], (request) => {
+  return { created: true, user: request.body };
 });`,
   },
   {
@@ -158,6 +172,8 @@ const features = [
 
 function Home() {
   const [installCopied, setInstallCopied] = useState(false);
+  const [theme, setTheme] = useState<Theme>("dark");
+  const [highlighter, setHighlighter] = useState<LoadedHighlighter | null>(null);
 
   const copyText = async (
     value: string,
@@ -171,6 +187,40 @@ function Home() {
       console.error("Could not copy text");
     }
   };
+
+  useEffect(() => {
+    const getTheme = () =>
+      document.documentElement.getAttribute("data-theme") === "light"
+        ? "light"
+        : "dark";
+
+    const syncTheme = () => setTheme(getTheme());
+    syncTheme();
+
+    const observer = new MutationObserver(syncTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    let mounted = true;
+
+    loadHighlighter().then(loaded => {
+      if (mounted) {
+        setHighlighter(loaded);
+      }
+    });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const SyntaxHighlighter = highlighter?.PrismLight;
 
   return (
     <>
@@ -247,13 +297,6 @@ function Home() {
       </section>
 
       <section className="example">
-        <div className="section-heading">
-          <h2>Ejemplo rápido</h2>
-          <p>Así de simple puede ser levantar un servidor con Skyguard JS.</p>
-        </div>
-
-        <CodeBlock code={rawCode} />
-
         <div className="example-showcase">
           {showcaseItems.map((item, index) => (
             <article
@@ -275,15 +318,37 @@ function Home() {
               <div className="example-code-card">
                 <div className="example-code-header">
                   <div className="example-code-dots" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
+                    <span/>
+                    <span/>
+                    <span/>
                   </div>
                   <span>{item.codeLabel}</span>
                 </div>
-                <pre>
-                  <code>{item.code}</code>
-                </pre>
+                {SyntaxHighlighter && highlighter ? (
+                  <SyntaxHighlighter
+                    language="typescript"
+                    style={theme === "light" ? highlighter.oneLight : highlighter.oneDark}
+                    customStyle={{
+                      background: "transparent",
+                      margin: 0,
+                      padding: "18px",
+                    }}
+                    codeTagProps={{
+                      style: {
+                        fontFamily: '"JetBrains Mono", monospace',
+                        fontSize: "0.84rem",
+                        lineHeight: "1.65",
+                        whiteSpace: "pre",
+                      },
+                    }}
+                  >
+                    {item.code}
+                  </SyntaxHighlighter>
+                ) : (
+                  <pre>
+                    <code>{item.code}</code>
+                  </pre>
+                )}
               </div>
             </article>
           ))}

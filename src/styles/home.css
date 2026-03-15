@@ -132,12 +132,12 @@
 }
 
 .btn-primary {
-    background: var(--color-primary);
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
 }
 
 .btn-primary:hover {
-    transform: translateY(-1px);
+    background-color: var(--color-primary-hover);
     opacity: 0.95;
 }
 
@@ -197,14 +197,14 @@
 .example-showcase {
     display: flex;
     flex-direction: column;
-    gap: 64px;
-    margin-top: 64px;
+    gap: 150px;
+    margin: 200px 0;
 }
 
 .example-showcase-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 70px;
     align-items: center;
 }
 
@@ -217,9 +217,9 @@
 }
 
 .example-showcase-copy h3 {
-    margin: 0 0 20px;
+    margin-bottom: 30px;
     font-size: clamp(1.7rem, 4vw, 2.5rem);
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .example-showcase-copy ul {
@@ -233,7 +233,7 @@
 
 .example-showcase-copy li {
     position: relative;
-    padding-left: 18px;
+    padding-left: 35px;
 }
 
 .example-showcase-copy li::before {
@@ -243,6 +243,7 @@
     left: 0;
     color: var(--color-primary);
     font-weight: 700;
+    font-size: 1.3rem;
 }
 
 .point-title {
@@ -342,12 +343,12 @@
 
 .cta-btn-primary {
     min-width: 260px;
-    background: #0dd4aa;
-    color: #001f1a;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
 }
 
 .cta-btn-primary:hover {
-    background: #12dcb2;
+    background-color: var(--color-primary-hover);
 }
 
 .cta-btn-secondary {
