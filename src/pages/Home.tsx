@@ -43,55 +43,55 @@ function loadHighlighter() {
 
 const showcaseItems = [
   {
-    title: "Confidence Through Type-Safety",
+    title: "Confianza mediante tipado seguro",
     points: [
       {
-        title: "Eliminate Runtime Errors",
+        title: "Elimina errores en tiempo de ejecución",
         description:
-          "Catch common mistakes at compile time with strict TypeScript types and predictable contracts.",
+          "Detecta errores comunes en compilación con tipos estrictos de TypeScript y contratos predecibles.",
       },
       {
-        title: "Simplify API Contracts",
+        title: "Simplifica contratos de API",
         description:
-          "Define expected input and output clearly so every endpoint stays documented by design.",
+          "Define entradas y salidas esperadas con claridad para que cada endpoint quede documentado por diseño.",
       },
       {
-        title: "Effortless Refactoring",
+        title: "Refactorización sin fricción",
         description:
-          "Evolve your codebase safely while the type system highlights impacted paths instantly.",
+          "Haz evolucionar tu código con seguridad mientras el sistema de tipos resalta de inmediato las rutas afectadas.",
       },
     ],
-    codeLabel: "server.ts",
+    codeLabel: "servidor.ts",
     code: `import { createApp, Response } from "skyguard-js";
 
 const app = createApp();
 
 app.get("/", () => {
-  return Response.json({ status: "ok" });
+  return Response.json({ estado: "ok" });
 });
 
 app.run(3000);`,
   },
   {
-    title: "High-Performance Validation",
+    title: "Validación integrada",
     points: [
       {
-        title: "Blazing Speed",
+        title: "Sin instalar dependencias",
         description:
-          "Validate input using lightweight schemas designed to keep request handling fast.",
+          "Valida peticiones entrantes con esquemas integrados y no instales dependencias.",
       },
       {
-        title: "Detailed Validation",
+        title: "Validación detallada",
         description:
-          "Get explicit messages for invalid payloads and return responses with confidence.",
+          "Obtén mensajes explícitos para payloads inválidos y valida las estructuras de las peticiones con precisión.",
       },
       {
-        title: "Seamless Integration",
+        title: "Integración fluida",
         description:
-          "Apply validation at route level so your existing handlers remain clean and readable.",
+          "Aplica validación a nivel de ruta para que tus handlers se mantengan limpios y legibles.",
       },
     ],
-    codeLabel: "validation.ts",
+    codeLabel: "validacion.ts",
     code: `import { createApp, v, schema, validatorRequest } from "skyguard-js";
 
 const app = createApp();
@@ -104,35 +104,37 @@ const userSchema = schema({
 });
 
 app.post("/users", [validatorRequest(userSchema)], (request) => {
-  return { created: true, user: request.body };
+  return { creado: true, usuario: request.body };
 });`,
   },
   {
-    title: "Extendable, but always secure",
+    title: "Sin dependencias",
     points: [
       {
-        title: "Extensible context",
+        title: "Tiene todo lo necesario",
         description:
-          "Add custom data to your request lifecycle while preserving strong typing across handlers.",
+          "No instales dependencias de terceros, el framework cuenta con todo lo necesario para crear APIs.",
       },
       {
-        title: "Always secure",
+        title: "Protección contra ataques",
         description:
-          "Use clear middleware composition to protect endpoints and keep your architecture maintainable.",
+          "Cuenta con funciones integradas para protección de ataques, funciones como CSRF, rate limiter, CORS, encriptación y hashing de contraseñas.",
       },
     ],
-    codeLabel: "extend.ts",
-    code: `import { createApp } from "skyguard-js";
+    codeLabel: "extension.ts",
+    code: `import { Hasher, json } from "skyguard-js";
+    
+app.middlewares(
+  cors({
+    origin: ["http://localhost:3000/"],
+  }),
+);
 
-interface AuthContext {
-  user: { id: string; role: "admin" | "user" };
-}
+app.post("/register", async (request) => {
+  const { username, password } = request.data;
+  const hashedPassword = await Hasher.hash(password);
 
-const app = createApp<AuthContext>();
-
-app.use((ctx, next) => {
-  ctx.user = { id: "1", role: "admin" };
-  return next();
+  return json({ message: "User registered" });
 });`,
   },
 ];
@@ -151,7 +153,7 @@ const features = [
     icon: <Box size={20} />,
   },
   {
-    title: "TypeScript first",
+    title: "TypeScript primero",
     description:
       "Tipado estático, autocompletado y una experiencia de desarrollo moderna desde el inicio.",
     icon: <Feather size={20} />,
@@ -184,7 +186,7 @@ function Home() {
       setter(true);
       window.setTimeout(() => setter(false), 1800);
     } catch {
-      console.error("Could not copy text");
+      console.error("No se pudo copiar el texto");
     }
   };
 
@@ -228,7 +230,7 @@ function Home() {
     <main className="home">
       <section className="hero">
         <div className="hero-content">
-          <span className="hero-badge">Lightweight TypeScript Framework</span>
+          <span className="hero-badge">Framework ligero en TypeScript</span>
 
           <h1 className="hero-title">Skyguard <span className="hero-title-color">JS</span></h1>
 
@@ -266,7 +268,7 @@ function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              Código Github
+              Código en GitHub
             </a>
           </div>
         </div>
@@ -274,7 +276,7 @@ function Home() {
         <div className="hero-visual">
             <img
               src="/logo-skyguard-js.png"
-              alt="Skyguard JS logo"
+              alt="Logo de Skyguard JS"
               className="hero-logo"
               />
         </div>
@@ -356,16 +358,16 @@ function Home() {
       </section>
 
       <section className="home-cta">
-        <h2>Ready to build faster?</h2>
+        <h2>¿Listo para construir más rápido?</h2>
         <p>
-          Go from documentation to starting your first project in Skyguard JS.
-          Discover the next generation of web development, powered by
+          Pasa de la documentación al inicio de tu primer proyecto con Skyguard
+          JS. Descubre la próxima generación del desarrollo web impulsado por
           TypeScript.
         </p>
 
         <div className="home-cta-actions">
           <Link to="/docs/get-started" className="btn cta-btn-primary">
-            Get Started with Skyguard
+            Empezar con Skyguard
           </Link>
 
           <a
@@ -375,7 +377,7 @@ function Home() {
             rel="noreferrer"
           >
             <Github size={19} />
-            Explore on GitHub
+            Explorar en GitHub
           </a>
         </div>
       </section>
