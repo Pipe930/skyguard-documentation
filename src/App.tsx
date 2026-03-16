@@ -13,6 +13,7 @@ const Validation = lazy(() => import("./pages/Validation"));
 const Context = lazy(() => import("./pages/RequestResponse"));
 const Exceptions = lazy(() => import("./pages/Exceptions"));
 const Authentication = lazy(() => import("./pages/Authentication"));
+const EncryptionHashing = lazy(() => import("./pages/EncryptionHashing"));
 const Configuration = lazy(() => import("./pages/Configuration"));
 const EngineTemplates = lazy(() => import("./pages/EngineTemplates"));
 
@@ -38,6 +39,7 @@ function App() {
             />
             <Route path="exceptions" element={<Exceptions />} />
             <Route path="authentication" element={<Authentication />} />
+            <Route path="encryption-hashing" element={<EncryptionHashing />} />
             <Route path="basic-configuration" element={<Configuration />} />
             <Route path="engine-templates" element={<EngineTemplates />} />
           </Route>

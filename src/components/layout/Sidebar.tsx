@@ -95,7 +95,7 @@ const docsNavigation = [
         icon: <ShieldCheck size={18} />,
       },
       {
-        label: "Encryption and Hashing",
+        label: "Encryption & Hashing",
         to: "/docs/encryption-hashing",
         icon: <Lock size={18} />,
       },

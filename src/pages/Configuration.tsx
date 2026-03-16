@@ -38,6 +38,24 @@ app.get("/health", () => Response.text("ok"));
 // GET /api/users
 // GET /api/health`;
 
+const codeExampleUploader = `import { createUploader, StorageType } from "skyguard-js";
+
+const uploader = createUploader({
+  storageType: StorageType.DISK,
+  storageOptions: {
+    disk: {
+      destination: "./uploads",
+    },
+  },
+});
+
+app.post("/upload", [uploader.single("file")], (ctx) => {
+  return ctx.json({
+    message: "Archivo subido correctamente",
+    file: ctx.req.files,
+  });
+});`;
+
 function Configuration() {
   return (
     <>
@@ -48,7 +66,8 @@ function Configuration() {
           sección verás cómo usar{" "}
           <mark className="docs-highlight">logger()</mark>,{" "}
           <mark className="docs-highlight">staticFiles()</mark> y{" "}
-          <mark className="docs-highlight">setPrefix()</mark>.
+          <mark className="docs-highlight">setPrefix()</mark>, además de la
+          carga de archivos con <mark className="docs-highlight">createUploader()</mark>.
         </p>
       </section>
       <hr />
@@ -87,6 +106,34 @@ function Configuration() {
         <Callout variant="warn">
           Define el prefijo al inicio del arranque para mantener consistencia en
           toda la API.
+        </Callout>
+      </section>
+
+      <section id="configuration-file-upload" className="docs-section">
+        <h2>Subida de Archivos</h2>
+        <p>
+          Para recibir y guardar archivos use{" "}
+          <mark className="docs-highlight">createUploader()</mark> con el tipo
+          de almacenamiento que necesite.
+        </p>
+        <CodeBlock code={codeExampleUploader} />
+        <p style={
+          {
+            padding: "25px 0"
+          }
+        }>
+          Según el <mark className="docs-highlight">StorageType</mark>{" "}
+          seleccionado, <mark className="docs-highlight">storageOptions</mark>{" "}
+          puede incluir dos propiedades:{" "}
+          <mark className="docs-highlight">disk</mark> y{" "}
+          <mark className="docs-highlight">memory</mark>.
+        </p>
+        <Callout variant="note">
+          Use <mark className="docs-highlight">StorageType.DISK</mark> cuando
+          necesite persistencia en disco y{" "}
+          <mark className="docs-highlight">StorageType.MEMORY</mark> para
+          procesamiento temporal en memoria antes de enviar a S3, Cloudinary u
+          otro almacenamiento externo.
         </Callout>
       </section>
     </>
