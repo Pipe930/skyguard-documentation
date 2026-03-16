@@ -60,8 +60,8 @@ const docsNavigation = [
         icon: <ListChecks size={18} />,
       },
       {
-        label: "Request & Response",
-        to: "/docs/request-response",
+        label: "Context",
+        to: "/docs/context",
         icon: <ArrowRightLeft size={18} />,
       },
       {

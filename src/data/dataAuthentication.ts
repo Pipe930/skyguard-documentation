@@ -13,8 +13,7 @@ interface SessionSuggestedRow {
   description: string;
 }
 
-export const codeExampleBasicAuth = `import { createApp, Response, UnauthorizedError } from "skyguard-js";
-
+export const codeExampleBasicAuth = `import { createApp, UnauthorizedError } from "skyguard-js";
 const app = createApp();
 
 const users = [
@@ -22,8 +21,8 @@ const users = [
   { id: 2, username: "editor", password: "123456", role: "editor" },
 ];
 
-app.post("/login", (request) => {
-  const { username, password } = request.body;
+app.post("/login", (ctx) => {
+  const { username, password } = ctx.body;
 
   const user = users.find(
     (entry) => entry.username === username && entry.password === password,
@@ -33,7 +32,7 @@ app.post("/login", (request) => {
     throw new UnauthorizedError("Invalid credentials");
   }
 
-  return Response.json({
+  return ctx.json({
     message: "Authenticated",
     user: { id: user.id, username: user.username, role: user.role },
   });
@@ -43,8 +42,7 @@ export const codeExampleSessionMemory = `import {
   createApp,
   sessions,
   MemorySessionStorage,
-  UnauthorizedError,
-  Response,
+  UnauthorizedError
 } from "skyguard-js";
 
 const app = createApp();
@@ -57,38 +55,37 @@ app.middlewares(
   }),
 );
 
-app.post("/login", (request) => {
-  const { username, password } = request.body;
+app.post("/login", (ctx) => {
+  const { username, password } = ctx.body;
 
   if (username === "admin" && password === "secret") {
-    request.session.set("user", {
+    ctx.session.set("user", {
       id: 1,
       username: "admin",
       role: "admin",
     });
 
-    return Response.json({ message: "Logged in" });
+    return ctx.json({ message: "Logged in" });
   }
 
   throw new UnauthorizedError("Invalid credentials");
 });
 
-app.get("/me", (request) => {
-  const user = request.session.get("user");
+app.get("/me", (ctx) => {
+  const user = ctx.session.get("user");
 
   if (!user) {
     throw new UnauthorizedError("Not authenticated");
   }
 
-  return Response.json({ user });
+  return ctx.json({ user });
 });`;
 
 export const codeExampleSessionFile = `import {
   createApp,
   sessions,
   FileSessionStorage,
-  UnauthorizedError,
-  json,
+  UnauthorizedError
 } from "skyguard-js";
 
 const app = createApp();
@@ -108,17 +105,17 @@ app.middlewares(
   }),
 );
 
-app.post("/login", (request) => {
-  const { username, password } = request.body;
+app.post("/login", (ctx) => {
+  const { username, password } = ctx.body;
 
   if (username === "admin" && password === "secret") {
-    request.session.set("user", {
+    ctx.session.set("user", {
       id: 1,
       username: "admin",
       role: "admin",
     });
 
-    return json({ message: "Logged in" });
+    return ctx.json({ message: "Logged in" });
   }
 
   throw new UnauthorizedError("Invalid credentials");
@@ -593,18 +590,17 @@ const adapter: SessionDatabaseAdapter = {
 
 DatabaseSessionStorage.configure(adapter);`;
 
-export const codeExampleJwtLogin = `import { createApp, JWT, json, UnauthorizedError } from "skyguard-js";
+export const codeExampleJwtLogin = `import { createApp, JWT, UnauthorizedError } from "skyguard-js";
 
 const app = createApp();
 
-app.post("/login", async (request) => {
-  const { username, password } = request.body;
+app.post("/login", async (ctx) => {
+  const { username, password } = ctx.body;
 
   // Retrieve user from database by username
   // Validate password hash
-  const isValid = username === "admin" && password === "secret";
 
-  if (!isValid) {
+  if (!(username === "admin" && password === "secret")) {
     throw new UnauthorizedError("Invalid credentials");
   }
 
@@ -613,21 +609,20 @@ app.post("/login", async (request) => {
     expiresIn: "1h",
   });
 
-  return json({ token });
+  return ctx.json({ token });
 });`;
 
 export const codeExampleJwtMiddleware = `import {
   JWT,
   type Middleware,
   UnauthorizedError,
-  json,
 } from "skyguard-js";
 
 const secret = "secret-key";
 
 export const authJWT = (): Middleware => {
-  return async (request, next) => {
-    const authHeader = request.headers.authorization;
+  return async (ctx, next) => {
+    const authHeader = ctx.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
       throw new UnauthorizedError("Missing or invalid token format");
@@ -644,14 +639,14 @@ export const authJWT = (): Middleware => {
       throw new UnauthorizedError("Invalid or expired token");
     }
 
-    request.state.user = user;
-    return await next(request);
+    ctx.req.state.user = user;
+    return await next(ctx);
   };
 };
 
-app.get("/profile", [authJWT()], async (request) => {
-  const user = request.state.user;
-  return json({ user });
+app.get("/profile", [authJWT()], async (ctx.req) => {
+  const user = ctx.req.state.user;
+  return ctx.json({ user });
 });`;
 
 export const jwtAlgorithmsColumns: TableColumn<JwtAlgorithmRow>[] = [

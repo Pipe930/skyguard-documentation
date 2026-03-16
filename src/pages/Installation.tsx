@@ -19,12 +19,12 @@ const tsConfigCode = `{
   }
 }`
 
-const createApp = `import { createApp, Response } from "skyguard-js";
+const createApp = `import { createApp } from "skyguard-js";
 
 const app = createApp();
 
-app.get("/", () => {
-  return Response.json({ message: "Hello World!!!" });
+app.get("/", (ctx) => {
+  return ctx.json({ message: "Hello World!!!" });
 });
 
 app.run();`

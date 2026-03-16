@@ -1,37 +1,37 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
 
-const codeExampleRoutesBasics = `import { createApp, Response } from "skyguard-js";
+const codeExampleRoutesBasics = `import { createApp } from "skyguard-js";
 const app = createApp();
 
-app.get("/", () => Response.text("GET"));
-app.post("/create", () => Response.text("POST"));
-app.put("/update", () => Response.text("PUT"));
-app.patch("/modify", () => Response.text("PATCH"));
-app.delete("/delete", () => Response.text("DELETE"));`;
+app.get("/", (ctx) => ctx.text("GET"));
+app.post("/create", (ctx) => ctx.text("POST"));
+app.put("/update", (ctx) => ctx.text("PUT"));
+app.patch("/modify", (ctx) => ctx.text("PATCH"));
+app.delete("/delete", (ctx) => ctx.text("DELETE"));`;
 
 const codeExampleRoutesParameters = `// Un parametro 
-app.get("/products/{id}", (request) => {
-  const { id } = request.params;
-  return Response.json({ idProduct: id });
+app.get("/products/{id}", (ctx) => {
+  const { id } = ctx.params;
+  return ctx.json({ idProduct: id });
 });
 
 // Multiples parametros
-app.get("/posts/{idPost}/category/{idCategory}", (request) => {
-  const { idPost, idCategory } = request.params;
-  return Response.json({ idPost, idCategory });
+app.get("/posts/{idPost}/category/{idCategory}", (ctx) => {
+  const { idPost, idCategory } = ctx.params;
+  return ctx.json({ idPost, idCategory });
 });`;
 
 const codeExampleRoutesQuery = `// URL: /search?q=test&limit=10
-app.get("/search", (request) => {
-  const { q, limit } = request.query;
-  return Response.json({ search: q, limiter: limit });
+app.get("/search", (ctx) => {
+  const { q, limit } = ctx.query;
+  return ctx.json({ search: q, limiter: limit });
 });`;
 
 const codeExampleGroupRoutes = `app.group("/api", api => {
-  api.get("/users", () => Response.text("Users")));
-  api.get("/products", () => Response.text("Products"));
-  api.post("/products", () => Response.text("Create Product"));
+  api.get("/users", (ctx) => ctx.text("Users")));
+  api.get("/products", (ctx) => ctx.text("Products"));
+  api.post("/products", (ctx) => ctx.text("Create Product"));
 });
 
 // Output Routes

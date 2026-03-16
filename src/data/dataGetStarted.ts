@@ -1,9 +1,8 @@
-export const codeExample = `import { createApp, Response } from "skyguard-js";
-
+export const codeExample = `import { createApp } from "skyguard-js";
 const app = createApp();
 
-app.get("/", () => {
-  return Response.json({ message: "Hello World!!!" });
+app.get("/", (ctx) => {
+  return ctx.json({ message: "Hello World!!!" });
 });
 
 app.run(3000);`;
@@ -13,42 +12,42 @@ export const codeRunServer = `node --experimental-specifier-resolution=node serv
 # Using tsx (recommended)
 tsx server.ts`;
 
-export const codeExampleRoutes = `import { createApp, Response } from "skyguard-js";
+export const codeExampleRoutes = `import { createApp } from "skyguard-js";
 const app = createApp();
 
-app.get("/", () => {
-  return Response.text({ message: "home page" });
+app.get("/", (ctx) => {
+  return ctx.text({ message: "home page" });
 });
 
-app.post("/users", () => {
-  return Response.json({ message: "create users" });
+app.post("/users", (ctx) => {
+  return ctx.json({ message: "create users" });
 });
 
-app.get("/users/{id}", (request) => {
-  const { id } = request.params;
-  return Response.json({ message: "get one users" });
+app.get("/users/{id}", (ctx) => {
+  const { id } = ctx.params;
+  return ctx.json({ message: "get one users" });
 });
 
 app.run(3000);`;
 
-export const codeExampleRequest = `app.get("/users/{id}", (request) => {
-  const { id } = request.params;
-  return Response.json({ idUser: id });
+export const codeExampleRequest = `app.get("/users/{id}", (ctx) => {
+  const { id } = ctx.params;
+  return ctx.json({ idUser: id });
 });
 
-app.get("/search", (request) => {
-  const { q } = request.query
-  return Response.json({ query: q });
+app.get("/search", (ctx) => {
+  const { q } = ctx.query
+  return ctx.json({ query: q });
 });
 
-app.post("/users", (request) => {
-  const { username, email } = request.body;
-  return Response.json({ message: "create user" });
+app.post("/users", (ctx) => {
+  const { username, email } = ctx.body;
+  return ctx.json({ message: "create user" });
 });
 
-app.post("/users", (request) => {
-  const userAgent = req.headers["user-agent"];
-  return Response.json({ userAgent });
+app.post("/users", (ctx) => {
+  const userAgent = ctx.headers["user-agent"];
+  return ctx.json({ userAgent });
 });`;
 
 export const codeExampleValidation = `const userSchema = schema({
@@ -60,17 +59,17 @@ export const codeExampleValidation = `const userSchema = schema({
   },
 });
 
-app.post("/users", [validateRequest(userSchema)], (request: Request) => {
-    const data = request.body;
-    return json(data).setStatusCode(201);
+app.post("/users", [validateRequest(userSchema)], (ctx) => {
+    const data = ctx.body;
+    return ctx.json(data).setStatusCode(201);
   },
 );`;
 
-export const codeExampleMiddleware = `const authMiddleware = async (request, next) => {
-  if(request.headers["autorization"].includex("Bearer")){
+export const codeExampleMiddleware = `const authMiddleware = async (ctx, next) => {
+  if(ctx.headers["autorization"].includex("Bearer")){
 
   }
-  return await next(request)
+  return await next(ctx)
 }
 
 // Middleware global

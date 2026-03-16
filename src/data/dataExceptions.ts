@@ -7,35 +7,30 @@ interface ExceptionRow {
   description: string;
 }
 
-export const codeExampleExceptionsUsage = `import {
-  NotFoundError,
-  InternalServerError,
-  json,
-  type Request,
-} from "skyguard-js";
+export const codeExampleExceptionsUsage = `import { NotFoundError InternalServerError } from "skyguard-js";
 
 const listResources = ["1", "2", "3"];
 
-app.get("/resource/{id}", (request: Request) => {
-  const resource = request.params["id"];
+app.get("/resource/{id}", (ctx) => {
+  const resource = ctx.params["id"];
 
   if (!listResources.includes(resource)) {
     throw new NotFoundError("Resource not found");
   }
 
-  return json(resource);
+  return ctx.json(resource);
 });
 
-app.get("/divide", (request: Request) => {
+app.get("/divide", (ctx) => {
   try {
-    const { a, b } = request.query;
+    const { a, b } = ctx.query;
     const result = Number(a) / Number(b);
 
     if (!Number.isFinite(result)) {
       throw new Error("Invalid operation");
     }
 
-    return json({ result });
+    return ctx.json({ result });
   } catch {
     throw new InternalServerError(
       "An error occurred while processing your request",
@@ -136,4 +131,3 @@ export const exceptionTypesData: ExceptionRow[] = [
     description: "Un upstream tardó demasiado en responder.",
   },
 ];
-

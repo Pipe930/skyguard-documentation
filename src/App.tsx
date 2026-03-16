@@ -10,7 +10,7 @@ const Introduction = lazy(() => import("./pages/Introduction"));
 const Routing = lazy(() => import("./pages/Routing"));
 const Middlewares = lazy(() => import("./pages/Middlewares"));
 const Validation = lazy(() => import("./pages/Validation"));
-const RequestResponse = lazy(() => import("./pages/RequestResponse"));
+const Context = lazy(() => import("./pages/RequestResponse"));
 const Exceptions = lazy(() => import("./pages/Exceptions"));
 const Authentication = lazy(() => import("./pages/Authentication"));
 const Configuration = lazy(() => import("./pages/Configuration"));
@@ -31,7 +31,11 @@ function App() {
             <Route path="routing" element={<Routing />} />
             <Route path="middlewares" element={<Middlewares />} />
             <Route path="validation" element={<Validation />} />
-            <Route path="request-response" element={<RequestResponse />} />
+            <Route path="context" element={<Context />} />
+            <Route
+              path="request-response"
+              element={<Navigate to="/docs/context" replace />}
+            />
             <Route path="exceptions" element={<Exceptions />} />
             <Route path="authentication" element={<Authentication />} />
             <Route path="basic-configuration" element={<Configuration />} />

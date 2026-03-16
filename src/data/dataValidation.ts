@@ -1,4 +1,4 @@
-export const codeExampleValidation = `import { v, schema, validateRequest, json } from "skyguard-js";
+export const codeExampleValidation = `import { v, schema, validateRequest } from "skyguard-js";
 
 const userSchema = schema({
   body: {
@@ -10,9 +10,9 @@ const userSchema = schema({
   },
 });
 
-app.post("/test", [validateRequest(userSchema)], (request: Request) => {
-  const data = request.body;
-  return json(data).setStatusCode(201);
+app.post("/test", [validateRequest(userSchema)], (ctx) => {
+  const data = ctx.body;
+  return ctx.json(data).setStatusCode(201);
 });`;
 
 export const codeExampleTypeString = `v.string()
@@ -100,11 +100,11 @@ export const codeExampleCompleteSchema = `const completeSchema = schema({
   },
 })
   
-app.post("/user", validationRequest(completeSchema), (request) => {
-  const { id } = request.params;
-  const { page, limit } = request.query;
-  const { title, content } = request.body;
-  return Response.json({ message: "validation schema" });
+app.post("/user", validationRequest(completeSchema), (ctx) => {
+  const { id } = ctx.params;
+  const { page, limit } = ctx.query;
+  const { title, content } = ctx.body;
+  return ctx.json({ message: "validation schema" });
 })`;
 
 export const codeExampleNestedOjects = `const profileSchema = schema({
@@ -135,8 +135,8 @@ export const codeExampleArrayValidation = `const batchSchema = schema({
   }
 });
  
-app.post("/users/batch", [validationRequest(batchSchema)], (request) => {
-  const { users } = request.body;
+app.post("/users/batch", [validationRequest(batchSchema)], (ctx) => {
+  const { users } = ctx.body;
   // users is User[] with min 1, max 100 items
 });`;
 

@@ -1,110 +1,89 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
-import { codeExampleRequestBasics, codeExampleRequestBodyAndState, codeExampleRequestCookies, codeExampleResponseCookiesHeaders, codeExampleResponseFilesStream, codeExampleResponseFluent, codeExampleResponseStatic } from "../data/dataRequestResponse";
+import {
+  codeExampleContextBasics,
+  codeExampleContextBodyCookiesSession,
+  codeExampleContextCommonResponses,
+  codeExampleContextFilesStreamRender,
+  codeExampleContextReqRes,
+} from "../data/dataRequestResponse";
 
-function RequestResponse() {
+function ContextPage() {
   return (
     <>
-      <section id="request-response" className="docs-section">
-        <h1>Request & Response</h1>
+      <section id="context" className="docs-section">
+        <h1>Context</h1>
         <p>
-          <mark className="docs-highlight">Request</mark> representa la petición
-          entrante y <mark className="docs-highlight">Response</mark> representa
-          la respuesta saliente. Ambos objetos cubren el flujo completo de una
-          ruta HTTP.
+          <mark className="docs-highlight">Context</mark> unifica los objetos{" "}
+          <mark className="docs-highlight">Request</mark> y{" "}
+          <mark className="docs-highlight">Response</mark> en una sola API para
+          middlewares y handlers.
         </p>
       </section>
       <hr />
-      <section id="request-object" className="docs-section">
-        <h2>Request</h2>
+      <section id="context-accessors" className="docs-section">
+        <h2>Lectura de Datos de Petición</h2>
         <p>
-          Use <mark className="docs-highlight">request.url</mark>,{" "}
-          <mark className="docs-highlight">request.method</mark>,{" "}
-          <mark className="docs-highlight">request.headers</mark>,{" "}
-          <mark className="docs-highlight">request.params</mark> y{" "}
-          <mark className="docs-highlight">request.query</mark> para leer
-          contexto de la petición.
+          Use <mark className="docs-highlight">context.headers</mark>,{" "}
+          <mark className="docs-highlight">context.params</mark>,{" "}
+          <mark className="docs-highlight">context.query</mark> y{" "}
+          <mark className="docs-highlight">context.remoteAddress</mark> para
+          leer datos de entrada.
         </p>
-        <CodeBlock code={codeExampleRequestBasics} />
+        <CodeBlock code={codeExampleContextBasics} />
       </section>
-      <section id="request-body-state" className="docs-section">
-        <h2>Body y State</h2>
+      <section id="context-body-cookies-session" className="docs-section">
+        <h2>Body, Cookies y Session</h2>
         <p>
-          Con <mark className="docs-highlight">request.body</mark> obtiene el
-          payload enviado por el cliente y con{" "}
-          <mark className="docs-highlight">request.state</mark> puede compartir
-          datos entre middlewares y handlers.
+          Con <mark className="docs-highlight">context.body</mark>,{" "}
+          <mark className="docs-highlight">context.cookies</mark> y{" "}
+          <mark className="docs-highlight">context.session</mark> puede acceder
+          al payload, cookies y sesión activa.
         </p>
-        <CodeBlock code={codeExampleRequestBodyAndState} />
+        <CodeBlock code={codeExampleContextBodyCookiesSession} />
       </section>
-      <section id="request-cookies" className="docs-section">
-        <h2>Cookies</h2>
+      <section id="context-req-res" className="docs-section">
+        <h2>Acceso Directo a req y res</h2>
         <p>
-          Acceda a cookies con{" "}
-          <mark className="docs-highlight">request.cookies</mark> y valide su
-          existencia con <mark className="docs-highlight">request.hasCookie()</mark>.
+          Si necesita control detallado puede usar{" "}
+          <mark className="docs-highlight">context.req</mark> y{" "}
+          <mark className="docs-highlight">context.res</mark>.
         </p>
-        <CodeBlock code={codeExampleRequestCookies} />
+        <CodeBlock code={codeExampleContextReqRes} />
         <Callout variant="tip">
-          Valide formato y expiración de cookies antes de confiar en sus valores.
+          Prefiera los helpers de <mark className="docs-highlight">context</mark>{" "}
+          para la mayoría de los casos y use <mark className="docs-highlight">res</mark>{" "}
+          cuando necesite personalización avanzada.
         </Callout>
       </section>
-      <section id="response-object" className="docs-section">
-        <h2>Response</h2>
+      <section id="context-common-responses" className="docs-section">
+        <h2>Respuestas Comunes</h2>
         <p>
-          El API fluido permite encadenar{" "}
-          <mark className="docs-highlight">setStatusCode()</mark>,{" "}
-          <mark className="docs-highlight">setHeader()</mark>,{" "}
-          <mark className="docs-highlight">setContentType()</mark> y{" "}
-          <mark className="docs-highlight">setContent()</mark>.
+          Para respuestas frecuentes use{" "}
+          <mark className="docs-highlight">context.json()</mark>,{" "}
+          <mark className="docs-highlight">context.text()</mark> y{" "}
+          <mark className="docs-highlight">context.redirect()</mark>.
         </p>
-        <CodeBlock code={codeExampleResponseFluent} />
+        <CodeBlock code={codeExampleContextCommonResponses} />
       </section>
-      <section id="response-cookies-headers" className="docs-section">
-        <h2>Headers y Cookies</h2>
-        <p>
-          Use <mark className="docs-highlight">setHeaders()</mark>,{" "}
-          <mark className="docs-highlight">setHeader()</mark>,{" "}
-          <mark className="docs-highlight">removeHeader()</mark>,{" "}
-          <mark className="docs-highlight">setCookie()</mark> y{" "}
-          <mark className="docs-highlight">removeCookie()</mark> para controlar
-          metadatos de respuesta.
-        </p>
-        <CodeBlock code={codeExampleResponseCookiesHeaders} />
-        <Callout variant="warn">
-          Configure <mark className="docs-highlight">httpOnly</mark>,{" "}
-          <mark className="docs-highlight">secure</mark> y{" "}
-          <mark className="docs-highlight">sameSite</mark> en cookies de sesión.
-        </Callout>
-      </section>
-      <section id="response-static-methods" className="docs-section">
-        <h2>Métodos Estáticos</h2>
-        <p>
-          Para respuestas comunes use{" "}
-          <mark className="docs-highlight">Response.json()</mark>,{" "}
-          <mark className="docs-highlight">Response.text()</mark> y{" "}
-          <mark className="docs-highlight">Response.redirect()</mark>.
-        </p>
-        <CodeBlock code={codeExampleResponseStatic} />
-      </section>
-      <section id="response-files-stream" className="docs-section">
+      <section id="context-files-stream-render" className="docs-section">
         <h2>Archivos, Stream y Render</h2>
         <p>
           También puede responder con archivos, streams o vistas usando{" "}
-          <mark className="docs-highlight">Response.download()</mark>,{" "}
-          <mark className="docs-highlight">Response.sendFile()</mark>,{" "}
-          <mark className="docs-highlight">Response.stream()</mark> y{" "}
-          <mark className="docs-highlight">Response.render()</mark>.
+          <mark className="docs-highlight">context.download()</mark>,{" "}
+          <mark className="docs-highlight">context.sendFile()</mark>,{" "}
+          <mark className="docs-highlight">context.stream()</mark> y{" "}
+          <mark className="docs-highlight">context.render()</mark>.
         </p>
-        <CodeBlock code={codeExampleResponseFilesStream} />
+        <CodeBlock code={codeExampleContextFilesStreamRender} />
         <Callout variant="danger">
-          Antes de usar <mark className="docs-highlight">sendFile()</mark> o{" "}
-          <mark className="docs-highlight">download()</mark>, valide rutas para
-          evitar exponer archivos sensibles.
+          Antes de usar <mark className="docs-highlight">context.sendFile()</mark>{" "}
+          o <mark className="docs-highlight">context.download()</mark>, valide
+          rutas para evitar exponer archivos sensibles.
         </Callout>
       </section>
     </>
   );
 }
 
-export default RequestResponse;
+export default ContextPage;

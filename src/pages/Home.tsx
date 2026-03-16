@@ -366,7 +366,7 @@ function Home() {
         </p>
 
         <div className="home-cta-actions">
-          <Link to="/docs/get-started" className="btn cta-btn-primary">
+          <Link to="/docs/getting-started" className="btn cta-btn-primary">
             Empezar con Skyguard
           </Link>
 

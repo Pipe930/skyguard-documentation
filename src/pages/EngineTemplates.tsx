@@ -14,16 +14,14 @@ app.engineTemplates("hbs", engineHandlebars);
 app.engineTemplates("ejs", engineEjs);
 app.engineTemplates("pug", enginePug);`;
 
-const codeExampleRender = `import { Response } from "skyguard-js";
-
-app.get("/home", async () => {
-  return await Response.render("index", {
+const codeExampleRender = `app.get("/home", async (ctx) => {
+  return await ctx.render("index", {
     title: "Home Page",
     message: "Welcome to the home page!",
   });
 });`;
 
-const codeExampleHandlebars = `import { createApp, Response } from "skyguard-js";
+const codeExampleHandlebars = `import { createApp } from "skyguard-js";
 import { engine } from "express-handlebars";
 import { join } from "node:path";
 
@@ -40,14 +38,14 @@ app.engineTemplates(
   }),
 );
 
-app.get("/home", async () => {
-  return await Response.render("home", {
+app.get("/home", async (ctx) => {
+  return await ctx.render("home", {
     title: "Inicio",
     message: "Bienvenido con Handlebars",
   });
 });`;
 
-const codeExampleEjs = `import { createApp, Response } from "skyguard-js";
+const codeExampleEjs = `import { createApp } from "skyguard-js";
 import ejs from "ejs";
 
 const app = createApp();
@@ -58,8 +56,8 @@ app.engineTemplates("ejs", (templatePath, data) => {
   return ejs.renderFile(templatePath, data);
 });
 
-app.get("/profile", async () => {
-  return await Response.render("profile", {
+app.get("/profile", async (ctx) => {
+  return await ctx.render("profile", {
     title: "Perfil",
     username: "elpipex",
   });
@@ -76,8 +74,8 @@ app.engineTemplates("pug", (templatePath, data) => {
   return pug.renderFile(templatePath, data);
 });
 
-app.get("/dashboard", async () => {
-  return await Response.render("dashboard", {
+app.get("/dashboard", async (ctx) => {
+  return await ctx.render("dashboard", {
     title: "Panel",
     stats: [12, 8, 3],
   });

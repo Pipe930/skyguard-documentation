@@ -6,8 +6,7 @@ interface ContentTable {
   skyguardjs: string;
 }
 
-export const codeExample = `import { createApp, json, schema, v, validateRequest } from "skyguard-js";
-
+export const codeExample = `import { createApp, schema, v, validateRequest } from "skyguard-js";
 const app = createApp();
 
 const userSchema = schema({
@@ -17,10 +16,10 @@ const userSchema = schema({
   }
 });
 
-app.post("/user/create", [validateRequest(userSchema)], (request) => {
-  const { username, email } = request.body;
+app.post("/user/create", [validateRequest(userSchema)], (ctx) => {
+  const { username, email } = ctx.body;
 
-  return json({ username, email }).setStatusCode(201);
+  return ctx.json({ username, email }).setStatusCode(201);
 });
 
 app.run(3000, () => {

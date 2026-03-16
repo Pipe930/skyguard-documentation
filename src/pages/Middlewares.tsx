@@ -1,30 +1,30 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
 
-const codeExampleMiddlewares = `import { createApp, json } from "skyguard-js";
+const codeExampleMiddlewares = `import { createApp } from "skyguard-js";
 
-const authMiddleware = async (request, next) => {
-  if (request.headers["authorization"] !== "secret") {
-    return json({ message: "Unauthorized" }).setStatus(401);
+const authMiddleware = async (ctx, next) => {
+  if (ctx.headers["authorization"] !== "secret") {
+    return ctx.json({ message: "Unauthorized" }).setStatus(401);
   }
 
-  return await next(request); // Call next to continue to the next handler
+  return await next(ctx); // Call next to continue to the next handler
 };
 
 const app = createApp();
 
 app.middlewares(authMiddleware);
 
-app.get("/", () => Response.text("hola"));`
+app.get("/", (ctx) => ctx.text("hola"));`
 
-const codeExampleOrderMiddlewares = `const first = async (request, next) => {
+const codeExampleOrderMiddlewares = `const first = async (ctx, next) => {
   console.log("1");
-  return await next(request);
+  return await next(ctx);
 };
  
-const second = async (request, next) => {
+const second = async (ctx, next) => {
   console.log("2");
-  return await next(request);
+  return await next(ctx);
 };
  
 app.middlewares(first, second);
@@ -37,17 +37,17 @@ app.middlewares(authMiddleware);
 // Group Middleware
 app.group("/users", (router) => {
   router.middlewares(authMiddleware);
-  router.get("/", () => Response.text("hola"));
+  router.get("/", (ctx) => ctx.text("hola"));
 });
 
 // Route-Specific Middleware
-app.get("/", [authMiddleware], () => Response.text("hola2"));`
+app.get("/", [authMiddleware], (ctx) => ctx.text("hola2"));`
 
 const codeExampleMiddlewaresCombined = `app.get(
 "/", 
 [authMiddleware, adminCheck, logger, rateLimiter], 
-() => {
-  return Response.json({ message: "holamundo" })
+(ctx) => {
+  return ctx.json({ message: "holamundo" })
 });`
 
 function Middlewares() {
