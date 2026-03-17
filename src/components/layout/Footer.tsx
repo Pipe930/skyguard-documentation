@@ -12,32 +12,32 @@ function Footer() {
         <div className="footer-links">
 
           <div className="footer-column">
-            <h4>Documentation</h4>
+            <h4>Documentación</h4>
 
-            <a href="/docs/introduction">Introduction</a>
-            <a href="/docs/getting-started">Getting Started</a>
-            <a href="/docs/routing">Routing</a>
+            <a href="/docs/introduction">Introducción</a>
+            <a href="/docs/getting-started">Empezando</a>
+            <a href="/docs/routing">Enrutamiento</a>
             <a href="/docs/middleware">Middleware</a>
           </div>
 
           <div className="footer-column">
-            <h4>Project</h4>
+            <h4>Proyecto</h4>
 
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
+            <a href="https://github.com/Pipe930/Skyguard-js" target="_blank" rel="noreferrer">
               GitHub
             </a>
 
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
+            <a href="https://github.com/Pipe930/Skyguard-js/issues" target="_blank" rel="noreferrer">
               Issues
             </a>
 
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
-              License
+            <a href="https://github.com/Pipe930/Skyguard-js/blob/main/LICENSE" target="_blank" rel="noreferrer">
+              Licencia
             </a>
           </div>
 
           <div className="footer-column">
-            <h4>Community</h4>
+            <h4>Comunidad</h4>
 
             <a href="https://discord.com/" target="_blank" rel="noreferrer">
               Discord
@@ -54,12 +54,12 @@ function Footer() {
         <div className="footer-bottom">
 
           <p>
-            © {year} Skyguard JS — Created by <strong>Felipe Sanchez</strong>
+            © {year} Skyguard JS — Creado por <strong>ElPipex</strong>
           </p>
 
           <div className="footer-socials">
             <a
-              href="https://github.com/"
+              href="https://github.com/Pipe930"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"

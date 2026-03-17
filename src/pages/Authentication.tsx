@@ -21,7 +21,7 @@ function Authentication() {
   return (
     <>
       <section id="authentication" className="docs-section">
-        <h1>Authentication</h1>
+        <h1>Autenticación</h1>
         <p>
           La autenticación es el proceso de verificar la identidad de un cliente
           antes de permitir acceso a recursos protegidos. En backend es esencial

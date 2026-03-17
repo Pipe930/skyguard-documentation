@@ -88,7 +88,7 @@ function Configuration() {
       </section>
 
       <section id="configuration-static-files" className="docs-section">
-        <h2>Static Files</h2>
+        <h2>Archivos Estáticos</h2>
         <p>
           Con <mark className="docs-highlight">staticFiles()</mark> expones una
           carpeta pública para servir archivos estáticos.

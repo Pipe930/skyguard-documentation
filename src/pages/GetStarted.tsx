@@ -90,7 +90,7 @@ function GetStarted() {
         <h2>Próximos Pasos</h2>
         <ul className="docs-lists">
           <li>
-            <Link to="/docs/routing" className="docs-links">Routing</Link> - Aprende a manejar rutas dinámicas y patrones de ruta
+            <Link to="/docs/routing" className="docs-links">Enrutamiento</Link> - Aprende a manejar rutas dinámicas y patrones de ruta
           </li>
           <li>
             <Link to="/docs/middlewares" className="docs-links">Middlewares</Link> - Cree funciones reutilizables para ejecutarlas en diferentes rutas

@@ -25,27 +25,27 @@ const docsNavigation = [
     title: "Getting Started",
     links: [
       {
-        label: "Introduction",
+        label: "Introducción",
         to: "/docs/introduction",
         icon: <BookOpen size={18} />,
       },
       {
-        label: "Installation",
+        label: "Instalación",
         to: "/docs/installation",
         icon: <Files size={18} />,
       },
       {
-        label: "Quick Start",
+        label: "Inicio Rápido",
         to: "/docs/getting-started",
         icon: <Rocket size={18} />,
       },
     ],
   },
   {
-    title: "Core Concepts",
+    title: "Conceptos Básicos",
     links: [
       {
-        label: "Routing",
+        label: "Enrutamiento",
         to: "/docs/routing",
         icon: <Route size={18} />,
       },
@@ -55,47 +55,47 @@ const docsNavigation = [
         icon: <Plug size={18} />,
       },
       {
-        label: "Validation",
+        label: "Validación",
         to: "/docs/validation",
         icon: <ListChecks size={18} />,
       },
       {
-        label: "Context",
+        label: "Contexto",
         to: "/docs/context",
         icon: <ArrowRightLeft size={18} />,
       },
       {
-        label: "Exceptions",
+        label: "Excepciones",
         to: "/docs/exceptions",
         icon: <TriangleAlert size={18} />,
       },
     ],
   },
   {
-    title: "Configuration",
+    title: "Configuración",
     links: [
       {
-        label: "Basic Configuration",
+        label: "Configuración Básica",
         to: "/docs/basic-configuration",
         icon: <Settings size={18} />,
       },
       {
-        label: "Engine Templates",
+        label: "Motor de Plantillas",
         to: "/docs/engine-templates",
         icon: <Code size={18} />,
       },
     ],
   },
   {
-    title: "Security",
+    title: "Seguridad",
     links: [
       {
-        label: "Authentication",
+        label: "Autenticación",
         to: "/docs/authentication",
         icon: <ShieldCheck size={18} />,
       },
       {
-        label: "Encryption & Hashing",
+        label: "Encriptación & Hashing",
         to: "/docs/encryption-hashing",
         icon: <Lock size={18} />,
       },
@@ -105,7 +105,7 @@ const docsNavigation = [
         icon: <Globe size={18} />,
       },
       {
-        label: "CSRF Protection",
+        label: "CSRF Protección",
         to: "/docs/csrf-protection",
         icon: <ShieldAlert size={18} />,
       },

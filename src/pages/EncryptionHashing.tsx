@@ -11,9 +11,9 @@ function EncryptionHashing() {
   return (
     <>
       <section id="encryption-hashing" className="docs-section">
-        <h1>Encryption & Hashing</h1>
+        <h1>Encriptación & Hashing</h1>
         <p>
-          Encryption y hashing son pilares de seguridad en backend. Protegen
+          Encriptación y hashing son pilares de seguridad en backend. Protegen
           credenciales, reducen impacto ante filtraciones y ayudan a cumplir
           requisitos mínimos de seguridad en APIs modernas.
         </p>
@@ -23,7 +23,7 @@ function EncryptionHashing() {
       <section id="encryption-hashing-concepts" className="docs-section">
         <h2>¿Qué son y por qué importan?</h2>
         <p>
-          <mark className="docs-highlight">Encryption</mark> transforma datos en
+          <mark className="docs-highlight">Encriptación</mark> transforma datos en
           un formato reversible (con clave) para proteger información sensible en
           tránsito o almacenamiento.{" "}
           <mark className="docs-highlight">Hashing</mark> transforma datos en un

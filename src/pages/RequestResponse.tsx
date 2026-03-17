@@ -12,7 +12,7 @@ function ContextPage() {
   return (
     <>
       <section id="context" className="docs-section">
-        <h1>Context</h1>
+        <h1>Contexto</h1>
         <p>
           <mark className="docs-highlight">Context</mark> unifica los objetos{" "}
           <mark className="docs-highlight">Request</mark> y{" "}
