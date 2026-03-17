@@ -68,6 +68,10 @@
     cursor: pointer;
 }
 
+.btn-search {
+    display: none;
+}
+
 .search-placeholder {
     font-size: 14px;
 }
@@ -268,6 +272,16 @@
 }
 
 @media (max-width: 1024px) {
+
+    .btn-search {
+        display: block;
+        border: none;
+        background: var(--color-bg);
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
     .navbar-menu-button {
         display: inline-flex;
     }

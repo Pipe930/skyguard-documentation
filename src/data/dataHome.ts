@@ -77,7 +77,7 @@ app.post("/users", [validatorRequest(userSchema)], (ctx) => {
       },
     ],
     codeLabel: "extension.ts",
-    code: `import { Hasher, json } from "skyguard-js";
+    code: `import { Hasher } from "skyguard-js";
     
 app.middlewares(
   cors({

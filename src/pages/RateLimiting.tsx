@@ -6,9 +6,9 @@ function RateLimiting() {
   return (
     <>
       <section id="rate-limiting" className="docs-section">
-        <h1>Rate Limiting</h1>
+        <h1>Limitador de Peticiones</h1>
         <p>
-          El rate limiting limita la cantidad de solicitudes que un cliente puede
+          El limitador de peticiones o Rate Limiting limita la cantidad de solicitudes que un cliente puede
           realizar en una ventana de tiempo. Es una capa clave para proteger tu
           API de abuso, fuerza bruta y picos de tráfico no controlados.
         </p>

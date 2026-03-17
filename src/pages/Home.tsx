@@ -10,6 +10,7 @@ import {
   Shield,
   Zap,
   Server,
+  ExternalLink,
 } from "lucide-react";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
@@ -171,7 +172,8 @@ function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              Código en GitHub
+              <span>Código en GitHub</span>
+              <ExternalLink size={22}/>
             </a>
           </div>
         </div>

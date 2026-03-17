@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../../styles/table-of-contents.css";
 import type { TableOfContentsProps } from "../../interfaces/tableOfContent.interface";
 
 function TableOfContents({ title = "En esta página", items }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
+  const { pathname, hash } = useLocation();
   const getActivationOffset = () => Math.min(230, Math.max(140, window.innerHeight * 0.3));
 
   useEffect(() => {
@@ -45,14 +47,8 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
 
     onScrollOrResize();
 
-    const onHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash) setActiveId(hash);
-    };
-
     window.addEventListener("scroll", onScrollOrResize, { passive: true });
     window.addEventListener("resize", onScrollOrResize);
-    window.addEventListener("hashchange", onHashChange);
 
     return () => {
       if (rafId !== null) {
@@ -61,9 +57,13 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
 
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);
-      window.removeEventListener("hashchange", onHashChange);
     };
   }, [items]);
+
+  useEffect(() => {
+    if (!hash) return;
+    setActiveId(hash.slice(1));
+  }, [hash]);
 
   return (
     <aside className="table-of-contents" aria-label="Tabla de contenidos">
@@ -73,16 +73,16 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
         {items.length > 0 ? (
           <nav className="table-of-contents-nav">
             {items.map(item => (
-              <a
+              <Link
                 key={item.id}
-                href={`#${item.id}`}
+                to={`${pathname}#${item.id}`}
                 className={`table-of-contents-link table-of-contents-level-${item.level} ${
                   activeId === item.id ? "is-active" : ""
                 }`}
                 aria-current={activeId === item.id ? "location" : undefined}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         ) : (

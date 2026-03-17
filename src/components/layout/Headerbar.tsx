@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { Github, Moon, Sun, Search, Menu } from "lucide-react";
+import { Moon, Sun, Search, Menu } from "lucide-react";
 import "../../styles/navbar.css";
 import { Link } from "react-router-dom";
 import type { Theme } from "../../types";
@@ -54,15 +54,12 @@ function Headerbar({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
         </div>
 
         <div className="navbar-right">
-          <a
-            href="https://github.com/Pipe930/Skyguard-js"
-            target="_blank"
-            rel="noreferrer"
-            className="navbar-icon"
-            aria-label="Github"
-          >
-            <Github size={20} />
-          </a>
+          <button 
+          type="button" 
+          className="btn-search" 
+          onClick={() => setIsSearchOpen(true)}>
+            <Search size={20}/>
+          </button>
 
           <button
             type="button"

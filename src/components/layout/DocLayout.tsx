@@ -4,6 +4,7 @@ import Headerbar from "./Headerbar";
 import Sidebar from "./Sidebar";
 import TableOfContents from "./TableOfContents";
 import Footer from "./Footer";
+import DocsPageNavigation from "./DocsPageNavigation";
 import type { TocItem } from "../../interfaces/tableOfContent.interface";
 import "../../styles/docs-layout.css";
 
@@ -97,6 +98,7 @@ function DocsLayout() {
         <main className="docs-content">
           <article ref={articleRef} className="docs-article">
             <Outlet />
+            <DocsPageNavigation />
           </article>
           <Footer />
 

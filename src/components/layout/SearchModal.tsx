@@ -50,7 +50,7 @@ function SearchModal({ isOpen, onClose }: {
     <div className="search-modal-overlay" onClick={onClose}>
       <section className="search-modal" onClick={event => event.stopPropagation()}>
         <div className="search-modal-header">
-          <h2>Buscar en la documentación</h2>
+          <h2>Buscar</h2>
           <button type="button" className="search-close-button" onClick={onClose}>
             <X size={18} />
           </button>

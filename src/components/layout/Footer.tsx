@@ -1,5 +1,6 @@
 import { Github, Twitter, MessageCircle } from "lucide-react";
 import "../../styles/footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -13,11 +14,18 @@ function Footer() {
 
           <div className="footer-column">
             <h4>Documentación</h4>
-
-            <a href="/docs/introduction">Introducción</a>
-            <a href="/docs/getting-started">Empezando</a>
-            <a href="/docs/routing">Enrutamiento</a>
-            <a href="/docs/middleware">Middleware</a>
+            <Link to="/docs/introduction">
+              Introducción
+            </Link>
+            <Link to="/docs/getting-started">
+              Empezando
+            </Link>
+            <Link to="/docs/routing">
+              Enrutamiento
+            </Link>
+            <Link to="/docs/middlewares">
+              Middleware
+            </Link>
           </div>
 
           <div className="footer-column">
