@@ -1,8 +1,10 @@
 import { Github, Twitter, MessageCircle } from "lucide-react";
 import "../../styles/footer.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
@@ -13,46 +15,46 @@ function Footer() {
         <div className="footer-links">
 
           <div className="footer-column">
-            <h4>Documentación</h4>
+            <h4>{t("footer.docs.title")}</h4>
             <Link to="/docs/introduction">
-              Introducción
+              {t("footer.docs.introduction")}
             </Link>
             <Link to="/docs/getting-started">
-              Empezando
+              {t("footer.docs.gettingStarted")}
             </Link>
             <Link to="/docs/routing">
-              Enrutamiento
+              {t("footer.docs.routing")}
             </Link>
             <Link to="/docs/middlewares">
-              Middleware
+              {t("footer.docs.middlewares")}
             </Link>
           </div>
 
           <div className="footer-column">
-            <h4>Proyecto</h4>
+            <h4>{t("footer.project.title")}</h4>
 
             <a href="https://github.com/Pipe930/Skyguard-js" target="_blank" rel="noreferrer">
-              GitHub
+              {t("footer.project.github")}
             </a>
 
             <a href="https://github.com/Pipe930/Skyguard-js/issues" target="_blank" rel="noreferrer">
-              Issues
+              {t("footer.project.issues")}
             </a>
 
             <a href="https://github.com/Pipe930/Skyguard-js/blob/main/LICENSE" target="_blank" rel="noreferrer">
-              Licencia
+              {t("footer.project.license")}
             </a>
           </div>
 
           <div className="footer-column">
-            <h4>Comunidad</h4>
+            <h4>{t("footer.community.title")}</h4>
 
             <a href="https://discord.com/" target="_blank" rel="noreferrer">
-              Discord
+              {t("footer.community.discord")}
             </a>
 
             <a href="https://twitter.com/" target="_blank" rel="noreferrer">
-              Twitter
+              {t("footer.community.twitter")}
             </a>
           </div>
 
@@ -62,7 +64,7 @@ function Footer() {
         <div className="footer-bottom">
 
           <p>
-            © {year} Skyguard JS — Creado por <strong>ElPipex</strong>
+            © {year} Skyguard JS - {t("footer.bottom.createdBy")} <strong>ElPipex</strong>
           </p>
 
           <div className="footer-socials">
@@ -70,7 +72,7 @@ function Footer() {
               href="https://github.com/Pipe930"
               target="_blank"
               rel="noreferrer"
-              aria-label="GitHub"
+              aria-label={t("footer.social.github")}
             >
               <Github size={18} />
             </a>
@@ -79,7 +81,7 @@ function Footer() {
               href="https://twitter.com/"
               target="_blank"
               rel="noreferrer"
-              aria-label="Twitter"
+              aria-label={t("footer.social.twitter")}
             >
               <Twitter size={18} />
             </a>
@@ -88,7 +90,7 @@ function Footer() {
               href="https://discord.com/"
               target="_blank"
               rel="noreferrer"
-              aria-label="Discord"
+              aria-label={t("footer.social.discord")}
             >
               <MessageCircle size={18} />
             </a>

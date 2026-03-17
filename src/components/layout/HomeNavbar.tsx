@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Github, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "../../styles/navbar.css";
 import type { Theme } from "../../types";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function HomeNavbar() {
+  const { t } = useTranslation();
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "dark";
     const storedTheme = localStorage.getItem("theme") as Theme | null;
@@ -26,12 +29,12 @@ function HomeNavbar() {
         <img src="/skyguard-documentation//Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
       </div>
 
-      <nav className="home-navbar-links" aria-label="Navegación principal">
+      <nav className="home-navbar-links" aria-label={t("navbar.common.mainNavigation")}>
         <Link to="/docs/introduction" className="navbar-home-link">
-          Empezar
+          {t("navbar.home.getStarted")}
         </Link>
         <Link to="/docs" className="navbar-home-link">
-          Documentación
+          {t("navbar.home.documentation")}
         </Link>
         <a
           href="https://github.com/Pipe930/Skyguard-js"
@@ -39,13 +42,14 @@ function HomeNavbar() {
           rel="noreferrer"
           className="navbar-home-link github-link"
         >
-          <span>Codigo Github</span>
+          <span>{t("navbar.home.githubCode")}</span>
           <Github />
         </a>
       </nav>
 
       <div className="navbar-right">
-        <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Cambiar tema">
+        <LanguageSwitcher />
+        <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label={t("navbar.common.toggleTheme")}>
           {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
         </button>
       </div>

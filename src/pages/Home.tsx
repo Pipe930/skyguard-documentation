@@ -1,6 +1,6 @@
-import HomeNavbar from "../components/layout/HomeNavbar";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Box,
   Copy,
@@ -12,14 +12,12 @@ import {
   Server,
   ExternalLink,
 } from "lucide-react";
-import "../styles/home.css";
 import { Link } from "react-router-dom";
+import HomeNavbar from "../components/layout/HomeNavbar";
 import Footer from "../components/layout/Footer";
 import Card from "../components/ui/Card";
-import type { LoadedHighlighter, Theme } from "../types";
-import { showcaseItems } from "../data/dataHome";
-
-const installationCommand = "npm install skyguard-js";
+import "../styles/home.css";
+import type { FeatureKey, LoadedHighlighter, ShowcaseItem, Theme, TranslatedFeature } from "../types";
 
 let highlighterLoader: Promise<LoadedHighlighter> | null = null;
 
@@ -43,43 +41,25 @@ function loadHighlighter() {
   return highlighterLoader;
 }
 
-const features = [
-  {
-    title: "Ligero",
-    description:
-      "Diseñado para mantenerse pequeño, rápido y fácil de integrar en cualquier proyecto backend.",
-    icon: <Zap size={20} />,
-  },
-  {
-    title: "Sin dependencias",
-    description:
-      "Menor complejidad, mayor control y una base más estable para construir tu servidor.",
-    icon: <Box size={20} />,
-  },
-  {
-    title: "TypeScript primero",
-    description:
-      "Tipado estático, autocompletado y una experiencia de desarrollo moderna desde el inicio.",
-    icon: <Feather size={20} />,
-  },
-  {
-    title: "Ideal para APIs",
-    description:
-      "Una base clara y directa para crear APIs y servidores web con una arquitectura simple.",
-    icon: <Server size={20} />,
-  },
-  {
-    title: "Arquitectura sólida",
-    description:
-      "Enfoque en claridad interna, mantenibilidad y organización del framework a largo plazo.",
-    icon: <Shield size={20} />,
-  },
-];
+const featureIcons: Record<FeatureKey, ReactNode> = {
+  box: <Box size={20} />,
+  feather: <Feather size={20} />,
+  server: <Server size={20} />,
+  shield: <Shield size={20} />,
+  zap: <Zap size={20} />,
+};
 
 function Home() {
+  const { t } = useTranslation();
   const [installCopied, setInstallCopied] = useState(false);
   const [theme, setTheme] = useState<Theme>("dark");
   const [highlighter, setHighlighter] = useState<LoadedHighlighter | null>(null);
+
+  const installationCommand = t("home.installationCommand");
+  const translatedFeatures = t("home.features.items", {
+    returnObjects: true,
+  }) as TranslatedFeature[];
+  const showcaseItems = t("home.showcase.items", { returnObjects: true }) as ShowcaseItem[];
 
   const copyText = async (
     value: string,
@@ -90,7 +70,7 @@ function Home() {
       setter(true);
       window.setTimeout(() => setter(false), 1800);
     } catch {
-      console.error("No se pudo copiar el texto");
+      console.error(t("home.copyError"));
     }
   };
 
@@ -130,164 +110,161 @@ function Home() {
 
   return (
     <>
-    <HomeNavbar />
-    <main className="home">
-      <section className="hero">
-        <div className="hero-content">
-          <span className="hero-badge">Framework ligero en TypeScript</span>
+      <HomeNavbar />
+      <main className="home">
+        <section className="hero">
+          <div className="hero-content">
+            <span className="hero-badge">{t("home.hero.badge")}</span>
 
-          <h1 className="hero-title">Skyguard <span className="hero-title-color">JS</span></h1>
+            <h1 className="hero-title">
+              {t("home.hero.title")} <span className="hero-title-color">{t("home.hero.titleHighlight")}</span>
+            </h1>
 
-          <p className="hero-description">
-            Skyguard JS es un framework ligero, sin dependencias y escrito en
-            TypeScript para crear APIs y servidores web.
-          </p>
+            <p className="hero-description">{t("home.hero.description")}</p>
 
-          <div className="hero-install">
-            <span className="install-label">Instalación</span>
+            <div className="hero-install">
+              <span className="install-label">{t("home.hero.installLabel")}</span>
 
-            <div className="install-command">
-              <code>{installationCommand}</code>
+              <div className="install-command">
+                <code>{installationCommand}</code>
 
-              <button
-                type="button"
-                className="icon-copy-button-home"
-                onClick={() => copyText(installationCommand, setInstallCopied)}
-                aria-label="Copiar comando de instalación"
-                title="Copiar comando"
+                <button
+                  type="button"
+                  className="icon-copy-button-home"
+                  onClick={() => copyText(installationCommand, setInstallCopied)}
+                  aria-label={t("home.copyInstallCommandAria")}
+                  title={t("home.copyInstallCommandTitle")}
+                >
+                  {installCopied ? <Check size={16} /> : <Copy size={16} />}
+                </button>
+              </div>
+            </div>
+
+            <div className="hero-actions">
+              <Link to="/docs/introduction" className="btn btn-primary">
+                {t("home.hero.startButton")}
+              </Link>
+
+              <a
+                href="https://github.com/Pipe930/Skyguard-js"
+                className="btn btn-secondary"
+                target="_blank"
+                rel="noreferrer"
               >
-                {installCopied ? <Check size={16} /> : <Copy size={16} />}
-              </button>
+                <span>{t("home.hero.githubButton")}</span>
+                <ExternalLink size={22} />
+              </a>
             </div>
           </div>
 
-          <div className="hero-actions">
-            <Link to="/docs/introduction" className="btn btn-primary">
-                Empezar
+          <div className="hero-visual">
+            <img
+              src="/skyguard-documentation/logo-skyguard-js.png"
+              alt={t("home.hero.logoAlt")}
+              className="hero-logo"
+            />
+          </div>
+        </section>
+
+        <section className="features">
+          <div className="section-heading">
+            <h2>{t("home.features.heading")}</h2>
+            <p>{t("home.features.description")}</p>
+          </div>
+
+          <div className="features-grid">
+            {translatedFeatures.map(feature => (
+              <Card
+                key={feature.title}
+                title={feature.title}
+                description={feature.description}
+                icon={featureIcons[feature.iconKey]}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className="example">
+          <div className="example-showcase">
+            {showcaseItems.map((item, index) => (
+              <article
+                key={item.title}
+                className={`example-showcase-item ${index % 2 !== 0 ? "is-reverse" : ""}`}
+              >
+                <div className="example-showcase-copy">
+                  <h3>{item.title}</h3>
+                  <ul>
+                    {item.points.map(point => (
+                      <li key={point.title}>
+                        <p className="point-title">{point.title}</p>
+                        <p className="point-description">{point.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="example-code-card">
+                  <div className="example-code-header">
+                    <div className="example-code-dots" aria-hidden="true">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <span>{item.codeLabel}</span>
+                  </div>
+                  {SyntaxHighlighter && highlighter ? (
+                    <SyntaxHighlighter
+                      language="typescript"
+                      style={theme === "light" ? highlighter.oneLight : highlighter.oneDark}
+                      customStyle={{
+                        background: "transparent",
+                        margin: 0,
+                        padding: "18px",
+                      }}
+                      codeTagProps={{
+                        style: {
+                          fontFamily: '"JetBrains Mono", monospace',
+                          fontSize: "0.84rem",
+                          lineHeight: "1.65",
+                          whiteSpace: "pre",
+                        },
+                      }}
+                    >
+                      {item.code}
+                    </SyntaxHighlighter>
+                  ) : (
+                    <pre>
+                      <code>{item.code}</code>
+                    </pre>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="home-cta">
+          <h2>{t("home.cta.title")}</h2>
+          <p>{t("home.cta.description")}</p>
+
+          <div className="home-cta-actions">
+            <Link to="/docs/getting-started" className="btn cta-btn-primary">
+              {t("home.cta.startButton")}
             </Link>
 
             <a
               href="https://github.com/Pipe930/Skyguard-js"
-              className="btn btn-secondary"
+              className="btn cta-btn-secondary"
               target="_blank"
               rel="noreferrer"
             >
-              <span>Código en GitHub</span>
-              <ExternalLink size={22}/>
+              <Github size={19} />
+              {t("home.cta.githubButton")}
             </a>
           </div>
-        </div>
-
-        <div className="hero-visual">
-            <img
-              src="/skyguard-documentation/logo-skyguard-js.png"
-              alt="Logo de Skyguard JS"
-              className="hero-logo"
-              />
-        </div>
-      </section>
-
-      <section className="features">
-        <div className="section-heading">
-          <h2>Fortalezas del framework</h2>
-          <p>
-            Una base moderna para desarrollar servidores web y APIs con enfoque
-            en simplicidad, rendimiento y control.
-          </p>
-        </div>
-
-        <div className="features-grid">
-          {features.map(feature => (
-            <Card key={feature.title} title={feature.title} description={feature.description} icon={feature.icon} />
-          ))}
-        </div>
-      </section>
-
-      <section className="example">
-        <div className="example-showcase">
-          {showcaseItems.map((item, index) => (
-            <article
-              key={item.title}
-              className={`example-showcase-item ${index % 2 !== 0 ? "is-reverse" : ""}`}
-            >
-              <div className="example-showcase-copy">
-                <h3>{item.title}</h3>
-                <ul>
-                  {item.points.map(point => (
-                    <li key={point.title}>
-                      <p className="point-title">{point.title}</p>
-                      <p className="point-description">{point.description}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="example-code-card">
-                <div className="example-code-header">
-                  <div className="example-code-dots" aria-hidden="true">
-                    <span/>
-                    <span/>
-                    <span/>
-                  </div>
-                  <span>{item.codeLabel}</span>
-                </div>
-                {SyntaxHighlighter && highlighter ? (
-                  <SyntaxHighlighter
-                    language="typescript"
-                    style={theme === "light" ? highlighter.oneLight : highlighter.oneDark}
-                    customStyle={{
-                      background: "transparent",
-                      margin: 0,
-                      padding: "18px",
-                    }}
-                    codeTagProps={{
-                      style: {
-                        fontFamily: '"JetBrains Mono", monospace',
-                        fontSize: "0.84rem",
-                        lineHeight: "1.65",
-                        whiteSpace: "pre",
-                      },
-                    }}
-                  >
-                    {item.code}
-                  </SyntaxHighlighter>
-                ) : (
-                  <pre>
-                    <code>{item.code}</code>
-                  </pre>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-cta">
-        <h2>¿Listo para construir más rápido?</h2>
-        <p>
-          Pasa de la documentación al inicio de tu primer proyecto con Skyguard
-          JS. Descubre la próxima generación del desarrollo web impulsado por
-          TypeScript.
-        </p>
-
-        <div className="home-cta-actions">
-          <Link to="/docs/getting-started" className="btn cta-btn-primary">
-            Empezar con Skyguard
-          </Link>
-
-          <a
-            href="https://github.com/Pipe930/Skyguard-js"
-            className="btn cta-btn-secondary"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Github size={19} />
-            Explorar en GitHub
-          </a>
-        </div>
-      </section>
-    </main>
-    <Footer/>
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }

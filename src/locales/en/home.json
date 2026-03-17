@@ -1,0 +1,110 @@
+{
+  "installationCommand": "npm install skyguard-js",
+  "copyInstallCommandAria": "Copy installation command",
+  "copyInstallCommandTitle": "Copy command",
+  "copyError": "Could not copy text",
+  "hero": {
+    "badge": "Lightweight TypeScript framework",
+    "title": "Skyguard",
+    "titleHighlight": "JS",
+    "description": "Skyguard JS is a lightweight dependency-free framework written in TypeScript to build APIs and web servers.",
+    "installLabel": "Installation",
+    "startButton": "Get Started",
+    "githubButton": "Code on GitHub",
+    "logoAlt": "Skyguard JS logo"
+  },
+  "features": {
+    "heading": "Framework strengths",
+    "description": "A modern base to build web servers and APIs with a focus on simplicity, performance, and control.",
+    "items": [
+      {
+        "iconKey": "zap",
+        "title": "Lightweight",
+        "description": "Designed to stay small, fast, and easy to integrate into any backend project."
+      },
+      {
+        "iconKey": "box",
+        "title": "Dependency-free",
+        "description": "Lower complexity, more control, and a more stable base to build your server."
+      },
+      {
+        "iconKey": "feather",
+        "title": "TypeScript first",
+        "description": "Static typing, autocomplete, and a modern developer experience from the start."
+      },
+      {
+        "iconKey": "server",
+        "title": "Great for APIs",
+        "description": "A clear and direct base to build APIs and web servers with a simple architecture."
+      },
+      {
+        "iconKey": "shield",
+        "title": "Solid architecture",
+        "description": "Focus on internal clarity, maintainability, and long-term framework organization."
+      }
+    ]
+  },
+  "showcase": {
+    "items": [
+      {
+        "title": "Confidence through safe typing",
+        "points": [
+          {
+            "title": "Eliminate runtime errors",
+            "description": "Catch common issues at compile time with strict TypeScript types and predictable contracts."
+          },
+          {
+            "title": "Simplify API contracts",
+            "description": "Define expected inputs and outputs clearly so every endpoint is documented by design."
+          },
+          {
+            "title": "Refactor without friction",
+            "description": "Evolve your code safely while the type system immediately highlights impacted paths."
+          }
+        ],
+        "codeLabel": "server.ts",
+        "code": "import { createApp } from \"skyguard-js\";\nconst app = createApp();\n\napp.get(\"/\", (ctx) => {\n  return ctx.json({ status: \"ok\" });\n});\n\napp.run(3000);"
+      },
+      {
+        "title": "Built-in validation",
+        "points": [
+          {
+            "title": "No dependency installs",
+            "description": "Validate incoming requests with built-in schemas and avoid extra dependencies."
+          },
+          {
+            "title": "Detailed validation",
+            "description": "Get explicit messages for invalid payloads and validate request structures precisely."
+          },
+          {
+            "title": "Smooth integration",
+            "description": "Apply validation at route level so handlers stay clean and readable."
+          }
+        ],
+        "codeLabel": "validation.ts",
+        "code": "import { createApp, v, schema, validatorRequest } from \"skyguard-js\";\nconst app = createApp();\n\nconst userSchema = schema({\n  body: {  \n    name: v.string({ minLength: 3 }),\n    email: v.string().email(),\n  }\n});\n\napp.post(\"/users\", [validatorRequest(userSchema)], (ctx) => {\n  return { created: true, user: ctx.body };\n});"
+      },
+      {
+        "title": "Dependency-free",
+        "points": [
+          {
+            "title": "Everything included",
+            "description": "No third-party packages required, the framework includes everything needed to build APIs."
+          },
+          {
+            "title": "Attack protection",
+            "description": "Built-in protections like CSRF, rate limiting, CORS, encryption, and password hashing."
+          }
+        ],
+        "codeLabel": "security.ts",
+        "code": "import { Hasher } from \"skyguard-js\";\n    \napp.middlewares(\n  cors({\n    origin: [\"http://localhost:3000/\"],\n  }),\n);\n\napp.post(\"/register\", async (ctx) => {\n  const { username, password } = ctx.data;\n  const hashedPassword = await Hasher.hash(password);\n\n  return ctx.json({ message: \"User registered\" });\n});"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to build faster?",
+    "description": "Go from docs to your first Skyguard JS project. Discover the next generation of TypeScript-powered web development.",
+    "startButton": "Start with Skyguard",
+    "githubButton": "Explore on GitHub"
+  }
+}

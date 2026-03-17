@@ -1,0 +1,28 @@
+{
+  "docs": {
+    "title": "Documentation",
+    "introduction": "Introduction",
+    "gettingStarted": "Getting Started",
+    "routing": "Routing",
+    "middlewares": "Middlewares"
+  },
+  "project": {
+    "title": "Project",
+    "github": "GitHub",
+    "issues": "Issues",
+    "license": "License"
+  },
+  "community": {
+    "title": "Community",
+    "discord": "Discord",
+    "twitter": "Twitter"
+  },
+  "bottom": {
+    "createdBy": "Created by"
+  },
+  "social": {
+    "github": "GitHub",
+    "twitter": "Twitter",
+    "discord": "Discord"
+  }
+}

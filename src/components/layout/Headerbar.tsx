@@ -2,11 +2,14 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { Moon, Sun, Search, Menu } from "lucide-react";
 import "../../styles/navbar.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import type { Theme } from "../../types";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const SearchModal = lazy(() => import("./SearchModal"));
 
 function Headerbar({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
+  const { t } = useTranslation();
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "dark";
     const storedTheme = localStorage.getItem("theme") as Theme | null;
@@ -27,19 +30,19 @@ function Headerbar({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
     <>
       <header className="navbar">
         <div className="navbar-left">
-        <button
-          type="button"
-          className="navbar-menu-button"
-          onClick={onToggleSidebar}
-          aria-label="Abrir menú lateral"
-        >
-          <Menu size={20} />
-        </button>
+          <button
+            type="button"
+            className="navbar-menu-button"
+            onClick={onToggleSidebar}
+            aria-label={t("navbar.common.openSidebar")}
+          >
+            <Menu size={20} />
+          </button>
 
-        <img src="/skyguard-documentation//Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
-        <Link to="/">
-          <span className="navbar-title">Skyguard Docs</span>
-        </Link>
+          <img src="/skyguard-documentation//Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
+          <Link to="/">
+            <span className="navbar-title">{t("navbar.common.title")}</span>
+          </Link>
         </div>
 
         <div className="navbar-center">
@@ -49,7 +52,7 @@ function Headerbar({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
             onClick={() => setIsSearchOpen(true)}
           >
             <Search size={18} className="search-icon" />
-            <span className="search-placeholder">Search documentation...</span>
+            <span className="search-placeholder">{t("navbar.common.searchPlaceholder")}</span>
           </button>
         </div>
 
@@ -57,15 +60,16 @@ function Headerbar({ onToggleSidebar }: { onToggleSidebar?: () => void }) {
           <button 
           type="button" 
           className="btn-search" 
-          onClick={() => setIsSearchOpen(true)}>
+          onClick={() => setIsSearchOpen(true)}
+          aria-label={t("navbar.common.openSearch")}>
             <Search size={20}/>
           </button>
-
+          <LanguageSwitcher />
           <button
             type="button"
             className="theme-toggle"
             onClick={toggleTheme}
-            aria-label="Cambiar tema"
+            aria-label={t("navbar.common.toggleTheme")}
           >
             {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
           </button>

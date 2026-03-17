@@ -1,0 +1,13 @@
+{
+  "home": {
+    "getStarted": "Empezar",
+    "documentation": "Documentación",
+    "githubCode": "Código GitHub"
+  },
+  "common": {
+    "title": "Skyguard Docs",
+    "searchPlaceholder": "Buscar en la documentación...",
+    "english": "Ingles",
+    "spanish": "Español"
+  }
+}
