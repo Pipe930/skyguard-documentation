@@ -20,6 +20,8 @@ import enCsrfProtection from "./locales/en/csrfProtection.json";
 import enRateLimiting from "./locales/en/rateLimiting.json";
 import enConfiguration from "./locales/en/configuration.json";
 import enEngineTemplates from "./locales/en/engineTemplates.json";
+import enSearchModal from "./locales/en/searchModal.json";
+import enTableOfContents from "./locales/en/tableOfContents.json";
 import esNavbar from "./locales/es/navbar.json";
 import esHome from "./locales/es/home.json";
 import esFooter from "./locales/es/footer.json";
@@ -40,6 +42,8 @@ import esCsrfProtection from "./locales/es/csrfProtection.json";
 import esRateLimiting from "./locales/es/rateLimiting.json";
 import esConfiguration from "./locales/es/configuration.json";
 import esEngineTemplates from "./locales/es/engineTemplates.json";
+import esSearchModal from "./locales/es/searchModal.json";
+import esTableOfContents from "./locales/es/tableOfContents.json";
 
 const resources = {
   en: {
@@ -64,6 +68,8 @@ const resources = {
       rateLimiting: enRateLimiting,
       configuration: enConfiguration,
       engineTemplates: enEngineTemplates,
+      searchModal: enSearchModal,
+      tableOfContents: enTableOfContents,
     },
   },
   es: {
@@ -88,6 +94,8 @@ const resources = {
       rateLimiting: esRateLimiting,
       configuration: esConfiguration,
       engineTemplates: esEngineTemplates,
+      searchModal: esSearchModal,
+      tableOfContents: esTableOfContents,
     },
   },
 };

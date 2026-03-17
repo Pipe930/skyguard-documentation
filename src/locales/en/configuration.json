@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "Configuration",
-    "lead": "Skyguard lets you configure the server with a few methods. In this section you will see how to use <mark class=\"docs-highlight\">logger()</mark>, <mark class=\"docs-highlight\">staticFiles()</mark>, and <mark class=\"docs-highlight\">setPrefix()</mark>, plus file uploads with <mark class=\"docs-highlight\">createUploader()</mark>."
+    "lead": "Skyguard lets you configure the server with a few methods. In this section you will see how to use logger(), staticFiles(), and setPrefix(), plus file uploads with createUploader()."
   },
   "logger": {
     "title": "Logger",

@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "Motores de plantillas",
-    "lead": "Para renderizar vistas debes configurar la carpeta de templates con <mark class=\"docs-highlight\">app.views()</mark>, registrar motores con <mark class=\"docs-highlight\">app.engineTemplates()</mark> y finalmente responder usando <mark class=\"docs-highlight\">Response.render()</mark>."
+    "lead": "Para renderizar vistas debes configurar la carpeta de templates con app.views(), registrar motores con app.engineTemplates() y finalmente responder usando Response.render()."
   },
   "setup": {
     "title": "Configuración base",

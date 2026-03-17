@@ -1,0 +1,7 @@
+{
+  "title": "Search",
+  "close": "Close search",
+  "placeholder": "Type to search by title or content...",
+  "noResults": "No results for \"{{query}}\".",
+  "moreResults": "More results"
+}

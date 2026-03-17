@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "Template engines",
-    "lead": "To render views you must configure the templates folder with <mark class=\"docs-highlight\">app.views()</mark>, register engines with <mark class=\"docs-highlight\">app.engineTemplates()</mark>, and finally respond using <mark class=\"docs-highlight\">Response.render()</mark>."
+    "lead": "To render views you must configure the templates folder with app.views(), register engines with app.engineTemplates(), and finally respond using Response.render()."
   },
   "setup": {
     "title": "Base configuration",

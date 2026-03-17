@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "../../styles/table-of-contents.css";
 import type { TableOfContentsProps } from "../../interfaces/tableOfContent.interface";
 
-function TableOfContents({ title = "En esta página", items }: TableOfContentsProps) {
+function TableOfContents({ title, items }: TableOfContentsProps) {
+  const { t } = useTranslation();
   const [activeId, setActiveId] = useState<string>("");
   const { pathname, hash } = useLocation();
   const getActivationOffset = () => Math.min(230, Math.max(140, window.innerHeight * 0.3));
+  const resolvedTitle = title ?? t("tableOfContents.title");
 
   useEffect(() => {
     const observedHeadings = items
@@ -66,9 +69,9 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
   }, [hash]);
 
   return (
-    <aside className="table-of-contents" aria-label="Tabla de contenidos">
+    <aside className="table-of-contents" aria-label={t("tableOfContents.ariaLabel")}>
       <div className="table-of-contents-card">
-        <p className="table-of-contents-title">{title}</p>
+        <p className="table-of-contents-title">{resolvedTitle}</p>
 
         {items.length > 0 ? (
           <nav className="table-of-contents-nav">
@@ -86,7 +89,7 @@ function TableOfContents({ title = "En esta página", items }: TableOfContentsPr
             ))}
           </nav>
         ) : (
-          <p className="table-of-contents-empty">No hay secciones disponibles.</p>
+          <p className="table-of-contents-empty">{t("tableOfContents.empty")}</p>
         )}
       </div>
     </aside>

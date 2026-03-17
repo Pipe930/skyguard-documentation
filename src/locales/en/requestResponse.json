@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "Context",
-    "lead": "<mark class=\"docs-highlight\">Context</mark> unifies <mark class=\"docs-highlight\">Request</mark> and <mark class=\"docs-highlight\">Response</mark> into a single API for middlewares and handlers."
+    "lead": "Context unifies Request and Response into a single API for middlewares and handlers."
   },
   "accessors": {
     "title": "Reading request data",

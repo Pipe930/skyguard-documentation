@@ -1,0 +1,7 @@
+{
+  "title": "Buscar",
+  "close": "Cerrar buscador",
+  "placeholder": "Escribe para buscar por titulo o contenido...",
+  "noResults": "Sin resultados para \"{{query}}\".",
+  "moreResults": "Mas resultados"
+}

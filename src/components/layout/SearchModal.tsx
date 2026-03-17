@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, X } from "lucide-react";
-import { normalizeSearchText, searchEntries } from "../../data/dataSearch";
+import { useTranslation } from "react-i18next";
+import { getSearchEntries, normalizeSearchText } from "../../data/dataSearch";
 
 const INITIAL_RESULTS_LIMIT = 3;
 
@@ -9,6 +10,7 @@ function SearchModal({ isOpen, onClose }: {
   isOpen: boolean;
   onClose: () => void;
 }) {
+  const { t, i18n } = useTranslation();
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [visibleResults, setVisibleResults] = useState(INITIAL_RESULTS_LIMIT);
@@ -35,6 +37,11 @@ function SearchModal({ isOpen, onClose }: {
     [debouncedQuery],
   );
 
+  const searchEntries = useMemo(
+    () => getSearchEntries(t),
+    [t, i18n.resolvedLanguage],
+  );
+
   const results = useMemo(() => {
     if (!normalizedQuery) return [];
 
@@ -50,8 +57,8 @@ function SearchModal({ isOpen, onClose }: {
     <div className="search-modal-overlay" onClick={onClose}>
       <section className="search-modal" onClick={event => event.stopPropagation()}>
         <div className="search-modal-header">
-          <h2>Buscar</h2>
-          <button type="button" className="search-close-button" onClick={onClose}>
+          <h2>{t("searchModal.title")}</h2>
+          <button type="button" className="search-close-button" onClick={onClose} aria-label={t("searchModal.close")}>
             <X size={18} />
           </button>
         </div>
@@ -62,7 +69,7 @@ function SearchModal({ isOpen, onClose }: {
             type="search"
             value={query}
             onChange={event => setQuery(event.target.value)}
-            placeholder="Escribe para buscar por título o contenido..."
+            placeholder={t("searchModal.placeholder")}
             className="search-input"
             autoFocus
           />
@@ -71,7 +78,7 @@ function SearchModal({ isOpen, onClose }: {
         {normalizedQuery && (
           <ul className="search-results-list">
             {displayedResults.length === 0 ? (
-              <li className="search-result-empty">Sin resultados para “{debouncedQuery}”.</li>
+              <li className="search-result-empty">{t("searchModal.noResults", { query: debouncedQuery })}</li>
             ) : (
               displayedResults.map(result => (
                 <li key={result.id} className="search-result-item">
@@ -92,7 +99,7 @@ function SearchModal({ isOpen, onClose }: {
             className="search-more-button"
             onClick={() => setVisibleResults(current => current + INITIAL_RESULTS_LIMIT)}
           >
-            Más resultados
+            {t("searchModal.moreResults")}
           </button>
         )}
       </section>
