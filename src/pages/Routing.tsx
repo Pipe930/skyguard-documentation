@@ -1,5 +1,6 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
+import { useTranslation } from "react-i18next";
 
 const codeExampleRoutesBasics = `import { createApp } from "skyguard-js";
 const app = createApp();
@@ -10,13 +11,13 @@ app.put("/update", (ctx) => ctx.text("PUT"));
 app.patch("/modify", (ctx) => ctx.text("PATCH"));
 app.delete("/delete", (ctx) => ctx.text("DELETE"));`;
 
-const codeExampleRoutesParameters = `// Un parametro 
+const codeExampleRoutesParameters = `// A parameter 
 app.get("/products/{id}", (ctx) => {
   const { id } = ctx.params;
   return ctx.json({ idProduct: id });
 });
 
-// Multiples parametros
+// Multiple parameters
 app.get("/posts/{idPost}/category/{idCategory}", (ctx) => {
   const { idPost, idCategory } = ctx.params;
   return ctx.json({ idPost, idCategory });
@@ -39,40 +40,42 @@ const codeExampleGroupRoutes = `app.group("/api", api => {
 // /api/products`;
 
 function Routing() {
+    const { t } = useTranslation();
+
     return (
         <>
         <section id="routing" className="docs-section">
-            <h1>Enrutamiento</h1>
-            <p>Aprenda a definir rutas y manejar solicitudes HTTP con SkyguardJS. Proporciona un sistema de enrutamiento simple e intuitivo que admite todos los métodos HTTP y parámetros de ruta dinámicos.</p>
+            <h1>{t("routing.page.title")}</h1>
+            <p>{t("routing.page.lead")}</p>
         </section>
         <hr />
         <section id="basic-routing" className="docs-section">
-            <h2>Rutas Básicas</h2>
-            <p>Para definir rutas, se utilizan los distintos metodos del objeto app.</p>
+            <h2>{t("routing.basicRouting.title")}</h2>
+            <p>{t("routing.basicRouting.description")}</p>
             <CodeBlock code={codeExampleRoutesBasics}/>
         </section>
 
         <section id="route-parameters" className="docs-section">
-            <h2>Rutas con Parametros</h2>
-            <p>Para capturar los parametros de las peticiones, se utiliza la propiedad params del objeto request</p>
+            <h2>{t("routing.routeParameters.title")}</h2>
+            <p>{t("routing.routeParameters.description")}</p>
             <CodeBlock code={codeExampleRoutesParameters}/>
             <Callout variant="tip">
-                Los parámetros se devuelven siempre como cadenas de texto. Utilice los esquemas validación para convertirlos a otros tipos.
+                {t("routing.routeParameters.tip")}
             </Callout>
         </section>
 
         <section id="query-parameters" className="docs-section">
-            <h2>Rutas con Queries</h2>
-            <p>Para acceder a las query parameters de las peticiones, se utiliza la propiedad query del objeto request</p>
+            <h2>{t("routing.queryParameters.title")}</h2>
+            <p>{t("routing.queryParameters.description")}</p>
             <CodeBlock code={codeExampleRoutesQuery}/>
         </section>
 
         <section id="group-routes" className="docs-section">
-            <h2>Grupo de Rutas</h2>
-            <p>Skyguard tiene un metodo para crear un grupo de rutas en base a un prefix inicial</p>
+            <h2>{t("routing.groupRoutes.title")}</h2>
+            <p>{t("routing.groupRoutes.description")}</p>
             <CodeBlock code={codeExampleGroupRoutes}/>
             <Callout variant="note">
-                El metodo group recibe una funcion, puedes crear una funcion aparte que reciba como parametro un <mark className="docs-highlight">RouterGroup</mark>
+                <span dangerouslySetInnerHTML={{ __html: t("routing.groupRoutes.note") }} />
             </Callout>
         </section>
         </>

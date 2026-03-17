@@ -1,61 +1,63 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import CodeBlock from "../components/ui/CodeBlock";
 import InstallCommandTabs from "../components/ui/CommandTabs";
-import { codeExample, codeExampleMiddleware, codeExampleRequest, codeExampleRoutes, codeExampleValidation, codeRunServer } from "../data/dataGetStarted";
+import {
+  codeExample,
+  codeExampleMiddleware,
+  codeExampleRequest,
+  codeExampleRoutes,
+  codeExampleValidation,
+  codeRunServer,
+} from "../data/dataGetStarted";
 
 function GetStarted() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section id="getting-started" className="docs-section">
-        <h1>Inicio Rápido</h1>
-        <p>
-          Crea un servidor con Skyguard JS en segundos.
-        </p>
+        <h1>{t("getStarted.page.title")}</h1>
+        <p>{t("getStarted.page.lead")}</p>
       </section>
       <hr />
 
       <section id="create-first-server" className="docs-section">
-        <h2>Crea tu primer servidor</h2>
-        <p>
-          Si ya tienes <mark className="docs-highlight">NodeJS</mark> instalado en tu maquina, estos son los pasos sencillos para utilizar SkyguardJS:
-        </p>
+        <h2>{t("getStarted.createFirstServer.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("getStarted.createFirstServer.intro") }} />
         <ol className="docs-list-ol">
           <li>
             <p>
-              <strong>Crea el archivo package.json</strong>
+              <strong>{t("getStarted.createFirstServer.steps.packageJson.title")}</strong>
             </p>
             <CodeBlock code="npm init -y" />
           </li>
           <li>
             <p>
-              <strong>Instalar Skyguard JS</strong>
+              <strong>{t("getStarted.createFirstServer.steps.install.title")}</strong>
             </p>
-            <InstallCommandTabs/>
+            <InstallCommandTabs />
           </li>
           <li>
             <p>
-              <strong>Crea un archivo de Typescript</strong>
+              <strong>{t("getStarted.createFirstServer.steps.typescriptFile.title")}</strong>
             </p>
             <br />
-            <p>
-              Crea un nuevo archivo <mark className="docs-highlight">server.ts</mark>
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t("getStarted.createFirstServer.steps.typescriptFile.description") }} />
             <CodeBlock code={codeExample} />
           </li>
           <li>
             <p>
-              <strong>Ejecuta tu servidor</strong>
+              <strong>{t("getStarted.createFirstServer.steps.runServer.title")}</strong>
             </p>
             <CodeBlock code={codeRunServer} />
           </li>
           <li>
             <p>
-              <strong>Prueba tu servidor</strong>
+              <strong>{t("getStarted.createFirstServer.steps.testServer.title")}</strong>
             </p>
             <br />
-            <p>
-              Abre tu navegador y visita la url <mark className="docs-highlight">http://localhost:3000/</mark> o utiliza curl o postnam o insomnia:
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: t("getStarted.createFirstServer.steps.testServer.description") }} />
             <CodeBlock code={`curl http://localhost:3000
 # Output: Hello World!!!`} />
           </li>
@@ -63,43 +65,55 @@ function GetStarted() {
       </section>
 
       <section id="add-more-routes" className="docs-section">
-        <h2>Añadir más rutas</h2>
-        <p>Skyguard facilita la adición de múltiples routes con diferentes metodos HTTP.</p>
+        <h2>{t("getStarted.addMoreRoutes.title")}</h2>
+        <p>{t("getStarted.addMoreRoutes.description")}</p>
         <CodeBlock code={codeExampleRoutes} />
       </section>
 
-        <section id="handle-request-data" className="docs-section">
-        <h2>Gestionar datos de Request</h2>
-        <p>Para acceder a los parametros, queries, cuerpo, cabeceras de las peticion, acceda con el objeto request que se ingresa como parametro en la función handle.</p>
+      <section id="handle-request-data" className="docs-section">
+        <h2>{t("getStarted.handleRequestData.title")}</h2>
+        <p>{t("getStarted.handleRequestData.description")}</p>
         <CodeBlock code={codeExampleRequest} />
       </section>
 
       <section id="add-validation" className="docs-section">
-        <h2>Añadir validación</h2>
-        <p>Skyguard incluye una validación integrada sin depender de librerias externas.</p>
+        <h2>{t("getStarted.addValidation.title")}</h2>
+        <p>{t("getStarted.addValidation.description")}</p>
         <CodeBlock code={codeExampleValidation} />
       </section>
 
       <section id="use-middleware" className="docs-section">
-        <h2>Usar middlewares</h2>
-        <p>Agregue middleware para manejar inquietudes transversales.</p>
+        <h2>{t("getStarted.useMiddleware.title")}</h2>
+        <p>{t("getStarted.useMiddleware.description")}</p>
         <CodeBlock code={codeExampleMiddleware} />
       </section>
 
       <section id="next-steps" className="docs-section">
-        <h2>Próximos Pasos</h2>
+        <h2>{t("getStarted.nextSteps.title")}</h2>
         <ul className="docs-lists">
           <li>
-            <Link to="/docs/routing" className="docs-links">Enrutamiento</Link> - Aprende a manejar rutas dinámicas y patrones de ruta
+            <Link to="/docs/routing" className="docs-links">
+              {t("getStarted.nextSteps.items.routing.label")}
+            </Link>{" "}
+            - {t("getStarted.nextSteps.items.routing.description")}
           </li>
           <li>
-            <Link to="/docs/middlewares" className="docs-links">Middlewares</Link> - Cree funciones reutilizables para ejecutarlas en diferentes rutas
+            <Link to="/docs/middlewares" className="docs-links">
+              {t("getStarted.nextSteps.items.middlewares.label")}
+            </Link>{" "}
+            - {t("getStarted.nextSteps.items.middlewares.description")}
           </li>
           <li>
-            <Link to="/docs/validation" className="docs-links">Validaciones</Link> - Como hacer validaciones con los esquemas
+            <Link to="/docs/validation" className="docs-links">
+              {t("getStarted.nextSteps.items.validation.label")}
+            </Link>{" "}
+            - {t("getStarted.nextSteps.items.validation.description")}
           </li>
           <li>
-            <Link to="/docs/security" className="docs-links">Seguridad</Link> - Buenas prácticas para proteger tus APIs
+            <Link to="/docs/security" className="docs-links">
+              {t("getStarted.nextSteps.items.security.label")}
+            </Link>{" "}
+            - {t("getStarted.nextSteps.items.security.description")}
           </li>
         </ul>
       </section>

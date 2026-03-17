@@ -1,0 +1,24 @@
+{
+  "page": {
+    "title": "CORS",
+    "lead": "CORS (Cross-Origin Resource Sharing) is a browser policy that controls which origins can consume your API. It is key to enabling legitimate integrations without exposing the server to unauthorized requests from any domain."
+  },
+  "importance": {
+    "title": "Why is it important?",
+    "description": "Without correct CORS configuration, a frontend application can be blocked by the browser or, worse, your API can accept requests from untrusted origins.",
+    "warn": "Security note: CORS is disabled by default until you explicitly define the <mark class=\"docs-highlight\">origin</mark> property."
+  },
+  "middleware": {
+    "title": "Configure CORS middleware",
+    "description": "To enable CORS, use the built-in <mark class=\"docs-highlight\">cors()</mark> middleware and define allowed origins and methods."
+  },
+  "bestPractices": {
+    "title": "Best practices",
+    "items": [
+      "Avoid <mark class=\"docs-highlight\">origin: \"*\"</mark> in APIs with credentials or sensitive data.",
+      "Define only required HTTP methods in <mark class=\"docs-highlight\">methods</mark>.",
+      "Limit <mark class=\"docs-highlight\">allowedHeaders</mark> to what you actually use.",
+      "If you enable <mark class=\"docs-highlight\">credentials: true</mark>, make sure to use an explicit list of trusted origins."
+    ]
+  }
+}

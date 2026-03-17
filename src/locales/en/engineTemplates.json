@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Template engines",
+    "lead": "To render views you must configure the templates folder with <mark class=\"docs-highlight\">app.views()</mark>, register engines with <mark class=\"docs-highlight\">app.engineTemplates()</mark>, and finally respond using <mark class=\"docs-highlight\">Response.render()</mark>."
+  },
+  "setup": {
+    "title": "Base configuration",
+    "description": "The <mark class=\"docs-highlight\">views()</mark> method defines where your views are located, and <mark class=\"docs-highlight\">engineTemplates()</mark> maps an extension to its render engine."
+  },
+  "render": {
+    "title": "Using Response.render()",
+    "description": "After configuring folder and engine, use <mark class=\"docs-highlight\">Response.render()</mark> to send the view with dynamic data."
+  },
+  "compatible": {
+    "title": "Currently supported engines",
+    "description": "Skyguard currently works with third-party engines like <mark class=\"docs-highlight\">Express Handlebars</mark>, <mark class=\"docs-highlight\">EJS</mark>, and <mark class=\"docs-highlight\">Pug</mark>. In the future, a native template engine is planned."
+  },
+  "handlebars": {
+    "title": "Express Handlebars",
+    "description": "Register the <mark class=\"docs-highlight\">hbs</mark> extension and main layout configuration."
+  },
+  "ejs": {
+    "title": "EJS",
+    "description": "Map <mark class=\"docs-highlight\">ejs</mark> using <mark class=\"docs-highlight\">ejs.renderFile()</mark> so Skyguard can render views by extension."
+  },
+  "pug": {
+    "title": "Pug",
+    "description": "Configure the <mark class=\"docs-highlight\">pug</mark> extension with <mark class=\"docs-highlight\">pug.renderFile()</mark> and use the same <mark class=\"docs-highlight\">Response.render()</mark> API.",
+    "tip": "Keep a naming convention between file and view (for example <mark class=\"docs-highlight\">dashboard.pug</mark> with <mark class=\"docs-highlight\">Response.render(\"dashboard\")</mark>) to avoid resolution errors."
+  },
+  "warn": "If you register multiple engines, the view extension defines which one is used for each render."
+}

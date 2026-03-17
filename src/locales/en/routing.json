@@ -1,0 +1,24 @@
+{
+  "page": {
+    "title": "Routing",
+    "lead": "Learn how to define routes and handle HTTP requests with SkyguardJS. It provides a simple and intuitive routing system that supports all HTTP methods and dynamic route parameters."
+  },
+  "basicRouting": {
+    "title": "Basic routes",
+    "description": "To define routes, use the different methods on the app object."
+  },
+  "routeParameters": {
+    "title": "Routes with parameters",
+    "description": "To capture request parameters, use the params property of the request object.",
+    "tip": "Parameters are always returned as strings. Use validation schemas to convert them to other types."
+  },
+  "queryParameters": {
+    "title": "Routes with query parameters",
+    "description": "To access query parameters from requests, use the query property of the request object."
+  },
+  "groupRoutes": {
+    "title": "Route groups",
+    "description": "Skyguard has a method to create a route group based on an initial prefix.",
+    "note": "The group method receives a function. You can create a separate function that receives a <mark class=\"docs-highlight\">RouterGroup</mark> as a parameter."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "page": {
+    "title": "Validación",
+    "lead": "Descubre el potente sistema de validación de SkyguardJS. Proporciona validación de solicitudes integrada sin instalar dependencias, garantizando la integridad de los datos con menos sobrecarga."
+  },
+  "basic": {
+    "title": "Validación basica",
+    "description": "Para crear esquemas de validación, utiliza el constructor <mark class=\"docs-highlight\">v</mark> para especificar reglas, la función <mark class=\"docs-highlight\">schema</mark> para crear el esquema y el middleware <mark class=\"docs-highlight\">validationRequest()</mark> para registrarlo en una ruta especifica."
+  },
+  "types": {
+    "title": "Validación de tipos",
+    "description": "Skyguard admite múltiples tipos de datos con validación incorporada:"
+  },
+  "optionalFields": {
+    "title": "Campos opcionales",
+    "description": "Puedes indicar campos opcionales o con valor por defecto, ya que por defecto son requeridos:"
+  },
+  "converter": {
+    "title": "Convertidor de tipos",
+    "description": "Skyguard ofrece un convertidor de tipos que transforma el valor de entrada al tipo de dato que indiques:",
+    "tip": "Puedes usar el convertidor de tipos para validar params o queries en las peticiones."
+  },
+  "differentParts": {
+    "title": "Validación de diferentes partes",
+    "description": "Skyguard permite validar diferentes partes de la petición:"
+  },
+  "nestedObjects": {
+    "title": "Objetos anidados",
+    "description": "Con la validación de tipo <mark class=\"docs-highlight\">v.object()</mark> se pueden validar estructuras anidadas complejas:"
+  },
+  "arrayValidation": {
+    "title": "Validación de arrays",
+    "description": "Se pueden validar arrays que contengan objetos:"
+  },
+  "errorHandling": {
+    "title": "Manejo de errores",
+    "description": "Cuando falla la validación, Skyguard devuelve automáticamente un error 400 con los detalles:",
+    "warn": "Los errores de validación se gestionan automáticamente. No es necesario escribir código de manejo de errores."
+  }
+}

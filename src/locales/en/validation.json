@@ -1,0 +1,40 @@
+{
+  "page": {
+    "title": "Validation",
+    "lead": "Discover SkyguardJS's powerful validation system. It provides built-in request validation without installing dependencies, ensuring data integrity with less overhead."
+  },
+  "basic": {
+    "title": "Basic validation",
+    "description": "To create validation schemas, use the <mark class=\"docs-highlight\">v</mark> builder to define rules, the <mark class=\"docs-highlight\">schema</mark> function to create the schema, and the <mark class=\"docs-highlight\">validationRequest()</mark> middleware to register it on a specific route."
+  },
+  "types": {
+    "title": "Type validation",
+    "description": "Skyguard supports multiple data types with built-in validation:"
+  },
+  "optionalFields": {
+    "title": "Optional fields",
+    "description": "You can define optional fields or default values, since fields are required by default:"
+  },
+  "converter": {
+    "title": "Type converter",
+    "description": "Skyguard provides a type converter that transforms input into the data type you specify:",
+    "tip": "You can use the type converter to validate params or query values in requests."
+  },
+  "differentParts": {
+    "title": "Validating different parts",
+    "description": "Skyguard lets you validate different parts of the request:"
+  },
+  "nestedObjects": {
+    "title": "Nested objects",
+    "description": "With <mark class=\"docs-highlight\">v.object()</mark> validation, you can validate complex nested structures:"
+  },
+  "arrayValidation": {
+    "title": "Array validation",
+    "description": "You can validate arrays that contain objects:"
+  },
+  "errorHandling": {
+    "title": "Error handling",
+    "description": "When validation fails, Skyguard automatically returns a 400 error with details:",
+    "warn": "Validation errors are handled automatically. You do not need to write custom error-handling code."
+  }
+}

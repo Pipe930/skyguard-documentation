@@ -1,39 +1,60 @@
 import CodeBlock from "../components/ui/CodeBlock";
 import Table from "../components/ui/Table";
-import {
-  codeExampleExceptionsUsage,
-  exceptionTypesColumns,
-  exceptionTypesData,
-} from "../data/dataExceptions";
+import { useTranslation } from "react-i18next";
+import type { TableColumn } from "../interfaces/table.interface";
+import { codeExampleExceptionsUsage } from "../data/dataExceptions";
+
+type ExceptionRow = {
+  exception: string;
+  statusCode: number;
+  code: string;
+  description: string;
+};
 
 function Exceptions() {
+  const { t } = useTranslation();
+
+  const exceptionTypesColumns: TableColumn<ExceptionRow>[] = [
+    {
+      header: t("exceptions.types.columns.exception"),
+      accessor: "exception",
+      emphasis: true,
+    },
+    {
+      header: t("exceptions.types.columns.status"),
+      accessor: "statusCode",
+      width: "110px",
+    },
+    {
+      header: t("exceptions.types.columns.code"),
+      accessor: "code",
+      width: "260px",
+    },
+    {
+      header: t("exceptions.types.columns.description"),
+      accessor: "description",
+    },
+  ];
+
+  const exceptionTypesData = t("exceptions.types.rows", {
+    returnObjects: true,
+  }) as ExceptionRow[];
+
   return (
     <>
       <section id="exceptions" className="docs-section">
-        <h1>Excepciones</h1>
-        <p>
-          El framework provee un conjunto de excepciones HTTP integradas que
-          puedes lanzar desde handlers de rutas o middlewares. Cuando se lanza
-          una excepción, el framework la detecta y responde automáticamente con
-          el código de estado y el mensaje que definiste en la clase.
-        </p>
+        <h1>{t("exceptions.page.title")}</h1>
+        <p>{t("exceptions.page.lead")}</p>
       </section>
       <hr />
       <section id="exceptions-usage" className="docs-section">
-        <h2>Ejemplo de uso</h2>
-        <p>
-          Puedes lanzar excepciones de forma explícita para errores de negocio
-          (por ejemplo, recurso no encontrado) y envolver errores inesperados
-          con una excepción 500 para mantener respuestas consistentes.
-        </p>
+        <h2>{t("exceptions.usage.title")}</h2>
+        <p>{t("exceptions.usage.description")}</p>
         <CodeBlock code={codeExampleExceptionsUsage} />
       </section>
       <section id="exceptions-types" className="docs-section">
-        <h2>Tipos de Excepciones</h2>
-        <p>
-          Estas son las excepciones HTTP soportadas por SkyguardJS y lo que
-          representa cada una.
-        </p>
+        <h2>{t("exceptions.types.title")}</h2>
+        <p>{t("exceptions.types.description")}</p>
         <Table columns={exceptionTypesColumns} data={exceptionTypesData} />
       </section>
     </>
@@ -41,4 +62,3 @@ function Exceptions() {
 }
 
 export default Exceptions;
-

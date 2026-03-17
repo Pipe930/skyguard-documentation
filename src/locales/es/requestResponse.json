@@ -1,0 +1,28 @@
+{
+  "page": {
+    "title": "Contexto",
+    "lead": "<mark class=\"docs-highlight\">Context</mark> unifica los objetos <mark class=\"docs-highlight\">Request</mark> y <mark class=\"docs-highlight\">Response</mark> en una sola API para middlewares y handlers."
+  },
+  "accessors": {
+    "title": "Lectura de datos de petición",
+    "description": "Usa <mark class=\"docs-highlight\">context.headers</mark>, <mark class=\"docs-highlight\">context.params</mark>, <mark class=\"docs-highlight\">context.query</mark> y <mark class=\"docs-highlight\">context.remoteAddress</mark> para leer datos de entrada."
+  },
+  "bodyCookiesSession": {
+    "title": "Body, cookies y session",
+    "description": "Con <mark class=\"docs-highlight\">context.body</mark>, <mark class=\"docs-highlight\">context.cookies</mark> y <mark class=\"docs-highlight\">context.session</mark> puedes acceder al payload, cookies y sesion activa."
+  },
+  "reqRes": {
+    "title": "Acceso directo a req y res",
+    "description": "Si necesitas control detallado, puedes usar <mark class=\"docs-highlight\">context.req</mark> y <mark class=\"docs-highlight\">context.res</mark>.",
+    "tip": "Prefiere los helpers de <mark class=\"docs-highlight\">context</mark> para la mayoría de casos y usa <mark class=\"docs-highlight\">res</mark> cuando necesites personalización avanzada."
+  },
+  "commonResponses": {
+    "title": "Respuestas comunes",
+    "description": "Para respuestas frecuentes usa <mark class=\"docs-highlight\">context.json()</mark>, <mark class=\"docs-highlight\">context.text()</mark> y <mark class=\"docs-highlight\">context.redirect()</mark>."
+  },
+  "filesStreamRender": {
+    "title": "Archivos, stream y render",
+    "description": "También puedes responder con archivos, streams o vistas usando <mark class=\"docs-highlight\">context.download()</mark>, <mark class=\"docs-highlight\">context.sendFile()</mark>, <mark class=\"docs-highlight\">context.stream()</mark> y <mark class=\"docs-highlight\">context.render()</mark>.",
+    "danger": "Antes de usar <mark class=\"docs-highlight\">context.sendFile()</mark> o <mark class=\"docs-highlight\">context.download()</mark>, válida rutas para evitar exponer archivos sensibles."
+  }
+}

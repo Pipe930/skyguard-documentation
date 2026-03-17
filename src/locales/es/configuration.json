@@ -1,0 +1,26 @@
+{
+  "page": {
+    "title": "Configuracion",
+    "lead": "Skyguard permite configurar el servidor con pocos metodos. En esta seccion veras como usar <mark class=\"docs-highlight\">logger()</mark>, <mark class=\"docs-highlight\">staticFiles()</mark> y <mark class=\"docs-highlight\">setPrefix()</mark>, ademas de la carga de archivos con <mark class=\"docs-highlight\">createUploader()</mark>."
+  },
+  "logger": {
+    "title": "Logger",
+    "description": "El método <mark class=\"docs-highlight\">logger()</mark> configura el formato de logs HTTP. Por defecto viene en configuración <mark class=\"docs-highlight\">dev</mark>, y tambien puedes ingresar como segundo parametro la ruta del archivo donde guardar los logs.",
+    "note": "Formatos disponibles: <mark class=\"docs-highlight\">combined</mark>, <mark class=\"docs-highlight\">common</mark>, <mark class=\"docs-highlight\">dev</mark>, <mark class=\"docs-highlight\">short</mark> y <mark class=\"docs-highlight\">tiny</mark>."
+  },
+  "staticFiles": {
+    "title": "Archivos estáticos",
+    "description": "Con <mark class=\"docs-highlight\">staticFiles()</mark> expones una carpeta publica para servir archivos estáticos."
+  },
+  "prefix": {
+    "title": "Prefix global",
+    "description": "El método <mark class=\"docs-highlight\">setPrefix()</mark> agrega un prefijo inicial a todas las rutas registradas.",
+    "warn": "Define el prefijo al inicio del arranque para mantener consistencia en toda la API."
+  },
+  "fileUpload": {
+    "title": "Subida de archivos",
+    "description": "Para recibir y guardar archivos usa <mark class=\"docs-highlight\">createUploader()</mark> con el tipo de almacenamiento que necesites.",
+    "storageDescription": "Segun el <mark class=\"docs-highlight\">StorageType</mark> seleccionado, <mark class=\"docs-highlight\">storageOptions</mark> puede incluir dos propiedades: <mark class=\"docs-highlight\">disk</mark> y <mark class=\"docs-highlight\">memory</mark>.",
+    "note": "Usa <mark class=\"docs-highlight\">StorageType.DISK</mark> cuando necesites persistencia en disco y <mark class=\"docs-highlight\">StorageType.MEMORY</mark> para procesamiento temporal en memoria antes de enviar a S3, Cloudinary u otro almacenamiento externo."
+  }
+}

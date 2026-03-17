@@ -1,0 +1,106 @@
+{
+  "page": {
+    "title": "Excepciones",
+    "lead": "El framework provee un conjunto de excepciones HTTP integradas que puedes lanzar desde handlers de rutas o middlewares. Cuando se lanza una excepcion, el framework la detecta y responde automaticamente con el codigo de estado y el mensaje que definiste en la clase."
+  },
+  "usage": {
+    "title": "Ejemplo de uso",
+    "description": "Puedes lanzar excepciones de forma explicita para errores de negocio (por ejemplo, recurso no encontrado) y envolver errores inesperados con una excepcion 500 para mantener respuestas consistentes."
+  },
+  "types": {
+    "title": "Tipos de excepciones",
+    "description": "Estas son las excepciones HTTP soportadas por SkyguardJS y lo que representa cada una.",
+    "columns": {
+      "exception": "Excepcion",
+      "status": "Status",
+      "code": "Code",
+      "description": "Que representa?"
+    },
+    "rows": [
+      {
+        "exception": "BadRequestError",
+        "statusCode": 400,
+        "code": "BAD_REQUEST",
+        "description": "La solicitud es inválida o tiene datos mal formados."
+      },
+      {
+        "exception": "UnauthorizedError",
+        "statusCode": 401,
+        "code": "UNAUTHORIZED",
+        "description": "Faltan credenciales o son invalidas."
+      },
+      {
+        "exception": "ForbiddenError",
+        "statusCode": 403,
+        "code": "FORBIDDEN",
+        "description": "El cliente esta autenticado, pero no tiene permisos."
+      },
+      {
+        "exception": "NotFoundError",
+        "statusCode": 404,
+        "code": "NOT_FOUND",
+        "description": "No existe el recurso solicitado."
+      },
+      {
+        "exception": "RequestTimeoutError",
+        "statusCode": 408,
+        "code": "REQUEST_TIMEOUT",
+        "description": "La solicitud tardo demasiado y expiro."
+      },
+      {
+        "exception": "ConflictError",
+        "statusCode": 409,
+        "code": "CONFLICT",
+        "description": "Hay conflicto con el estado actual del recurso."
+      },
+      {
+        "exception": "UnsopportedMediaTypeError",
+        "statusCode": 415,
+        "code": "UNSOPPORTED_MEDIA_TYPE",
+        "description": "El tipo de contenido enviado no es soportado."
+      },
+      {
+        "exception": "UnprocessableContentError",
+        "statusCode": 422,
+        "code": "UNPROCESSABLE_CONTENT",
+        "description": "El contenido es válido sintacticamente, pero no procesable."
+      },
+      {
+        "exception": "TooManyRequestsError",
+        "statusCode": 429,
+        "code": "TOO_MANY_REQUESTS",
+        "description": "Se supero el límite de solicitudes permitidas."
+      },
+      {
+        "exception": "InternalServerError",
+        "statusCode": 500,
+        "code": "INTERNAL_SERVER_ERROR",
+        "description": "Error interno inesperado del servidor."
+      },
+      {
+        "exception": "NotImplementedError",
+        "statusCode": 501,
+        "code": "NOT_IMPLEMENTED",
+        "description": "La funcionalidad solicitada no esta implementada."
+      },
+      {
+        "exception": "BadGatewayError",
+        "statusCode": 502,
+        "code": "BAD_GATEWAY",
+        "description": "El servidor recibio una respuesta inválida de un upstream."
+      },
+      {
+        "exception": "ServiceUnavailableError",
+        "statusCode": 503,
+        "code": "SERVICE_UNAVAILABLE",
+        "description": "El servicio no esta disponible temporalmente."
+      },
+      {
+        "exception": "GatewayTimeoutError",
+        "statusCode": 504,
+        "code": "GATEWAY_TIMEOUT",
+        "description": "Un upstream tardo demasiado en responder."
+      }
+    ]
+  }
+}

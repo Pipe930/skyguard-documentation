@@ -1,0 +1,49 @@
+{
+  "page": {
+    "title": "Rate Limiting",
+    "lead": "Rate limiting restricts how many requests a client can make within a time window. It is a key layer to protect your API against abuse, brute force, and uncontrolled traffic spikes."
+  },
+  "importance": {
+    "title": "What is it used for?",
+    "items": [
+      "Reduce brute-force attacks on login and sensitive endpoints.",
+      "Avoid server saturation from excessive traffic.",
+      "Protect expensive resources such as search or exports.",
+      "Improve overall stability under high concurrency."
+    ]
+  },
+  "middleware": {
+    "title": "Basic usage of rateLimit() middleware",
+    "description": "You can limit requests with the built-in <mark class=\"docs-highlight\">rateLimit</mark> middleware."
+  },
+  "sensitiveRoutes": {
+    "title": "Example on sensitive routes",
+    "description": "It is recommended to apply stricter limits on authentication or account recovery endpoints."
+  },
+  "keyGenerator": {
+    "title": "Customize keyGenerator",
+    "description": "By default, IP is used (considering <mark class=\"docs-highlight\">trustProxy</mark>). If you want quotas per authenticated user, define <mark class=\"docs-highlight\">keyGenerator</mark>."
+  },
+  "skip": {
+    "title": "Skip routes with skip",
+    "description": "Use <mark class=\"docs-highlight\">skip</mark> to exclude routes or specific conditions from counting."
+  },
+  "customHandler": {
+    "title": "Custom response with handler",
+    "description": "You can adjust <mark class=\"docs-highlight\">statusCode</mark>, <mark class=\"docs-highlight\">message</mark>, and define a <mark class=\"docs-highlight\">handler</mark> to return your own error format. You can also control headers with <mark class=\"docs-highlight\">standardHeaders</mark> and <mark class=\"docs-highlight\">legacyHeaders</mark>."
+  },
+  "multiInstance": {
+    "title": "Multi-instance deployments",
+    "description": "In multi-instance deployments, provide a shared store (for example Redis) by implementing <mark class=\"docs-highlight\">RateLimitStore</mark> and passing it in <mark class=\"docs-highlight\">store</mark>.",
+    "warn": "If you do not use a shared store, each instance will count requests separately and global limits will lose accuracy."
+  },
+  "bestPractices": {
+    "title": "Best practices",
+    "items": [
+      "Use stricter limits for login, account recovery, and high-cost endpoints.",
+      "Enable <mark class=\"docs-highlight\">trustProxy</mark> only if your API is behind a trusted reverse proxy.",
+      "Keep <mark class=\"docs-highlight\">standardHeaders</mark> enabled to improve observability in clients and gateways.",
+      "In cluster or multi-node serverless deployments, use a shared <mark class=\"docs-highlight\">store</mark> to avoid inconsistent limits."
+    ]
+  }
+}

@@ -1,7 +1,5 @@
 {
   "installationCommand": "npm install skyguard-js",
-  "copyInstallCommandAria": "Copy installation command",
-  "copyInstallCommandTitle": "Copy command",
   "copyError": "Could not copy text",
   "hero": {
     "badge": "Lightweight TypeScript framework",

@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Inicio Rápido",
+    "lead": "Crea un servidor con Skyguard JS en segundos."
+  },
+  "createFirstServer": {
+    "title": "Crea tu primer servidor",
+    "intro": "Si ya tienes <mark class=\"docs-highlight\">NodeJS</mark> instalado en tu maquina, estos son los pasos sencillos para utilizar SkyguardJS:",
+    "steps": {
+      "packageJson": {
+        "title": "Crea el archivo package.json"
+      },
+      "install": {
+        "title": "Instalar Skyguard JS"
+      },
+      "typescriptFile": {
+        "title": "Crea un archivo de TypeScript",
+        "description": "Crea un nuevo archivo <mark class=\"docs-highlight\">server.ts</mark>"
+      },
+      "runServer": {
+        "title": "Ejecuta tu servidor"
+      },
+      "testServer": {
+        "title": "Prueba tu servidor",
+        "description": "Abre tu navegador y visita la url <mark class=\"docs-highlight\">http://localhost:3000/</mark> o utiliza curl, Postman o Insomnia:"
+      }
+    }
+  },
+  "addMoreRoutes": {
+    "title": "Añadir más rutas",
+    "description": "Skyguard facilita la adición de múltiples routes con diferentes metodos HTTP."
+  },
+  "handleRequestData": {
+    "title": "Gestionar datos de request",
+    "description": "Para acceder a los parametros, queries, cuerpo y cabeceras de la petición, usa el objeto request que se ingresa como parametro en la función handler."
+  },
+  "addValidation": {
+    "title": "Añadir validación",
+    "description": "Skyguard incluye una validación integrada sin depender de librerias externas."
+  },
+  "useMiddleware": {
+    "title": "Usar middlewares",
+    "description": "Agrega middleware para manejar inquietudes transversales."
+  },
+  "nextSteps": {
+    "title": "Próximos pasos",
+    "items": {
+      "routing": {
+        "label": "Enrutamiento",
+        "description": "Aprende a manejar rutas dinámicas y patrones de ruta"
+      },
+      "middlewares": {
+        "label": "Middlewares",
+        "description": "Crea funciones reutilizables para ejecutarlas en diferentes rutas"
+      },
+      "validation": {
+        "label": "Validaciones",
+        "description": "Como hacer validaciones con los esquemas"
+      },
+      "security": {
+        "label": "Seguridad",
+        "description": "Buenas practicas para proteger tus APIs"
+      }
+    }
+  }
+}

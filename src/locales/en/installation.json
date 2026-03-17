@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "Installation",
+    "lead": "In this section, you will learn how to install and configure SkyguardJS in your project."
+  },
+  "prerequisites": {
+    "title": "Prerequisites",
+    "description": "Before installing SkyguardJS, make sure you have NodeJS and TypeScript installed with these versions:",
+    "node": "Node.js",
+    "typescript": "TypeScript"
+  },
+  "quickInstall": {
+    "title": "Package installation",
+    "description": "Select your package manager to copy the installation command and install the library."
+  },
+  "typescriptConfiguration": {
+    "title": "TypeScript configuration",
+    "description": "SkyguardJS is built with TypeScript and offers full type safety. Make sure your <mark class=\"docs-highlight\">tsconfig.json</mark> includes:"
+  },
+  "verify": {
+    "title": "Verify installation",
+    "description": "To verify the installation, create a simple server with the <mark class=\"docs-highlight\">.createApp()</mark> function:",
+    "runServer": "Run your server:",
+    "note": "By default, if you do not specify a port in the run function, the server runs on port 3000."
+  },
+  "nextSteps": {
+    "title": "Next steps",
+    "items": {
+      "quickStart": {
+        "label": "Quick start guide",
+        "description": "Create your first application with Skyguard JS"
+      },
+      "basics": {
+        "label": "Core concepts",
+        "description": "Learn the basics of routing, middlewares, security, and more."
+      },
+      "configuration": {
+        "label": "Configuration",
+        "description": "Configure some library features based on your needs."
+      }
+    }
+  }
+}

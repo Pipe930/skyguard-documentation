@@ -1,29 +1,26 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
+import { useTranslation } from "react-i18next";
 import { codeExampleArrayValidation, codeExampleCompleteSchema, codeExampleConverteTypes, codeExampleErrorHandling, codeExampleNestedOjects, codeExampleOptionalFields, codeExampleTypeArray, codeExampleTypeBigint, codeExampleTypeBoolean, codeExampleTypeDate, codeExampleTypeLiteral, codeExampleTypeNumber, codeExampleTypeObject, codeExampleTypeString, codeExampleTypeUnion, codeExampleValidation } from "../data/dataValidation";
 
 function Validation() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section id="validation" className="docs-section">
-        <h1>Validación</h1>
-        <p>
-          Descubre el potente sistema de validación de SkyguardJS. proporciona un sistema de  validación de solicitudes integrado sin tener que instalar dependencias, lo que garantiza la integridad de los datos con menos sobre carga
-        </p>
+        <h1>{t("validation.page.title")}</h1>
+        <p>{t("validation.page.lead")}</p>
       </section>
       <hr />
       <section id="basic-validation" className="docs-section">
-        <h2>Validación Básica</h2>
-        <p>
-          Para crear esquemas de validación utilice el constructor <mark className="docs-highlight">t</mark> para especificar las validaciones, la función <mark className="docs-highlight">schema</mark> para crear el esquema y el middleware <mark className="docs-highlight">validationRequest()</mark> para registrarlo en una ruta especifica.
-        </p>
+        <h2>{t("validation.basic.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("validation.basic.description") }} />
         <CodeBlock code={codeExampleValidation} />
       </section>
       <section id="schema-types" className="docs-section">
-        <h2>Validación de Tipos</h2>
-        <p>
-          Skyguard admite multiples tipos de datos cona validación incorporada:
-        </p>
+        <h2>{t("validation.types.title")}</h2>
+        <p>{t("validation.types.description")}</p>
         <div id="schema-types-string" className="docs-subsection">
           <h3>Strings</h3>
           <CodeBlock code={codeExampleTypeString} />
@@ -62,39 +59,39 @@ function Validation() {
         </div>
       </section>
       <section id="optional-fields" className="docs-section">
-        <h2>Campos Opcionales</h2>
-        <p>Puedes indicar que los campos sean opcionales o que tengan algun valor por defecto, ya que, por defecto son requeridos:</p>
+        <h2>{t("validation.optionalFields.title")}</h2>
+        <p>{t("validation.optionalFields.description")}</p>
         <CodeBlock code={codeExampleOptionalFields} />
       </section>
       <section id="converter-fields" className="docs-section">
-        <h2>Convertidor de Tipos</h2>
-        <p>Skyguard ofrece un convertidor de tipos, convierte el valor de entrada en el tipo de dato que le indiques:</p>
+        <h2>{t("validation.converter.title")}</h2>
+        <p>{t("validation.converter.description")}</p>
         <CodeBlock code={codeExampleConverteTypes} />
         <Callout variant="tip">
-          Puedes utilizar el convertidor de tipos para validar params o queries en las peticiones.
+          {t("validation.converter.tip")}
         </Callout>
       </section>
       <section id="validating-different-parts" className="docs-section">
-        <h2>Validación de Diferentes Partes</h2>
-        <p>Skyguard ofrece validar las diferentes partes de la peticion:</p>
+        <h2>{t("validation.differentParts.title")}</h2>
+        <p>{t("validation.differentParts.description")}</p>
         <CodeBlock code={codeExampleCompleteSchema} />
       </section>
       <section id="nested-objects" className="docs-section">
-        <h2>Objetos Anidados</h2>
-        <p>Con la validacion de tipo <mark className="docs-highlight">v.object()</mark> se pueden validar estructuras anidadas complejas:</p>
+        <h2>{t("validation.nestedObjects.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("validation.nestedObjects.description") }} />
         <CodeBlock code={codeExampleNestedOjects} />
       </section>
       <section id="validation-array" className="docs-section">
-        <h2>Validación de Arrays</h2>
-        <p>Se puede validar arrays que tenga objetos:</p>
+        <h2>{t("validation.arrayValidation.title")}</h2>
+        <p>{t("validation.arrayValidation.description")}</p>
         <CodeBlock code={codeExampleArrayValidation} />
       </section>
       <section id="error-handling" className="docs-section">
-        <h2>Manejo de Errores</h2>
-        <p>Cuando falla la validación, Skyguard devuelve automáticamente un error 400 con los detalles:</p>
+        <h2>{t("validation.errorHandling.title")}</h2>
+        <p>{t("validation.errorHandling.description")}</p>
         <CodeBlock code={codeExampleErrorHandling} />
         <Callout variant="warn">
-          Los errores de validación se gestionan automáticamente. No es necesario escribir código de gestión de errores.
+          {t("validation.errorHandling.warn")}
         </Callout>
       </section>
     </>

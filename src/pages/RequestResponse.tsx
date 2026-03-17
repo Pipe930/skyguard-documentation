@@ -1,5 +1,6 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
+import { useTranslation } from "react-i18next";
 import {
   codeExampleContextBasics,
   codeExampleContextBodyCookiesSession,
@@ -9,77 +10,44 @@ import {
 } from "../data/dataRequestResponse";
 
 function ContextPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section id="context" className="docs-section">
-        <h1>Contexto</h1>
-        <p>
-          <mark className="docs-highlight">Context</mark> unifica los objetos{" "}
-          <mark className="docs-highlight">Request</mark> y{" "}
-          <mark className="docs-highlight">Response</mark> en una sola API para
-          middlewares y handlers.
-        </p>
+        <h1>{t("requestResponse.page.title")}</h1>
+        <p dangerouslySetInnerHTML={{ __html: t("requestResponse.page.lead") }} />
       </section>
       <hr />
       <section id="context-accessors" className="docs-section">
-        <h2>Lectura de Datos de Petición</h2>
-        <p>
-          Use <mark className="docs-highlight">context.headers</mark>,{" "}
-          <mark className="docs-highlight">context.params</mark>,{" "}
-          <mark className="docs-highlight">context.query</mark> y{" "}
-          <mark className="docs-highlight">context.remoteAddress</mark> para
-          leer datos de entrada.
-        </p>
+        <h2>{t("requestResponse.accessors.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("requestResponse.accessors.description") }} />
         <CodeBlock code={codeExampleContextBasics} />
       </section>
       <section id="context-body-cookies-session" className="docs-section">
-        <h2>Body, Cookies y Session</h2>
-        <p>
-          Con <mark className="docs-highlight">context.body</mark>,{" "}
-          <mark className="docs-highlight">context.cookies</mark> y{" "}
-          <mark className="docs-highlight">context.session</mark> puede acceder
-          al payload, cookies y sesión activa.
-        </p>
+        <h2>{t("requestResponse.bodyCookiesSession.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("requestResponse.bodyCookiesSession.description") }} />
         <CodeBlock code={codeExampleContextBodyCookiesSession} />
       </section>
       <section id="context-req-res" className="docs-section">
-        <h2>Acceso Directo a req y res</h2>
-        <p>
-          Si necesita control detallado puede usar{" "}
-          <mark className="docs-highlight">context.req</mark> y{" "}
-          <mark className="docs-highlight">context.res</mark>.
-        </p>
+        <h2>{t("requestResponse.reqRes.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("requestResponse.reqRes.description") }} />
         <CodeBlock code={codeExampleContextReqRes} />
         <Callout variant="tip">
-          Prefiera los helpers de <mark className="docs-highlight">context</mark>{" "}
-          para la mayoría de los casos y use <mark className="docs-highlight">res</mark>{" "}
-          cuando necesite personalización avanzada.
+          <span dangerouslySetInnerHTML={{ __html: t("requestResponse.reqRes.tip") }} />
         </Callout>
       </section>
       <section id="context-common-responses" className="docs-section">
-        <h2>Respuestas Comunes</h2>
-        <p>
-          Para respuestas frecuentes use{" "}
-          <mark className="docs-highlight">context.json()</mark>,{" "}
-          <mark className="docs-highlight">context.text()</mark> y{" "}
-          <mark className="docs-highlight">context.redirect()</mark>.
-        </p>
+        <h2>{t("requestResponse.commonResponses.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("requestResponse.commonResponses.description") }} />
         <CodeBlock code={codeExampleContextCommonResponses} />
       </section>
       <section id="context-files-stream-render" className="docs-section">
-        <h2>Archivos, Stream y Render</h2>
-        <p>
-          También puede responder con archivos, streams o vistas usando{" "}
-          <mark className="docs-highlight">context.download()</mark>,{" "}
-          <mark className="docs-highlight">context.sendFile()</mark>,{" "}
-          <mark className="docs-highlight">context.stream()</mark> y{" "}
-          <mark className="docs-highlight">context.render()</mark>.
-        </p>
+        <h2>{t("requestResponse.filesStreamRender.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("requestResponse.filesStreamRender.description") }} />
         <CodeBlock code={codeExampleContextFilesStreamRender} />
         <Callout variant="danger">
-          Antes de usar <mark className="docs-highlight">context.sendFile()</mark>{" "}
-          o <mark className="docs-highlight">context.download()</mark>, valide
-          rutas para evitar exponer archivos sensibles.
+          <span dangerouslySetInnerHTML={{ __html: t("requestResponse.filesStreamRender.danger") }} />
         </Callout>
       </section>
     </>

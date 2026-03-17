@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Motores de plantillas",
+    "lead": "Para renderizar vistas debes configurar la carpeta de templates con <mark class=\"docs-highlight\">app.views()</mark>, registrar motores con <mark class=\"docs-highlight\">app.engineTemplates()</mark> y finalmente responder usando <mark class=\"docs-highlight\">Response.render()</mark>."
+  },
+  "setup": {
+    "title": "Configuración base",
+    "description": "El método <mark class=\"docs-highlight\">views()</mark> define donde estan tus vistas y <mark class=\"docs-highlight\">engineTemplates()</mark> asocia una extensión con su motor de render."
+  },
+  "render": {
+    "title": "Uso con Response.render()",
+    "description": "Despues de configurar carpeta y motor, utiliza <mark class=\"docs-highlight\">Response.render()</mark> para enviar la vista con los datos dinámicos."
+  },
+  "compatible": {
+    "title": "Motores compatibles actualmente",
+    "description": "Actualmente Skyguard funciona con motores de terceros como <mark class=\"docs-highlight\">Express Handlebars</mark>, <mark class=\"docs-highlight\">EJS</mark> y <mark class=\"docs-highlight\">Pug</mark>. A futuro se planea incluir un motor de plantillas propio."
+  },
+  "handlebars": {
+    "title": "Express Handlebars",
+    "description": "Registra la extensión <mark class=\"docs-highlight\">hbs</mark> y la configuración del layout principal."
+  },
+  "ejs": {
+    "title": "EJS",
+    "description": "Asocia <mark class=\"docs-highlight\">ejs</mark> usando <mark class=\"docs-highlight\">ejs.renderFile()</mark> para que Skyguard pueda renderizar tus vistas por extensión."
+  },
+  "pug": {
+    "title": "Pug",
+    "description": "Configura la extensión <mark class=\"docs-highlight\">pug</mark> con <mark class=\"docs-highlight\">pug.renderFile()</mark> y utiliza la misma API de <mark class=\"docs-highlight\">Response.render()</mark>.",
+    "tip": "Manten una convención de nombres entre archivo y vista (por ejemplo <mark class=\"docs-highlight\">dashboard.pug</mark> con <mark class=\"docs-highlight\">Response.render(\"dashboard\")</mark>) para evitar errores de resolución."
+  },
+  "warn": "Si registras varios motores, la extensión de la vista define cual se utiliza en cada render."
+}

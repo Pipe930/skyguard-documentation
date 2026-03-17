@@ -1,0 +1,36 @@
+{
+  "page": {
+    "title": "CSRF Protección",
+    "lead": "CSRF (Cross-Site Request Forgery) es un ataque donde un sitio malicioso induce al navegador del usuario autenticado a ejecutar acciones no deseadas en tu aplicación."
+  },
+  "importance": {
+    "title": "Por que es importante mitigarlo?",
+    "description": "Si no validas tokens CSRF, un atacante puede forzar operaciones como transferencias, cambios de contraseñas o modificaciones de perfil usando la sesion activa de la víctima.",
+    "warn": "CSRF es especialmente crítico cuando usas autenticación basada en cookies, porque el navegador las envia automaticamente."
+  },
+  "middleware": {
+    "title": "Middleware csrf() basico",
+    "description": "Usa el middleware integrado <mark class=\"docs-highlight\">csrf()</mark> para proteger endpoints contra ataques CSRF."
+  },
+  "howItWorks": {
+    "title": "Como funciona internamente",
+    "items": [
+      "Emite una cookie CSRF cuando falta (incluyendo primeras peticiones GET/HEAD/OPTIONS y solicitudes protegidas fallidas).",
+      "Para métodos que cambian estado (POST/PUT/PATCH/DELETE), valida el token recibido en header/body contra el valor de la cookie.",
+      "Válida <mark class=\"docs-highlight\">Origin</mark>/<mark class=\"docs-highlight\">Referer</mark> en solicitudes protegidas, y exige Referer en HTTPS cuando Origin no existe.",
+      "Rechaza valores CSRF duplicados en headers para evitar ambigüedad al parsear tokens."
+    ]
+  },
+  "templates": {
+    "title": "Ejemplo con templates (Express Handlebars)",
+    "description": "En render server-side, pasa el token CSRF a la vista e incluyelo como campo oculto en formularios."
+  },
+  "templateView": {
+    "title": "Vista transfer.hbs"
+  },
+  "ajax": {
+    "title": "CSRF en fetch/AJAX",
+    "description": "Para peticiones AJAX, envia el mismo token en headers con el nombre definido en <mark class=\"docs-highlight\">headerNames</mark>.",
+    "tip": "Manten el token CSRF alineado entre cookie, campo hidden y header para evitar falsos positivos de validación."
+  }
+}

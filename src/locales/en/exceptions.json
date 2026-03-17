@@ -1,0 +1,36 @@
+{
+  "page": {
+    "title": "Exceptions",
+    "lead": "The framework provides built-in HTTP exceptions that you can throw from route handlers or middlewares. When an exception is thrown, the framework detects it and automatically responds with the status code and message defined in the class."
+  },
+  "usage": {
+    "title": "Usage example",
+    "description": "You can throw exceptions explicitly for business errors (for example, resource not found) and wrap unexpected errors with a 500 exception to keep consistent responses."
+  },
+  "types": {
+    "title": "Exception types",
+    "description": "These are the HTTP exceptions supported by SkyguardJS and what each one represents.",
+    "columns": {
+      "exception": "Exception",
+      "status": "Status",
+      "code": "Code",
+      "description": "What does it represent?"
+    },
+    "rows": [
+      { "exception": "BadRequestError", "statusCode": 400, "code": "BAD_REQUEST", "description": "The request is invalid or contains malformed data." },
+      { "exception": "UnauthorizedError", "statusCode": 401, "code": "UNAUTHORIZED", "description": "Credentials are missing or invalid." },
+      { "exception": "ForbiddenError", "statusCode": 403, "code": "FORBIDDEN", "description": "The client is authenticated but does not have permissions." },
+      { "exception": "NotFoundError", "statusCode": 404, "code": "NOT_FOUND", "description": "The requested resource does not exist." },
+      { "exception": "RequestTimeoutError", "statusCode": 408, "code": "REQUEST_TIMEOUT", "description": "The request took too long and timed out." },
+      { "exception": "ConflictError", "statusCode": 409, "code": "CONFLICT", "description": "There is a conflict with the current resource state." },
+      { "exception": "UnsopportedMediaTypeError", "statusCode": 415, "code": "UNSOPPORTED_MEDIA_TYPE", "description": "The sent content type is not supported." },
+      { "exception": "UnprocessableContentError", "statusCode": 422, "code": "UNPROCESSABLE_CONTENT", "description": "The content is syntactically valid but cannot be processed." },
+      { "exception": "TooManyRequestsError", "statusCode": 429, "code": "TOO_MANY_REQUESTS", "description": "The allowed request rate limit was exceeded." },
+      { "exception": "InternalServerError", "statusCode": 500, "code": "INTERNAL_SERVER_ERROR", "description": "Unexpected internal server error." },
+      { "exception": "NotImplementedError", "statusCode": 501, "code": "NOT_IMPLEMENTED", "description": "The requested functionality is not implemented." },
+      { "exception": "BadGatewayError", "statusCode": 502, "code": "BAD_GATEWAY", "description": "The server received an invalid response from an upstream." },
+      { "exception": "ServiceUnavailableError", "statusCode": 503, "code": "SERVICE_UNAVAILABLE", "description": "The service is temporarily unavailable." },
+      { "exception": "GatewayTimeoutError", "statusCode": 504, "code": "GATEWAY_TIMEOUT", "description": "An upstream took too long to respond." }
+    ]
+  }
+}

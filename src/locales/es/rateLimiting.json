@@ -1,0 +1,49 @@
+{
+  "page": {
+    "title": "Limitador de peticiones",
+    "lead": "El limitador de peticiones o rate limiting limita la cantidad de solicitudes que un cliente puede realizar en una ventana de tiempo. Es una capa clave para proteger tu API de abuso, fuerza bruta y picos de tráfico no controlados."
+  },
+  "importance": {
+    "title": "Para que se utiliza?",
+    "items": [
+      "Reducir ataques de fuerza bruta en login y endpoints sensibles.",
+      "Evitar saturación del servidor por tráfico excesivo.",
+      "Proteger recursos costosos como búsquedas o exportaciones.",
+      "Mejorar estabilidad general bajo alta concurrencia."
+    ]
+  },
+  "middleware": {
+    "title": "Uso básico del middleware rateLimit()",
+    "description": "Puedes limitar solicitudes con el middleware integrado <mark class=\"docs-highlight\">rateLimit</mark>."
+  },
+  "sensitiveRoutes": {
+    "title": "Ejemplo en rutas sensibles",
+    "description": "Es recomendable aplicar limites mas estrictos en endpoints de autenticación o recuperación de cuentas."
+  },
+  "keyGenerator": {
+    "title": "Personalizar keyGenerator",
+    "description": "Por defecto se usa IP (considerando <mark class=\"docs-highlight\">trustProxy</mark>). Si quieres cuotas por usuario autenticado, define <mark class=\"docs-highlight\">keyGenerator</mark>."
+  },
+  "skip": {
+    "title": "Omitir rutas con skip",
+    "description": "Usa <mark class=\"docs-highlight\">skip</mark> para excluir rutas o condiciones específicas del conteo."
+  },
+  "customHandler": {
+    "title": "Respuesta personalizada con handler",
+    "description": "Puedes ajustar <mark class=\"docs-highlight\">statusCode</mark>, <mark class=\"docs-highlight\">message</mark> y definir un <mark class=\"docs-highlight\">handler</mark> para retornar un formato de error propio. Tambien puedes controlar headers con <mark class=\"docs-highlight\">standardHeaders</mark> y <mark class=\"docs-highlight\">legacyHeaders</mark>."
+  },
+  "multiInstance": {
+    "title": "Despliegues multi-instancia",
+    "description": "En despliegues con multiples instancias, provee un store compartido (por ejemplo Redis) implementando la interfaz <mark class=\"docs-highlight\">RateLimitStore</mark> y pasandolo en <mark class=\"docs-highlight\">store</mark>.",
+    "warn": "Si no usas un store compartido, cada instancia contara solicitudes por separado y los limites globales perderan precisión."
+  },
+  "bestPractices": {
+    "title": "Buenas practicas",
+    "items": [
+      "Usa limites estrictos para login, recuperación de cuenta y endpoints de alto costo.",
+      "Habilita <mark class=\"docs-highlight\">trustProxy</mark> solo si tu API esta detras de un proxy reverso confiable.",
+      "Manten <mark class=\"docs-highlight\">standardHeaders</mark> activos para facilitar observabilidad en clientes y gateways.",
+      "En cluster o serverless multi-nodo, usa <mark class=\"docs-highlight\">store</mark> compartido para evitar limites inconsistentes."
+    ]
+  }
+}

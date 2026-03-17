@@ -1,0 +1,114 @@
+{
+  "page": {
+    "title": "Autenticación",
+    "lead": "La autenticación es el proceso de verificar la identidad de un cliente antes de permitir acceso a recursos protegidos. En backend es esencial para controlar permisos, proteger datos sensibles y reducir riesgo de suplantación de identidad."
+  },
+  "importance": {
+    "title": "¿Por que es esencial en backend?",
+    "description": "En una API, autenticación y autorización no son lo mismo. Primero se válida <mark class=\"docs-highlight\">quien eres</mark> (autenticación), luego se válida <mark class=\"docs-highlight\">que puedes hacer</mark> (autorizacion). Si omites la autenticación, cualquier cliente podria ejecutar acciones privilegiadas.",
+    "note": "Buenas practicas minimas: credenciales en hash, tokens con expiración, cookies de sesión con <mark class=\"docs-highlight\">httpOnly</mark> y rotación de secretos."
+  },
+  "basic": {
+    "title": "Ejemplo básico",
+    "description": "Este ejemplo usa una lista en memoria para validar usuario y contraseña. Es ideal para entender el flujo antes de conectar base de datos."
+  },
+  "sessions": {
+    "title": "Autenticacion con sesiones",
+    "description": "Skyguard provee el middleware <mark class=\"docs-highlight\">sessions()</mark> y tres estrategias de almacenamiento: memoria, archivo JSON y base de datos. Todas comparten el mismo patrón de login y acceso a <mark class=\"docs-highlight\">request.session</mark>.",
+    "memory": {
+      "title": "Session storage en memoria",
+      "description": "Recomendado para desarrollo local o pruebas. No persiste si reinicias el proceso."
+    },
+    "file": {
+      "title": "Session storage en archivo (JSON)",
+      "description": "Usa <mark class=\"docs-highlight\">FileSessionStorage</mark> para persistir sesiones en disco con cookies configurables."
+    },
+    "database": {
+      "title": "Session storage en base de datos",
+      "description": "Con <mark class=\"docs-highlight\">DatabaseSessionStorage</mark> defines un adapter agnóstico al motor. Esto permite SQL directo u ORM con el mismo contrato.",
+      "tableLabel": "Estructura de tabla sugerida (portable entre motores):",
+      "note": "Puedes utilizar cualquier conector de base de datos u ORM. Solo tienes que implementar la clase adaptadora para que el framework pueda reconocer las sesiones de tu base de datos.",
+      "configLabel": "Para mantener el código mas limpio, conviene crear un archivo separado para configurar sesiones de base de datos, por ejemplo: <mark class=\"docs-highlight\">src/sessions/config.ts</mark>.",
+      "columns": {
+        "field": "Campo",
+        "type": "Tipo recomendado",
+        "description": "Descripción"
+      },
+      "rows": [
+        {
+          "field": "id",
+          "dbType": "string/varchar (primary key)",
+          "description": "Identificador único de la sesión"
+        },
+        {
+          "field": "key",
+          "dbType": "JSON/TEXT",
+          "description": "Objeto serializado con el contenido de la sesión"
+        },
+        {
+          "field": "expires_at",
+          "dbType": "bigint/timestamp (unix ms)",
+          "description": "Expiración de la sesión en milisegundos unix"
+        }
+      ]
+    },
+    "sql": {
+      "title": "Ejemplo SQL (PostgreSQL)"
+    },
+    "orm": {
+      "title": "Ejemplo ORM (Prisma)"
+    }
+  },
+  "jwt": {
+    "title": "Autenticación con JSON Web Token (JWT)",
+    "description": "Skyguard incluye una clase interna <mark class=\"docs-highlight\">JWT</mark> para crear y verificar tokens. El patron recomendado es emitir token en login y validarlo con middleware en rutas protegidas.",
+    "createTitle": "Crear JWT en login",
+    "middlewareTitle": "Middleware para validar JWT",
+    "algorithmsTitle": "Algoritmos soportados por JWT",
+    "algorithmsWarn": "Aclaración criptográfica: los algoritmos <mark class=\"docs-highlight\">HS*</mark> usan clave simétrica compartida; los <mark class=\"docs-highlight\">RS*</mark> usan par de claves asimétricas (privada/publica).",
+    "columns": {
+      "algorithm": "Algoritmo",
+      "type": "Tipo",
+      "keyRequirement": "Clave requerida",
+      "recommendedUsage": "Uso recomendado"
+    },
+    "rows": [
+      {
+        "algorithm": "HS256",
+        "type": "HMAC (simétrico)",
+        "keyRequirement": "Una clave secreta compartida",
+        "recommendedUsage": "Servicios internos con secreto robusto y rotacion"
+      },
+      {
+        "algorithm": "HS384",
+        "type": "HMAC (simétrico)",
+        "keyRequirement": "Una clave secreta compartida",
+        "recommendedUsage": "Mismo caso que HS256 con digest mas largo"
+      },
+      {
+        "algorithm": "HS512",
+        "type": "HMAC (simétrico)",
+        "keyRequirement": "Una clave secreta compartida",
+        "recommendedUsage": "Mayor margen criptografico en entornos estrictos"
+      },
+      {
+        "algorithm": "RS256",
+        "type": "RSA (asimétrico)",
+        "keyRequirement": "Clave privada para firmar y pública para verificar",
+        "recommendedUsage": "APIs con emisores y verificadores separados"
+      },
+      {
+        "algorithm": "RS384",
+        "type": "RSA (asimétrico)",
+        "keyRequirement": "Clave privada para firmar y pública para verificar",
+        "recommendedUsage": "Variante RSA con digest mas largo"
+      },
+      {
+        "algorithm": "RS512",
+        "type": "RSA (asimétrico)",
+        "keyRequirement": "Clave privada para firmar y pública para verificar",
+        "recommendedUsage": "Requerimientos altos de seguridad y compatibilidad RSA"
+      }
+    ]
+  }
+}

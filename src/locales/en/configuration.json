@@ -1,0 +1,26 @@
+{
+  "page": {
+    "title": "Configuration",
+    "lead": "Skyguard lets you configure the server with a few methods. In this section you will see how to use <mark class=\"docs-highlight\">logger()</mark>, <mark class=\"docs-highlight\">staticFiles()</mark>, and <mark class=\"docs-highlight\">setPrefix()</mark>, plus file uploads with <mark class=\"docs-highlight\">createUploader()</mark>."
+  },
+  "logger": {
+    "title": "Logger",
+    "description": "The <mark class=\"docs-highlight\">logger()</mark> method configures HTTP log format. By default it uses <mark class=\"docs-highlight\">dev</mark>, and you can also pass a log file path as the second argument.",
+    "note": "Available formats: <mark class=\"docs-highlight\">combined</mark>, <mark class=\"docs-highlight\">common</mark>, <mark class=\"docs-highlight\">dev</mark>, <mark class=\"docs-highlight\">short</mark>, and <mark class=\"docs-highlight\">tiny</mark>."
+  },
+  "staticFiles": {
+    "title": "Static files",
+    "description": "With <mark class=\"docs-highlight\">staticFiles()</mark> you expose a public folder to serve static files."
+  },
+  "prefix": {
+    "title": "Global prefix",
+    "description": "The <mark class=\"docs-highlight\">setPrefix()</mark> method adds a base prefix to all registered routes.",
+    "warn": "Define the prefix early during startup to keep API-wide consistency."
+  },
+  "fileUpload": {
+    "title": "File upload",
+    "description": "To receive and store files, use <mark class=\"docs-highlight\">createUploader()</mark> with the storage type you need.",
+    "storageDescription": "Depending on selected <mark class=\"docs-highlight\">StorageType</mark>, <mark class=\"docs-highlight\">storageOptions</mark> can include two properties: <mark class=\"docs-highlight\">disk</mark> and <mark class=\"docs-highlight\">memory</mark>.",
+    "note": "Use <mark class=\"docs-highlight\">StorageType.DISK</mark> when you need disk persistence and <mark class=\"docs-highlight\">StorageType.MEMORY</mark> for in-memory temporary processing before sending to S3, Cloudinary, or another external storage."
+  }
+}

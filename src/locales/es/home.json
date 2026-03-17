@@ -1,7 +1,5 @@
 {
   "installationCommand": "npm install skyguard-js",
-  "copyInstallCommandAria": "Copiar comando de instalacion",
-  "copyInstallCommandTitle": "Copiar comando",
   "copyError": "No se pudo copiar el texto",
   "hero": {
     "badge": "Framework ligero en TypeScript",
@@ -20,7 +18,7 @@
       {
         "iconKey": "zap",
         "title": "Ligero",
-        "description": "Diseñado para mantenerse pequeño, rapido y facil de integrar en cualquier proyecto backend."
+        "description": "Diseñado para mantenerse pequeño, rápido y facil de integrar en cualquier proyecto backend."
       },
       {
         "iconKey": "box",
@@ -40,7 +38,7 @@
       {
         "iconKey": "shield",
         "title": "Arquitectura solida",
-        "description": "Enfoque en claridad interna, mantenibilidad y organizacion del framework a largo plazo."
+        "description": "Enfoque en claridad interna, mantenibilidad y organización del framework a largo plazo."
       }
     ]
   },
@@ -55,7 +53,7 @@
           },
           {
             "title": "Simplifica contratos de API",
-            "description": "Define entradas y salidas esperadas con claridad para que cada endpoint quede documentado por diseno."
+            "description": "Define entradas y salidas esperadas con claridad para que cada endpoint quede documentado por diseño."
           },
           {
             "title": "Refactorizacion sin fricción",
@@ -70,15 +68,15 @@
         "points": [
           {
             "title": "Sin instalar dependencias",
-            "description": "Valida peticiones entrantes con esquemas integrados y no instales dependencias."
+            "description": "Válida peticiones entrantes con esquemas integrados y no instales dependencias."
           },
           {
             "title": "Validación detallada",
-            "description": "Obten mensajes explicitos para payloads invalidos y valida las estructuras de las peticiones con precision."
+            "description": "Obten mensajes explicitos para payloads invalidos y valida las estructuras de las peticiones con precisión."
           },
           {
             "title": "Integracion fluida",
-            "description": "Aplica validacion a nivel de ruta para que tus handlers se mantengan limpios y legibles."
+            "description": "Aplica validación a nivel de ruta para que tus handlers se mantengan limpios y legibles."
           }
         ],
         "codeLabel": "validacion.ts",
@@ -102,8 +100,8 @@
     ]
   },
   "cta": {
-    "title": "Listo para construir mas rapido?",
-    "description": "Pasa de la documentacion al inicio de tu primer proyecto con Skyguard JS. Descubre la proxima generacion del desarrollo web impulsado por TypeScript.",
+    "title": "¿Listo para construir más rápido?",
+    "description": "Pasa de la documentación al inicio de tu primer proyecto con Skyguard JS. Descubre la próxima generación del desarrollo web impulsado por TypeScript.",
     "startButton": "Empezar con Skyguard",
     "githubButton": "Explorar en GitHub"
   }

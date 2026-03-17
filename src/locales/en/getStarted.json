@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Quick Start",
+    "lead": "Create a server with Skyguard JS in seconds."
+  },
+  "createFirstServer": {
+    "title": "Create your first server",
+    "intro": "If you already have <mark class=\"docs-highlight\">NodeJS</mark> installed on your machine, these are the simple steps to start using SkyguardJS:",
+    "steps": {
+      "packageJson": {
+        "title": "Create the package.json file"
+      },
+      "install": {
+        "title": "Install Skyguard JS"
+      },
+      "typescriptFile": {
+        "title": "Create a TypeScript file",
+        "description": "Create a new <mark class=\"docs-highlight\">server.ts</mark> file"
+      },
+      "runServer": {
+        "title": "Run your server"
+      },
+      "testServer": {
+        "title": "Test your server",
+        "description": "Open your browser and visit <mark class=\"docs-highlight\">http://localhost:3000/</mark> or use curl, Postman, or Insomnia:"
+      }
+    }
+  },
+  "addMoreRoutes": {
+    "title": "Add more routes",
+    "description": "Skyguard makes it easy to add multiple routes with different HTTP methods."
+  },
+  "handleRequestData": {
+    "title": "Handle request data",
+    "description": "To access params, query, body, and headers from the request, use the request object passed as a parameter to the handler function."
+  },
+  "addValidation": {
+    "title": "Add validation",
+    "description": "Skyguard includes built-in validation without depending on external libraries."
+  },
+  "useMiddleware": {
+    "title": "Use middlewares",
+    "description": "Add middleware to handle cross-cutting concerns."
+  },
+  "nextSteps": {
+    "title": "Next steps",
+    "items": {
+      "routing": {
+        "label": "Routing",
+        "description": "Learn how to handle dynamic routes and route patterns"
+      },
+      "middlewares": {
+        "label": "Middlewares",
+        "description": "Create reusable functions to execute across different routes"
+      },
+      "validation": {
+        "label": "Validation",
+        "description": "How to validate data with schemas"
+      },
+      "security": {
+        "label": "Security",
+        "description": "Best practices to protect your APIs"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "page": {
+    "title": "Middlewares",
+    "lead": "Middlewares are functions used for cross-cutting concerns. Middleware functions let you run code before route handlers, enabling concerns such as authentication, logging, request preprocessing, and more."
+  },
+  "basic": {
+    "title": "Basic middlewares",
+    "description": "To create a middleware, define an arrow function following this pattern:"
+  },
+  "order": {
+    "title": "Middleware order",
+    "description": "Middlewares are executed in the same order as they are registered:"
+  },
+  "scope": {
+    "title": "Global vs Group vs Route middlewares",
+    "description": "Middlewares can be registered globally, per route group, or for a specific route:"
+  },
+  "combined": {
+    "title": "Combining middlewares",
+    "description": "You can stack multiple middlewares in a route."
+  },
+  "tip": "Always call the <mark class=\"docs-highlight\">next()</mark> function to continue the request flow. If you forget it, requests will be blocked."
+}

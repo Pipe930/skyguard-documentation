@@ -1,5 +1,6 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
+import { useTranslation } from "react-i18next";
 
 const codeExampleCors = `import { cors, HttpMethods } from "skyguard-js";
 
@@ -13,62 +14,39 @@ app.middlewares(
 );`;
 
 function Cors() {
+  const { t } = useTranslation();
+  const bestPractices = t("cors.bestPractices.items", { returnObjects: true }) as string[];
+
   return (
     <>
       <section id="cors" className="docs-section">
-        <h1>CORS</h1>
-        <p>
-          CORS (Cross-Origin Resource Sharing) es una política del navegador que
-          controla qué orígenes pueden consumir tu API. Es clave para permitir
-          integraciones legítimas sin exponer el servidor a solicitudes no
-          autorizadas desde cualquier dominio.
-        </p>
+        <h1>{t("cors.page.title")}</h1>
+        <p>{t("cors.page.lead")}</p>
       </section>
       <hr />
 
       <section id="cors-importance" className="docs-section">
-        <h2>¿Por qué es importante?</h2>
-        <p>
-          Sin una configuración correcta de CORS, una aplicación frontend puede
-          quedar bloqueada por el navegador o, peor, tu API puede aceptar
-          peticiones desde orígenes no confiables.
-        </p>
+        <h2>{t("cors.importance.title")}</h2>
+        <p>{t("cors.importance.description")}</p>
         <Callout variant="warn">
-          Nota de seguridad: CORS está deshabilitado por defecto hasta que
-          definas explícitamente la propiedad{" "}
-          <mark className="docs-highlight">origin</mark>.
+          <span dangerouslySetInnerHTML={{ __html: t("cors.importance.warn") }} />
         </Callout>
       </section>
 
       <section id="cors-middleware" className="docs-section">
-        <h2>Configurar middleware CORS</h2>
-        <p>
-          Para habilitar CORS usa el middleware integrado{" "}
-          <mark className="docs-highlight">cors()</mark> e indica los orígenes y
-          métodos permitidos.
-        </p>
+        <h2>{t("cors.middleware.title")}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t("cors.middleware.description") }} />
         <CodeBlock code={codeExampleCors} />
       </section>
 
       <section id="cors-best-practices" className="docs-section">
-        <h2>Buenas prácticas</h2>
+        <h2>{t("cors.bestPractices.title")}</h2>
         <ul className="docs-lists">
-          <li>
-            Evita <mark className="docs-highlight">origin: "*"</mark> en APIs con
-            credenciales o datos sensibles.
-          </li>
-          <li>
-            Define solo los métodos HTTP necesarios en{" "}
-            <mark className="docs-highlight">methods</mark>.
-          </li>
-          <li>
-            Limita <mark className="docs-highlight">allowedHeaders</mark> a lo que
-            realmente usas.
-          </li>
-          <li>
-            Si habilitas <mark className="docs-highlight">credentials: true</mark>,
-            asegúrate de usar una lista explícita de orígenes confiables.
-          </li>
+          {bestPractices.map((item, index) => (
+            <li key={index}>
+              <span dangerouslySetInnerHTML={{ __html: item }} />
+            </li>
+          ))}
         </ul>
       </section>
     </>

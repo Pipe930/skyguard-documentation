@@ -1,0 +1,27 @@
+{
+  "page": {
+    "title": "Encryption & Hashing",
+    "lead": "Encryption and hashing are security pillars in backend systems. They protect credentials, reduce impact during leaks, and help meet baseline security requirements for modern APIs."
+  },
+  "concepts": {
+    "title": "What are they and why do they matter?",
+    "description": "<mark class=\"docs-highlight\">Encryption</mark> transforms data into a reversible format (with a key) to protect sensitive information in transit or at rest. <mark class=\"docs-highlight\">Hashing</mark> transforms data into a non-reversible digest and is especially used for passwords.",
+    "warn": "For passwords, use brute-force resistant hashing (scrypt, bcrypt, or argon2). Do not store passwords with reversible encryption."
+  },
+  "hasherExample": {
+    "title": "Hasher example (Skyguard)",
+    "description": "Skyguard includes <mark class=\"docs-highlight\">Hasher</mark> with scrypt, random salt, and support for verification and progressive rehash."
+  },
+  "hasherBatch": {
+    "title": "Batch processing",
+    "description": "For migrations or bulk validations, use <mark class=\"docs-highlight\">Hasher.hashBatch()</mark> and <mark class=\"docs-highlight\">Hasher.verifyBatch()</mark> with controlled concurrency."
+  },
+  "bcryptInstall": {
+    "title": "Install bcrypt"
+  },
+  "bcryptUsage": {
+    "title": "Common bcrypt functions",
+    "description": "This example covers <mark class=\"docs-highlight\">genSalt</mark>, <mark class=\"docs-highlight\">hash</mark>, <mark class=\"docs-highlight\">compare</mark>, and their sync variants.",
+    "tip": "In production, prioritize async bcrypt functions to avoid blocking the event loop."
+  }
+}

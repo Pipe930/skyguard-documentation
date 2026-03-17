@@ -1,0 +1,23 @@
+{
+  "page": {
+    "title": "Middlewares",
+    "lead": "Los middlewares son funciones que se usan para cuestiones transversales. Permiten ejecutar código antes de los controladores de ruta, lo que facilita tareas como autenticación, registro de logs, preprocesamiento de solicitudes y más."
+  },
+  "basic": {
+    "title": "Middlewares básicos",
+    "description": "Para crear un middleware, simplemente crea una función tipo flecha siguiendo la siguiente nomenclatura:"
+  },
+  "order": {
+    "title": "Orden de middlewares",
+    "description": "Los middlewares se ejecutaran en orden segun como los hayas registrado:"
+  },
+  "scope": {
+    "title": "Global vs Group vs Route middlewares",
+    "description": "Los middlewares se pueden registrar de manera global, por grupo de rutas o por una ruta especifica:"
+  },
+  "combined": {
+    "title": "Combinando middlewares",
+    "description": "Puedes apilar varios middlewares en una ruta."
+  },
+  "tip": "Siempre llama a la función <mark class=\"docs-highlight\">next()</mark> para continuar el flujo de las peticiones. Olvidarlo provocara que las solicitudes se bloqueen."
+}

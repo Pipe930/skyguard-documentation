@@ -1,0 +1,36 @@
+{
+  "page": {
+    "title": "CSRF Protection",
+    "lead": "CSRF (Cross-Site Request Forgery) is an attack where a malicious site tricks an authenticated user's browser into executing unwanted actions in your application."
+  },
+  "importance": {
+    "title": "Why is mitigation important?",
+    "description": "If you do not validate CSRF tokens, an attacker can force operations like transfers, password changes, or profile updates using the victim's active session.",
+    "warn": "CSRF is especially critical when using cookie-based authentication because the browser sends cookies automatically."
+  },
+  "middleware": {
+    "title": "Basic csrf() middleware",
+    "description": "Use the built-in <mark class=\"docs-highlight\">csrf()</mark> middleware to protect endpoints against CSRF attacks."
+  },
+  "howItWorks": {
+    "title": "How it works internally",
+    "items": [
+      "Issues a CSRF cookie when missing (including first GET/HEAD/OPTIONS requests and failed protected requests).",
+      "For state-changing methods (POST/PUT/PATCH/DELETE), it validates the token received in header/body against the cookie value.",
+      "Validates <mark class=\"docs-highlight\">Origin</mark>/<mark class=\"docs-highlight\">Referer</mark> in protected requests, and requires Referer in HTTPS when Origin is missing.",
+      "Rejects duplicated CSRF values in headers to avoid token parsing ambiguity."
+    ]
+  },
+  "templates": {
+    "title": "Template example (Express Handlebars)",
+    "description": "In server-side rendering, pass the CSRF token to the view and include it as a hidden field in forms."
+  },
+  "templateView": {
+    "title": "transfer.hbs view"
+  },
+  "ajax": {
+    "title": "CSRF in fetch/AJAX",
+    "description": "For AJAX requests, send the same token in headers using the name defined in <mark class=\"docs-highlight\">headerNames</mark>.",
+    "tip": "Keep the CSRF token aligned across cookie, hidden field, and header to avoid false validation positives."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "page": {
+    "title": "Enrutamiento",
+    "lead": "Aprende a definir rutas y manejar solicitudes HTTP con SkyguardJS. Proporciona un sistema de enrutamiento simple e intuitivo que admite todos los métodos HTTP y parametros de ruta dínamicos."
+  },
+  "basicRouting": {
+    "title": "Rutas básicas",
+    "description": "Para definir rutas, se usan los distintos métodos del objeto app."
+  },
+  "routeParameters": {
+    "title": "Rutas con parametros",
+    "description": "Para capturar los parametros de las peticiones, se usa la propiedad params del objeto request.",
+    "tip": "Los parametros se devuelven siempre como cadenas de texto. Utiliza los esquemas de validación para convertirlos a otros tipos."
+  },
+  "queryParameters": {
+    "title": "Rutas con queries",
+    "description": "Para acceder a los query parameters de las peticiones, se usa la propiedad query del objeto request."
+  },
+  "groupRoutes": {
+    "title": "Grupo de rutas",
+    "description": "Skyguard tiene un método para crear un grupo de rutas en base a un prefijo inicial.",
+    "note": "El método group recibe una función. Puedes crear una función aparte que reciba como parametro un <mark class=\"docs-highlight\">RouterGroup</mark>."
+  }
+}

@@ -1,5 +1,6 @@
 import Callout from "../components/ui/Callout";
 import CodeBlock from "../components/ui/CodeBlock";
+import { useTranslation } from "react-i18next";
 
 const codeExampleMiddlewares = `import { createApp } from "skyguard-js";
 
@@ -51,44 +52,46 @@ const codeExampleMiddlewaresCombined = `app.get(
 });`
 
 function Middlewares() {
+    const { t } = useTranslation();
+
     return (
         <>
         <section id="middlewares" className="docs-section">
-            <h1>Middlewares</h1>
+            <h1>{t("middlewares.page.title")}</h1>
             <p>
-                Los middlewares son básicamente funciones que se utilizan para cuestiones transversales. Las funciones middleware permiten ejecutar código antes de los controladores de ruta, lo que posibilita cuestiones transversales como autenticación, registro, logs, preprocesamiento de solicitudes, etc.
+                {t("middlewares.page.lead")}
             </p>
         </section>
         <section id="basic-middlewares" className="docs-section">
-            <h2>Middlewares Básicos</h2>
+            <h2>{t("middlewares.basic.title")}</h2>
             <p>
-                Para crear un middleware, simplemente cree una función tipo flecha, siguiendo la siguiente nomenclatura:
+                {t("middlewares.basic.description")}
             </p>
             <CodeBlock code={codeExampleMiddlewares}/>
         </section>
         <section id="middleware-order" className="docs-section">
-            <h2>Orden de Middlewares</h2>
+            <h2>{t("middlewares.order.title")}</h2>
             <p>
-                Los middlewares se ejecutaran en orden según como lo hayas registrado:
+                {t("middlewares.order.description")}
             </p>
             <CodeBlock code={codeExampleOrderMiddlewares}/>
         </section>
         <section id="middleware-global-group-route" className="docs-section">
-            <h2>Global vs Group vs Route Middlewares</h2>
+            <h2>{t("middlewares.scope.title")}</h2>
             <p>
-                Los middlewares se pueden registrar de manera global, por grupo de rutas o por una ruta específica:
+                {t("middlewares.scope.description")}
             </p>
             <CodeBlock code={codeExampleMiddlewaresRegister}/>
         </section>
         <section id="combined-middlewares" className="docs-section">
-            <h2>Combinando Middlewares</h2>
+            <h2>{t("middlewares.combined.title")}</h2>
             <p>
-                Puedes apilar varios middlewares en una ruta
+                {t("middlewares.combined.description")}
             </p>
             <CodeBlock code={codeExampleMiddlewaresCombined}/>
         </section>
         <Callout variant="tip">
-            Siempre llame a la función <mark className="docs-highlight">next()</mark> para continuar el flujo de las peticiones. Olvidarlo provocará que las solicitudes de bloquen.
+            <span dangerouslySetInnerHTML={{ __html: t("middlewares.tip") }} />
         </Callout>
         </>
     )
