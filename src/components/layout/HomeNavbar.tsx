@@ -23,7 +23,7 @@ function HomeNavbar() {
   return (
     <header className="navbar home-navbar">
       <div className="navbar-left">
-        <img src="/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
+        <img src="/skyguard-documentation//Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
       </div>
 
       <nav className="home-navbar-links" aria-label="Navegación principal">

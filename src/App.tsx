@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./globals.css";
 
 const DocsLayout = lazy(() => import("./components/layout/DocLayout"));
@@ -22,7 +22,7 @@ const EngineTemplates = lazy(() => import("./pages/EngineTemplates"));
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -51,7 +51,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
