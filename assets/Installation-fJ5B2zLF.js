@@ -1,4 +1,4 @@
-import{j as e,L as s}from"./index-9yXqAzJ7.js";import{C as r}from"./Callout-BzEIIO_Y.js";import{C as i}from"./CodeBlock-BHRitkc_.js";import{I as n}from"./CommandTabs-BUXjPA85.js";import"./createLucideIcon-BZu3VFx7.js";import"./triangle-alert-4N9rATx-.js";import"./copy-DET8tuUk.js";const a=`{
+import{j as e,L as s}from"./index-CVLVyqCr.js";import{C as r}from"./Callout-CPEMqqow.js";import{C as i}from"./CodeBlock-DqpFqFhe.js";import{I as n}from"./CommandTabs-H41b6cdv.js";import"./createLucideIcon-Ie-Bw47j.js";import"./triangle-alert-Bsll79NY.js";import"./copy-1r-K9xfu.js";const a=`{
   "compilerOptions": {
     "target": "ES2023",
     "module": "nodenext",

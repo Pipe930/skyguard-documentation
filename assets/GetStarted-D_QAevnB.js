@@ -1,4 +1,4 @@
-import{j as e,L as r}from"./index-9yXqAzJ7.js";import{C as s}from"./CodeBlock-BHRitkc_.js";import{I as a}from"./CommandTabs-BUXjPA85.js";import"./copy-DET8tuUk.js";import"./createLucideIcon-BZu3VFx7.js";const t=`import { createApp } from "skyguard-js";
+import{j as e,L as r}from"./index-CVLVyqCr.js";import{C as s}from"./CodeBlock-DqpFqFhe.js";import{I as a}from"./CommandTabs-H41b6cdv.js";import"./copy-1r-K9xfu.js";import"./createLucideIcon-Ie-Bw47j.js";const t=`import { createApp } from "skyguard-js";
 const app = createApp();
 
 app.get("/", (ctx) => {

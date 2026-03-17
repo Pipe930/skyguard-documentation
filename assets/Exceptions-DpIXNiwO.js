@@ -1,4 +1,4 @@
-import{j as e}from"./index-9yXqAzJ7.js";import{C as o}from"./CodeBlock-BHRitkc_.js";import{T as r}from"./Table-Cvj1Q4tB.js";import"./copy-DET8tuUk.js";import"./createLucideIcon-BZu3VFx7.js";const s=`import { NotFoundError InternalServerError } from "skyguard-js";
+import{j as e}from"./index-CVLVyqCr.js";import{C as o}from"./CodeBlock-DqpFqFhe.js";import{T as r}from"./Table-DJtjEYSg.js";import"./copy-1r-K9xfu.js";import"./createLucideIcon-Ie-Bw47j.js";const s=`import { NotFoundError InternalServerError } from "skyguard-js";
 
 const listResources = ["1", "2", "3"];
 
