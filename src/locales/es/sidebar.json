@@ -1,0 +1,42 @@
+{
+  "common": {
+    "title": "Skyguard Docs"
+  },
+  "sections": {
+    "gettingStarted": {
+      "title": "Empezando",
+      "links": {
+        "introduction": "Introducción",
+        "installation": "Instalación",
+        "quickStart": "Inicio Rápido"
+      }
+    },
+    "basics": {
+      "title": "Conceptos Básicos",
+      "links": {
+        "routing": "Enrutamiento",
+        "middlewares": "Middlewares",
+        "validation": "Validación",
+        "context": "Contexto",
+        "exceptions": "Excepciones"
+      }
+    },
+    "configuration": {
+      "title": "Configuración",
+      "links": {
+        "basicConfiguration": "Configuración Básica",
+        "templateEngine": "Motor de Plantillas"
+      }
+    },
+    "security": {
+      "title": "Seguridad",
+      "links": {
+        "authentication": "Autenticación",
+        "encryptionHashing": "Encriptación & Hashing",
+        "cors": "CORS",
+        "csrfProtection": "CSRF Protección",
+        "rateLimiting": "Limitador de Peticiones"
+      }
+    }
+  }
+}

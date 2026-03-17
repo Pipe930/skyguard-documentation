@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
-import {
-  X,
-} from "lucide-react";
+import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import "../../styles/sidebar.css";
 import type { SidebarProps } from "../../interfaces/sidebar.interface";
 import { docsNavigation } from "../../data/docsNavigation";
 
 function Sidebar({ isMobileOpen, onCloseMobile }: SidebarProps) {
+  const { t } = useTranslation();
+
   return (
     <>
       <div
@@ -17,13 +18,13 @@ function Sidebar({ isMobileOpen, onCloseMobile }: SidebarProps) {
       <aside className={`sidebar ${isMobileOpen ? "sidebar-mobile-open" : ""}`}>
         <div className="sidebar-mobile-header">
           <img src="/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
-          <span className="sidebar-mobile-title">Skyguard Docs</span>
+          <span className="sidebar-mobile-title">{t("sidebar.common.title")}</span>
 
           <button
             type="button"
             className="sidebar-close-button"
             onClick={onCloseMobile}
-            aria-label="Cerrar menú lateral"
+            aria-label={t("sidebar.common.closeMenu")}
           >
             <X size={18} />
           </button>
@@ -32,7 +33,9 @@ function Sidebar({ isMobileOpen, onCloseMobile }: SidebarProps) {
         <div className="sidebar-scroll">
           {docsNavigation.map(section => (
             <div key={section.title} className="sidebar-section">
-              <p className="sidebar-section-title">{section.title}</p>
+              <p className="sidebar-section-title">
+                {section.translationKey ? t(section.translationKey) : section.title}
+              </p>
 
                 <nav className="sidebar-nav">
                   {section.links.map(link => (
@@ -49,7 +52,9 @@ function Sidebar({ isMobileOpen, onCloseMobile }: SidebarProps) {
                       <span className="sidebar-link-icon">
                         <link.icon size={18} />
                       </span>
-                      <span className="sidebar-link-text">{link.label}</span>
+                      <span className="sidebar-link-text">
+                        {link.translationKey ? t(link.translationKey) : link.label}
+                      </span>
                     </NavLink>
                   ))}
                 </nav>

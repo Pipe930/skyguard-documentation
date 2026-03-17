@@ -1,0 +1,95 @@
+{
+  "page": {
+    "title": "Introducción",
+    "lead": "Bienvenidos a Skyguard JS, un framework minimalista escrito en TypeScript sin dependencias de terceros."
+  },
+  "whatIs": {
+    "title": "¿Qué es Skyguard JS?",
+    "paragraph1": "Skyguard JS es un framework minimalista fuertemente tipado escrito en TypeScript sin dependencias de terceros, para aplicaciones en el entorno de ejecución de <mark class=\"docs-highlight\">NodeJS</mark>. Ofrece distintas funcionalidades integradas, hechas con dependencias nativas de NodeJS para no tener dependencias de terceros y tener mucho mas control del proyecto.",
+    "paragraph2": "Nuestra filosofia se basa en tener un framework minimalista sin dependencias de terceros, para escribir APIs o aplicaciones web que corran desde el servidor."
+  },
+  "cards": [
+    {
+      "iconKey": "box",
+      "title": "Sin Dependencias",
+      "description": "Solo se instala la librería, nada mas. Esto garantiza mucha mas seguridad, evitamos tener bundle footprint y validaciones de seguridad de grado industrial."
+    },
+    {
+      "iconKey": "code",
+      "title": "Tipado Estricto",
+      "description": "Al estar escrito con TypeScript, permite tener tipado fuerte para evitar futuros bugs, ya que con JavaScript son muy frecuentes."
+    },
+    {
+      "iconKey": "laptop",
+      "title": "Experiencia de Desarrollo",
+      "description": "API intuitiva inspirada en Express y Fastify. Empieza a crear de inmediato con patrones familiares."
+    },
+    {
+      "iconKey": "shield",
+      "title": "Seguridad",
+      "description": "Skyguard JS implementa varias funcionalidades de seguridad integradas, como CORS, proteccion contra ataques CSRF, hashing de contraseñas, etc."
+    }
+  ],
+  "quickExample": {
+    "title": "Ejemplo rápido"
+  },
+  "comparison": {
+    "title": "Comparación con la competencia",
+    "columns": {
+      "characteristics": "Caracteristicas",
+      "express": "Express.js",
+      "koa": "Koa.js",
+      "skyguard": "Skyguard.js"
+    },
+    "rows": [
+      {
+        "characteristic": "Filosofia",
+        "express": "\"Incluye lo básico\"",
+        "koa": "Minimalista / Base",
+        "skyguardjs": "Fuertemente Tipado / Minimalista"
+      },
+      {
+        "characteristic": "Validacion",
+        "express": "Requiere `express-validator`",
+        "koa": "Requiere terceros",
+        "skyguardjs": "Esquemas de validacion nativos"
+      },
+      {
+        "characteristic": "Middlewares",
+        "express": "Basados en callbacks",
+        "koa": "Async (Modelo Cebolla)",
+        "skyguardjs": "Async (Modelo Cebolla)"
+      },
+      {
+        "characteristic": "Cookies",
+        "express": "Requiere `cookie-parser`",
+        "koa": "Integrado",
+        "skyguardjs": "Soporte nativo de Cookies"
+      },
+      {
+        "characteristic": "Sesiones",
+        "express": "Requiere `express-session`",
+        "koa": "Requiere `koa-session`",
+        "skyguardjs": "Soporte nativo de Sesiones"
+      },
+      {
+        "characteristic": "TypeScript",
+        "express": "Via `@types/express`",
+        "koa": "Via `@types/koa`",
+        "skyguardjs": "Soporte nativo de TypeScript"
+      },
+      {
+        "characteristic": "Dependencias",
+        "express": "~30+ transitivas",
+        "koa": "~20+ transitivas",
+        "skyguardjs": "0 Dependencias"
+      }
+    ]
+  },
+  "callout": {
+    "title": "¿Listo para probarlo?",
+    "prefix": "Salta a la sección de",
+    "guideLink": "Guía de Inicio",
+    "suffix": "para crear tu primer servidor con este poderoso framework."
+  }
+}

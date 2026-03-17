@@ -3,9 +3,15 @@ import { initReactI18next } from "react-i18next";
 import enNavbar from "./locales/en/navbar.json";
 import enHome from "./locales/en/home.json";
 import enFooter from "./locales/en/footer.json";
+import enSidebar from "./locales/en/sidebar.json";
+import enDocsPageNavigation from "./locales/en/docsPageNavigation.json";
+import enIntroduction from "./locales/en/introduction.json";
 import esNavbar from "./locales/es/navbar.json";
 import esHome from "./locales/es/home.json";
 import esFooter from "./locales/es/footer.json";
+import esSidebar from "./locales/es/sidebar.json";
+import esDocsPageNavigation from "./locales/es/docsPageNavigation.json";
+import esIntroduction from "./locales/es/introduction.json";
 
 const resources = {
   en: {
@@ -13,6 +19,9 @@ const resources = {
       navbar: enNavbar,
       home: enHome,
       footer: enFooter,
+      sidebar: enSidebar,
+      docsPageNavigation: enDocsPageNavigation,
+      introduction: enIntroduction,
     },
   },
   es: {
@@ -20,6 +29,9 @@ const resources = {
       navbar: esNavbar,
       home: esHome,
       footer: esFooter,
+      sidebar: esSidebar,
+      docsPageNavigation: esDocsPageNavigation,
+      introduction: esIntroduction,
     },
   },
 };
