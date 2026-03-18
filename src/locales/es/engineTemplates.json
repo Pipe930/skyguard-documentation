@@ -9,7 +9,7 @@
   },
   "render": {
     "title": "Uso con Response.render()",
-    "description": "Despues de configurar carpeta y motor, utiliza <mark class=\"docs-highlight\">Response.render()</mark> para enviar la vista con los datos dinámicos."
+    "description": "Después de configurar carpeta y motor, utiliza <mark class=\"docs-highlight\">Response.render()</mark> para enviar la vista con los datos dinámicos."
   },
   "compatible": {
     "title": "Motores compatibles actualmente",

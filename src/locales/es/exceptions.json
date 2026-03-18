@@ -1,20 +1,20 @@
 {
   "page": {
     "title": "Excepciones",
-    "lead": "El framework provee un conjunto de excepciones HTTP integradas que puedes lanzar desde handlers de rutas o middlewares. Cuando se lanza una excepcion, el framework la detecta y responde automaticamente con el codigo de estado y el mensaje que definiste en la clase."
+    "lead": "El framework provee un conjunto de excepciones HTTP integradas que puedes lanzar desde handlers de rutas o middlewares. Cuando se lanza una excepción, el framework la detecta y responde automaticamente con el código de estado y el mensaje que definiste en la clase."
   },
   "usage": {
     "title": "Ejemplo de uso",
-    "description": "Puedes lanzar excepciones de forma explicita para errores de negocio (por ejemplo, recurso no encontrado) y envolver errores inesperados con una excepcion 500 para mantener respuestas consistentes."
+    "description": "Puedes lanzar excepciones de forma explícita para errores de negocio (por ejemplo, recurso no encontrado) y envolver errores inesperados con una excepción 500 para mantener respuestas consistentes."
   },
   "types": {
     "title": "Tipos de excepciones",
     "description": "Estas son las excepciones HTTP soportadas por SkyguardJS y lo que representa cada una.",
     "columns": {
-      "exception": "Excepcion",
+      "exception": "Excepción",
       "status": "Status",
       "code": "Code",
-      "description": "Que representa?"
+      "description": "¿Qué representa?"
     },
     "rows": [
       {

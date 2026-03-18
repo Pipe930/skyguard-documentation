@@ -9,7 +9,7 @@
   },
   "bodyCookiesSession": {
     "title": "Body, cookies y session",
-    "description": "Con <mark class=\"docs-highlight\">context.body</mark>, <mark class=\"docs-highlight\">context.cookies</mark> y <mark class=\"docs-highlight\">context.session</mark> puedes acceder al payload, cookies y sesion activa."
+    "description": "Con <mark class=\"docs-highlight\">context.body</mark>, <mark class=\"docs-highlight\">context.cookies</mark> y <mark class=\"docs-highlight\">context.session</mark> puedes acceder al payload, cookies y sesión activa."
   },
   "reqRes": {
     "title": "Acceso directo a req y res",

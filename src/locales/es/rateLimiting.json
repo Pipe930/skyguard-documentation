@@ -1,10 +1,10 @@
 {
   "page": {
     "title": "Limitador de peticiones",
-    "lead": "El limitador de peticiones o rate limiting limita la cantidad de solicitudes que un cliente puede realizar en una ventana de tiempo. Es una capa clave para proteger tu API de abuso, fuerza bruta y picos de tráfico no controlados."
+    "lead": "El limitador de peticiones o rate limiting límita la cantidad de solicitudes que un cliente puede realizar en una ventana de tiempo. Es una capa clave para proteger tu API de abuso, fuerza bruta y picos de tráfico no controlados."
   },
   "importance": {
-    "title": "Para que se utiliza?",
+    "title": "¿Para que se utiliza?",
     "items": [
       "Reducir ataques de fuerza bruta en login y endpoints sensibles.",
       "Evitar saturación del servidor por tráfico excesivo.",
@@ -18,7 +18,7 @@
   },
   "sensitiveRoutes": {
     "title": "Ejemplo en rutas sensibles",
-    "description": "Es recomendable aplicar limites mas estrictos en endpoints de autenticación o recuperación de cuentas."
+    "description": "Es recomendable aplicar límites mas estrictos en endpoints de autenticación o recuperación de cuentas."
   },
   "keyGenerator": {
     "title": "Personalizar keyGenerator",
@@ -30,7 +30,7 @@
   },
   "customHandler": {
     "title": "Respuesta personalizada con handler",
-    "description": "Puedes ajustar <mark class=\"docs-highlight\">statusCode</mark>, <mark class=\"docs-highlight\">message</mark> y definir un <mark class=\"docs-highlight\">handler</mark> para retornar un formato de error propio. Tambien puedes controlar headers con <mark class=\"docs-highlight\">standardHeaders</mark> y <mark class=\"docs-highlight\">legacyHeaders</mark>."
+    "description": "Puedes ajustar <mark class=\"docs-highlight\">statusCode</mark>, <mark class=\"docs-highlight\">message</mark> y definir un <mark class=\"docs-highlight\">handler</mark> para retornar un formato de error propio. También puedes controlar headers con <mark class=\"docs-highlight\">standardHeaders</mark> y <mark class=\"docs-highlight\">legacyHeaders</mark>."
   },
   "multiInstance": {
     "title": "Despliegues multi-instancia",

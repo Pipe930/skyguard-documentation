@@ -5,7 +5,7 @@
   },
   "createFirstServer": {
     "title": "Crea tu primer servidor",
-    "intro": "Si ya tienes <mark class=\"docs-highlight\">NodeJS</mark> instalado en tu maquina, estos son los pasos sencillos para utilizar SkyguardJS:",
+    "intro": "Si ya tienes <mark class=\"docs-highlight\">NodeJS</mark> instalado en tu máquina, estos son los pasos sencillos para utilizar SkyguardJS:",
     "steps": {
       "packageJson": {
         "title": "Crea el archivo package.json"
@@ -28,7 +28,7 @@
   },
   "addMoreRoutes": {
     "title": "Añadir más rutas",
-    "description": "Skyguard facilita la adición de múltiples routes con diferentes metodos HTTP."
+    "description": "Skyguard facilita la adición de múltiples routes con diferentes métodos HTTP."
   },
   "handleRequestData": {
     "title": "Gestionar datos de request",
@@ -55,7 +55,7 @@
       },
       "validation": {
         "label": "Validaciones",
-        "description": "Como hacer validaciones con los esquemas"
+        "description": "Cómo hacer validaciones con los esquemas"
       },
       "security": {
         "label": "Seguridad",

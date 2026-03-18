@@ -1,7 +1,7 @@
 {
   "page": {
-    "title": "Configuracion",
-    "lead": "Skyguard permite configurar el servidor con pocos metodos. En esta seccion veras como usar logger(), staticFiles() y setPrefix(), ademas de la carga de archivos con createUploader()."
+    "title": "Configuración",
+    "lead": "Skyguard permite configurar el servidor con pocos metodos. En esta sección veras como usar logger(), staticFiles() y setPrefix(), ademas de la carga de archivos con createUploader()."
   },
   "logger": {
     "title": "Logger",

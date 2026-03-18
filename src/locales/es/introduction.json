@@ -6,7 +6,7 @@
   "whatIs": {
     "title": "¿Qué es Skyguard JS?",
     "paragraph1": "Skyguard JS es un framework minimalista fuertemente tipado escrito en TypeScript sin dependencias de terceros, para aplicaciones en el entorno de ejecución de <mark class=\"docs-highlight\">NodeJS</mark>. Ofrece distintas funcionalidades integradas, hechas con dependencias nativas de NodeJS para no tener dependencias de terceros y tener mucho mas control del proyecto.",
-    "paragraph2": "Nuestra filosofia se basa en tener un framework minimalista sin dependencias de terceros, para escribir APIs o aplicaciones web que corran desde el servidor."
+    "paragraph2": "Nuestra filosofía se basa en tener un framework minimalista sin dependencias de terceros, para escribir APIs o aplicaciones web que corran desde el servidor."
   },
   "cards": [
     {
@@ -27,7 +27,7 @@
     {
       "iconKey": "shield",
       "title": "Seguridad",
-      "description": "Skyguard JS implementa varias funcionalidades de seguridad integradas, como CORS, proteccion contra ataques CSRF, hashing de contraseñas, etc."
+      "description": "Skyguard JS implementa varias funcionalidades de seguridad integradas, como CORS, protección contra ataques CSRF, hashing de contraseñas, etc."
     }
   ],
   "quickExample": {
@@ -36,14 +36,14 @@
   "comparison": {
     "title": "Comparación con la competencia",
     "columns": {
-      "characteristics": "Caracteristicas",
+      "characteristics": "Características",
       "express": "Express.js",
       "koa": "Koa.js",
       "skyguard": "Skyguard.js"
     },
     "rows": [
       {
-        "characteristic": "Filosofia",
+        "characteristic": "Filosofía",
         "express": "\"Incluye lo básico\"",
         "koa": "Minimalista / Base",
         "skyguardjs": "Fuertemente Tipado / Minimalista"
@@ -52,7 +52,7 @@
         "characteristic": "Validacion",
         "express": "Requiere `express-validator`",
         "koa": "Requiere terceros",
-        "skyguardjs": "Esquemas de validacion nativos"
+        "skyguardjs": "Esquemas de validación nativos"
       },
       {
         "characteristic": "Middlewares",

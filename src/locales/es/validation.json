@@ -4,7 +4,7 @@
     "lead": "Descubre el potente sistema de validación de SkyguardJS. Proporciona validación de solicitudes integrada sin instalar dependencias, garantizando la integridad de los datos con menos sobrecarga."
   },
   "basic": {
-    "title": "Validación basica",
+    "title": "Validación básica",
     "description": "Para crear esquemas de validación, utiliza el constructor <mark class=\"docs-highlight\">v</mark> para especificar reglas, la función <mark class=\"docs-highlight\">schema</mark> para crear el esquema y el middleware <mark class=\"docs-highlight\">validationRequest()</mark> para registrarlo en una ruta especifica."
   },
   "types": {
@@ -34,7 +34,7 @@
   },
   "errorHandling": {
     "title": "Manejo de errores",
-    "description": "Cuando falla la validación, Skyguard devuelve automáticamente un error 400 con los detalles:",
+    "description": "Cuándo falla la validación, Skyguard devuelve automáticamente un error 400 con los detalles:",
     "warn": "Los errores de validación se gestionan automáticamente. No es necesario escribir código de manejo de errores."
   }
 }

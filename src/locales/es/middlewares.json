@@ -13,7 +13,7 @@
   },
   "scope": {
     "title": "Global vs Group vs Route middlewares",
-    "description": "Los middlewares se pueden registrar de manera global, por grupo de rutas o por una ruta especifica:"
+    "description": "Los middlewares se pueden registrar de manera global, por grupo de rutas o por una ruta específica:"
   },
   "combined": {
     "title": "Combinando middlewares",

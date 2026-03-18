@@ -4,8 +4,8 @@
     "lead": "La autenticación es el proceso de verificar la identidad de un cliente antes de permitir acceso a recursos protegidos. En backend es esencial para controlar permisos, proteger datos sensibles y reducir riesgo de suplantación de identidad."
   },
   "importance": {
-    "title": "¿Por que es esencial en backend?",
-    "description": "En una API, autenticación y autorización no son lo mismo. Primero se válida <mark class=\"docs-highlight\">quien eres</mark> (autenticación), luego se válida <mark class=\"docs-highlight\">que puedes hacer</mark> (autorizacion). Si omites la autenticación, cualquier cliente podria ejecutar acciones privilegiadas.",
+    "title": "¿Por qué es esencial en backend?",
+    "description": "En una API, autenticación y autorización no son lo mismo. Primero se válida <mark class=\"docs-highlight\">quién eres</mark> (autenticación), luego se válida <mark class=\"docs-highlight\">que puedes hacer</mark> (autorizacion). Si omites la autenticación, cualquier cliente podria ejecutar acciones privilegiadas.",
     "note": "Buenas practicas minimas: credenciales en hash, tokens con expiración, cookies de sesión con <mark class=\"docs-highlight\">httpOnly</mark> y rotación de secretos."
   },
   "basic": {
@@ -13,7 +13,7 @@
     "description": "Este ejemplo usa una lista en memoria para validar usuario y contraseña. Es ideal para entender el flujo antes de conectar base de datos."
   },
   "sessions": {
-    "title": "Autenticacion con sesiones",
+    "title": "Autenticación con sesiones",
     "description": "Skyguard provee el middleware <mark class=\"docs-highlight\">sessions()</mark> y tres estrategias de almacenamiento: memoria, archivo JSON y base de datos. Todas comparten el mismo patrón de login y acceso a <mark class=\"docs-highlight\">request.session</mark>.",
     "memory": {
       "title": "Session storage en memoria",
@@ -65,7 +65,7 @@
     "createTitle": "Crear JWT en login",
     "middlewareTitle": "Middleware para validar JWT",
     "algorithmsTitle": "Algoritmos soportados por JWT",
-    "algorithmsWarn": "Aclaración criptográfica: los algoritmos <mark class=\"docs-highlight\">HS*</mark> usan clave simétrica compartida; los <mark class=\"docs-highlight\">RS*</mark> usan par de claves asimétricas (privada/publica).",
+    "algorithmsWarn": "Aclaración criptográfica: los algoritmos <mark class=\"docs-highlight\">HS*</mark> usan clave simétrica compartida; los <mark class=\"docs-highlight\">RS*</mark> usan par de claves asimétricas (privada/pública).",
     "columns": {
       "algorithm": "Algoritmo",
       "type": "Tipo",
@@ -77,7 +77,7 @@
         "algorithm": "HS256",
         "type": "HMAC (simétrico)",
         "keyRequirement": "Una clave secreta compartida",
-        "recommendedUsage": "Servicios internos con secreto robusto y rotacion"
+        "recommendedUsage": "Servicios internos con secreto robusto y rotación"
       },
       {
         "algorithm": "HS384",
@@ -89,7 +89,7 @@
         "algorithm": "HS512",
         "type": "HMAC (simétrico)",
         "keyRequirement": "Una clave secreta compartida",
-        "recommendedUsage": "Mayor margen criptografico en entornos estrictos"
+        "recommendedUsage": "Mayor margen criptográfico en entornos estrictos"
       },
       {
         "algorithm": "RS256",
