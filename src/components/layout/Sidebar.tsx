@@ -17,7 +17,7 @@ function Sidebar({ isMobileOpen, onCloseMobile }: SidebarProps) {
 
       <aside className={`sidebar ${isMobileOpen ? "sidebar-mobile-open" : ""}`}>
         <div className="sidebar-mobile-header">
-          <img src="/Skyguard-js-icon.ico" alt="Logo" className="navbar-logo" />
+          <img src="/skyguard-documentation/Skyguard-js-icon.ico" alt="Logo" className="sidebar-logo" />
           <span className="sidebar-mobile-title">{t("sidebar.common.title")}</span>
 
           <button

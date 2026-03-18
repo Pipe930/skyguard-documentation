@@ -3,8 +3,8 @@
     "title": "Documentación",
     "introduction": "Introducción",
     "gettingStarted": "Empezando",
-    "routing": "Enrutamiento",
-    "middlewares": "Middleware"
+    "coreConcepts": "Conceptos Básicos",
+    "home": "Inicio"
   },
   "project": {
     "title": "Proyecto",

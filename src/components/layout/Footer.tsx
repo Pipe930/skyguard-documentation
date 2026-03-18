@@ -16,6 +16,9 @@ function Footer() {
 
           <div className="footer-column">
             <h4>{t("footer.docs.title")}</h4>
+            <Link to="/">
+              {t("footer.docs.home")}
+            </Link>
             <Link to="/docs/introduction">
               {t("footer.docs.introduction")}
             </Link>
@@ -23,10 +26,7 @@ function Footer() {
               {t("footer.docs.gettingStarted")}
             </Link>
             <Link to="/docs/routing">
-              {t("footer.docs.routing")}
-            </Link>
-            <Link to="/docs/middlewares">
-              {t("footer.docs.middlewares")}
+              {t("footer.docs.coreConcepts")}
             </Link>
           </div>
 

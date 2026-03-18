@@ -3,8 +3,8 @@
     "title": "Documentation",
     "introduction": "Introduction",
     "gettingStarted": "Getting Started",
-    "routing": "Routing",
-    "middlewares": "Middlewares"
+    "coreConcepts": "Core Concepts",
+    "home": "Home"
   },
   "project": {
     "title": "Project",
