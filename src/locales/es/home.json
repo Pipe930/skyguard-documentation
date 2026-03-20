@@ -75,12 +75,12 @@
             "description": "Obten mensajes explicitos para payloads invalidos y valida las estructuras de las peticiones con precisión."
           },
           {
-            "title": "Integracion fluida",
+            "title": "Integración fluida",
             "description": "Aplica validación a nivel de ruta para que tus handlers se mantengan limpios y legibles."
           }
         ],
         "codeLabel": "validacion.ts",
-        "code": "import { createApp, v, schema, validatorRequest } from \"skyguard-js\";\nconst app = createApp();\n\nconst userSchema = schema({\n  body: {  \n    name: v.string({ minLength: 3 }),\n    email: v.string().email(),\n  }\n});\n\napp.post(\"/users\", [validatorRequest(userSchema)], (ctx) => {\n  return { creado: true, user: ctx.body };\n});"
+        "code": "import { createApp, v, schema, validateRequest } from \"skyguard-js\";\nconst app = createApp();\n\nconst userSchema = schema({\n  body: {  \n    name: v.string({ minLength: 3 }),\n    email: v.string().email(),\n  }\n});\n\napp.post(\"/users\", [validateRequest(userSchema)], (ctx) => {\n  return { creado: true, user: ctx.body };\n});"
       },
       {
         "title": "Sin dependencias",
@@ -90,7 +90,7 @@
             "description": "No instales dependencias de terceros, el framework cuenta con todo lo necesario para crear APIs."
           },
           {
-            "title": "Proteccion contra ataques",
+            "title": "Protección contra ataques",
             "description": "Cuenta con funciones integradas para protección de ataques, funciones como CSRF, rate limiter, CORS, encriptación y hashing de contraseñas."
           }
         ],

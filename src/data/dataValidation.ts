@@ -100,7 +100,7 @@ export const codeExampleCompleteSchema = `const completeSchema = schema({
   },
 })
   
-app.post("/user", validationRequest(completeSchema), (ctx) => {
+app.post("/user", [validateRequest(completeSchema)], (ctx) => {
   const { id } = ctx.params;
   const { page, limit } = ctx.query;
   const { title, content } = ctx.body;
@@ -135,7 +135,7 @@ export const codeExampleArrayValidation = `const batchSchema = schema({
   }
 });
  
-app.post("/users/batch", [validationRequest(batchSchema)], (ctx) => {
+app.post("/users/batch", [validateRequest(batchSchema)], (ctx) => {
   const { users } = ctx.body;
   // users is User[] with min 1, max 100 items
 });`;

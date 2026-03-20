@@ -19,6 +19,7 @@ function ContextPage() {
         <p dangerouslySetInnerHTML={{ __html: t("requestResponse.page.lead") }} />
       </section>
       <hr />
+      <mark className=""></mark>
       <section id="context-accessors" className="docs-section">
         <h2>{t("requestResponse.accessors.title")}</h2>
         <p dangerouslySetInnerHTML={{ __html: t("requestResponse.accessors.description") }} />

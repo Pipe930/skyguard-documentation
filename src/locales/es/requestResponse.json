@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "Contexto",
-    "lead": "Context unifica los objetos Request y Response en una sola API para middlewares y handlers."
+    "lead": "<mark class=\"docs-highlight\">Context</mark> unifica los objetos <mark class=\"docs-highlight\">Request</mark> y <mark class=\"docs-highlight\">Response</mark> en una sola API para middlewares y handlers."
   },
   "accessors": {
     "title": "Lectura de datos de petición",

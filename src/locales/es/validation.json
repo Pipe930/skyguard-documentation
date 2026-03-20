@@ -5,7 +5,7 @@
   },
   "basic": {
     "title": "Validación básica",
-    "description": "Para crear esquemas de validación, utiliza el constructor <mark class=\"docs-highlight\">v</mark> para especificar reglas, la función <mark class=\"docs-highlight\">schema</mark> para crear el esquema y el middleware <mark class=\"docs-highlight\">validationRequest()</mark> para registrarlo en una ruta especifica."
+    "description": "Para crear esquemas de validación, utiliza el constructor <mark class=\"docs-highlight\">v</mark> para especificar reglas, la función <mark class=\"docs-highlight\">schema</mark> para crear el esquema y el middleware <mark class=\"docs-highlight\">validateRequest()</mark> para registrarlo en una ruta especifica."
   },
   "types": {
     "title": "Validación de tipos",
