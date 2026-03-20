@@ -17,8 +17,22 @@ type SearchEntryDefinition = {
   sectionKey?: string;
 };
 
-const normalizeText = (value: string) =>
+const stripHtmlTags = (value: string) => value.replace(/<[^>]*>/g, " ");
+
+const decodeHtmlEntities = (value: string) =>
   value
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'");
+
+const sanitizeSearchText = (value: string) =>
+  decodeHtmlEntities(stripHtmlTags(value)).replace(/\s+/g, " ").trim();
+
+const normalizeText = (value: string) =>
+  sanitizeSearchText(value)
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -30,14 +44,20 @@ const createEntry = (
   route: string,
   content: string,
   section?: string,
-): SearchEntry => ({
-  id,
-  title,
-  route,
-  section,
-  content,
-  searchableText: normalizeText(`${title} ${section ?? ""} ${content}`),
-});
+): SearchEntry => {
+  const sanitizedTitle = sanitizeSearchText(title);
+  const sanitizedSection = section ? sanitizeSearchText(section) : undefined;
+  const sanitizedContent = sanitizeSearchText(content);
+
+  return {
+    id,
+    title: sanitizedTitle,
+    route,
+    section: sanitizedSection,
+    content: sanitizedContent,
+    searchableText: normalizeText(`${sanitizedTitle} ${sanitizedSection ?? ""} ${sanitizedContent}`),
+  };
+};
 
 const GETTING_STARTED_SECTION = "sidebar.sections.gettingStarted.title";
 const BASICS_SECTION = "sidebar.sections.basics.title";
