@@ -1,4 +1,4 @@
-import{j as t}from"./index-AJrTjCO-.js";import{C as o}from"./Callout-CrxKFo1l.js";import{C as i}from"./CodeBlock-BFJ7rdmv.js";import{u as c}from"./createLucideIcon-BXFtYZs2.js";import"./triangle-alert-DMqqz8xL.js";import"./copy-qIaFTmYD.js";const m=`import { rateLimit } from "skyguard-js";
+import{j as t}from"./index-BYLENJzT.js";import{C as o}from"./Callout-CNABm0bs.js";import{C as i}from"./CodeBlock-BktDhWg6.js";import{u as c}from"./createLucideIcon-CNrYo-mO.js";import"./triangle-alert-svta8DRN.js";import"./copy-CaZlgTTj.js";const m=`import { rateLimit } from "skyguard-js";
 
 const apiRateLimit = rateLimit({
   windowMs: 60_000, // 1 minuto

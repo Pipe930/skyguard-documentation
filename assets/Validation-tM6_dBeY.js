@@ -1,4 +1,4 @@
-import{j as e}from"./index-AJrTjCO-.js";import{C as t}from"./Callout-CrxKFo1l.js";import{C as s}from"./CodeBlock-BFJ7rdmv.js";import{u as a}from"./createLucideIcon-BXFtYZs2.js";import"./triangle-alert-DMqqz8xL.js";import"./copy-qIaFTmYD.js";const n=`import { v, schema, validateRequest } from "skyguard-js";
+import{j as e}from"./index-BYLENJzT.js";import{C as t}from"./Callout-CNABm0bs.js";import{C as s}from"./CodeBlock-BktDhWg6.js";import{u as a}from"./createLucideIcon-CNrYo-mO.js";import"./triangle-alert-svta8DRN.js";import"./copy-CaZlgTTj.js";const n=`import { v, schema, validateRequest } from "skyguard-js";
 
 const userSchema = schema({
   body: {

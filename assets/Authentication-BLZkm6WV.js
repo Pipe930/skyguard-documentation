@@ -1,4 +1,4 @@
-import{j as e}from"./index-AJrTjCO-.js";import{C as a}from"./Callout-CrxKFo1l.js";import{C as t}from"./CodeBlock-BFJ7rdmv.js";import{T as i}from"./Table-C0Nf9p4d.js";import{u as c}from"./createLucideIcon-BXFtYZs2.js";import"./triangle-alert-DMqqz8xL.js";import"./copy-qIaFTmYD.js";const l=`import { createApp, UnauthorizedError } from "skyguard-js";
+import{j as e}from"./index-BYLENJzT.js";import{C as a}from"./Callout-CNABm0bs.js";import{C as t}from"./CodeBlock-BktDhWg6.js";import{T as i}from"./Table-BNVTg6UX.js";import{u as c}from"./createLucideIcon-CNrYo-mO.js";import"./triangle-alert-svta8DRN.js";import"./copy-CaZlgTTj.js";const l=`import { createApp, UnauthorizedError } from "skyguard-js";
 const app = createApp();
 
 const users = [

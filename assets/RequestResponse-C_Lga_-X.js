@@ -1,4 +1,4 @@
-import{j as e}from"./index-AJrTjCO-.js";import{C as o}from"./Callout-CrxKFo1l.js";import{C as t}from"./CodeBlock-BFJ7rdmv.js";import{u as n}from"./createLucideIcon-BXFtYZs2.js";import"./triangle-alert-DMqqz8xL.js";import"./copy-qIaFTmYD.js";const r=`import { createApp } from "skyguard-js";
+import{j as e}from"./index-BYLENJzT.js";import{C as o}from"./Callout-CNABm0bs.js";import{C as t}from"./CodeBlock-BktDhWg6.js";import{u as n}from"./createLucideIcon-CNrYo-mO.js";import"./triangle-alert-svta8DRN.js";import"./copy-CaZlgTTj.js";const r=`import { createApp } from "skyguard-js";
 const app = createApp();
 
 app.get("/users/{id}", (context) => {
