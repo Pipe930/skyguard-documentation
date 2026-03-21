@@ -7,11 +7,6 @@ app.get("/", (ctx) => {
 
 app.run(3000);`;
 
-export const codeRunServer = `node --experimental-specifier-resolution=node server.ts
-
-# Using tsx (recommended)
-tsx server.ts`;
-
 export const codeExampleRoutes = `import { createApp } from "skyguard-js";
 const app = createApp();
 

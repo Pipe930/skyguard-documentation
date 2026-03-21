@@ -47,10 +47,16 @@ function Installation() {
         <p>{t("installation.prerequisites.description")}</p>
         <ul className="docs-lists">
           <li>
-            <strong>{t("installation.prerequisites.node")}</strong> (v22 or higher)
+            <strong>{t("installation.prerequisites.node")}</strong> {t("installation.prerequisites.nodeText")}
           </li>
           <li>
-            <strong>{t("installation.prerequisites.typescript")}</strong> (v5 or higher)
+            <strong>{t("installation.prerequisites.deno")}</strong> {t("installation.prerequisites.denoText")}
+          </li>
+          <li>
+            <strong>{t("installation.prerequisites.bun")}</strong> {t("installation.prerequisites.bunText")}
+          </li>
+          <li>
+            <strong>{t("installation.prerequisites.typescript")}</strong> {t("installation.prerequisites.typescriptText")}
           </li>
         </ul>
       </section>
@@ -58,7 +64,7 @@ function Installation() {
       <section id="quick-install" className="docs-section">
         <h2>{t("installation.quickInstall.title")}</h2>
         <p>{t("installation.quickInstall.description")}</p>
-        <InstallCommandTabs />
+        <InstallCommandTabs packageManagers={["npm", "pnpm", "yarn", "deno", "bun"]} commandByManager={{npm: "npm install skyguard-js", pnpm: "pnpm add skyguard-js", yarn: "yarn add skyguard-js", deno: "deno add npm:skyguard-js", bun: "bun add skyguard-js"}} />
       </section>
 
       <section id="typescript-configuration" className="docs-section">
@@ -74,7 +80,10 @@ function Installation() {
         <CodeBlock code={createApp} />
 
         <p style={{ marginTop: "20px" }}>{t("installation.verify.runServer")}</p>
-        <CodeBlock code="tsx src/server.ts" />
+        <InstallCommandTabs packageManagers={["node", "deno", "bun"]} commandByManager={{node: `node --watch server.ts
+ 
+# or with tsx
+tsx server.ts`, deno: "deno run --allow-net --allow-env --allow-read --allow-ffi server.ts", bun: "bun run server.ts"}} />
         <Callout variant="note">{t("installation.verify.note")}</Callout>
       </section>
 

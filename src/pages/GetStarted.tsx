@@ -7,8 +7,7 @@ import {
   codeExampleMiddleware,
   codeExampleRequest,
   codeExampleRoutes,
-  codeExampleValidation,
-  codeRunServer,
+  codeExampleValidation
 } from "../data/dataGetStarted";
 
 function GetStarted() {
@@ -36,7 +35,7 @@ function GetStarted() {
             <p>
               <strong>{t("getStarted.createFirstServer.steps.install.title")}</strong>
             </p>
-            <InstallCommandTabs />
+            <InstallCommandTabs packageManagers={["npm", "pnpm", "yarn", "deno", "bun"]} commandByManager={{npm: "npm install skyguard-js", pnpm: "pnpm add skyguard-js", yarn: "yarn add skyguard-js", deno: "deno add npm:skyguard-js", bun: "bun add skyguard-js"}} />
           </li>
           <li>
             <p>
@@ -50,7 +49,10 @@ function GetStarted() {
             <p>
               <strong>{t("getStarted.createFirstServer.steps.runServer.title")}</strong>
             </p>
-            <CodeBlock code={codeRunServer} />
+            <InstallCommandTabs packageManagers={["node", "deno", "bun"]} commandByManager={{node: `node --watch server.ts
+ 
+# or with tsx
+tsx server.ts`, deno: "deno run --allow-net --allow-env --allow-read --allow-ffi server.ts", bun: "bun run server.ts"}} />
           </li>
           <li>
             <p>

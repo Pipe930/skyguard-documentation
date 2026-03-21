@@ -22,6 +22,7 @@
 .docs-lists {
     margin-left: 25px;
     list-style: circle;
+    margin-top: 20px;
 }
 
 .docs-lists li {

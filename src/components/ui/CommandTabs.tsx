@@ -2,18 +2,8 @@ import { useMemo, useState } from "react";
 import "../../styles/command-tabs.css";
 import CodeBlock from "./CodeBlock";
 
-const packageManagers = ["npm", "pnpm", "yarn"] as const;
-
-type PackageManager = (typeof packageManagers)[number];
-
-const commandByManager: Record<PackageManager, string> = {
-  npm: "npm install skyguard-js",
-  pnpm: "pnpm add skyguard-js",
-  yarn: "yarn add skyguard-js",
-};
-
-function InstallCommandTabs() {
-  const [activeManager, setActiveManager] = useState<PackageManager>("npm");
+function InstallCommandTabs({ packageManagers, commandByManager }: { packageManagers: string[], commandByManager: Record<string, string> }) {
+  const [activeManager, setActiveManager] = useState<string>(packageManagers[0]);
 
   const command = useMemo(
     () => commandByManager[activeManager],

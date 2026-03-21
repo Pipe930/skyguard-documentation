@@ -159,7 +159,7 @@ function Home() {
 
           <div className="hero-visual">
             <img
-              src="/skyguard-documentation/logo-skyguard-js.png"
+              src="/skyguard-documentation/logo-skyguard-js.webp"
               alt={t("home.hero.logoAlt")}
               className="hero-logo"
             />
@@ -182,6 +182,29 @@ function Home() {
               />
             ))}
           </div>
+        </section>
+
+        <section className="runtime-support">
+          <div className="runtime-support-heading">
+            <h2>{t("home.runtimes.heading")}</h2>
+            <p>{t("home.runtimes.description")}</p>
+          </div>
+
+          <div className="runtime-logos" aria-label={t("home.runtimes.logosAria")}>
+            <a href="https://nodejs.org/" target="_blank">
+              <img src="/skyguard-documentation/nodejs-icon.webp" className="runtime-logo" alt="nodejs logo" />
+            </a>
+            <a href="https://deno.com/" target="_blank">
+              <img src="/skyguard-documentation/icon-dark.webp" className="runtime-logo" alt="deno logo" />
+            </a>
+            <a href="https://bun.com/" target="_blank">
+              <img src="/skyguard-documentation/Bun.webp" className="runtime-logo" alt="bun logo" />
+            </a>
+          </div>
+
+          <ul className="runtime-benefits">
+            <li>{t("home.runtimes.slogan")}</li>
+          </ul>
         </section>
 
         <section className="example">

@@ -1,13 +1,19 @@
 {
   "page": {
     "title": "Instalación",
-    "lead": "En este apartado aprenderas a instalar y configurar SkyguardJS en tu proyecto."
+    "lead": "En este apartado aprenderas a instalar y configurar Skyguard JS en tu proyecto."
   },
   "prerequisites": {
     "title": "Prerequisitos",
-    "description": "Antes de instalar SkyguardJS, asegurate de tener instalado NodeJS y TypeScript en las siguientes versiones:",
+    "description": "Antes de instalar Skyguard JS, asegurate de tener instalado uno de los siguientes entornos de ejecución de Javascript, y también tener instalado TypeScript en las siguientes versiones:",
     "node": "Node.js",
-    "typescript": "TypeScript"
+    "nodeText": "(v22 o superior)",
+    "deno": "Deno",
+    "denoText": "(v2.5 o superior)",
+    "bun": "Bun",
+    "bunText": "(v1.2 o superior)",
+    "typescript": "TypeScript",
+    "typescriptText": "(v5 o superior)"
   },
   "quickInstall": {
     "title": "Instalación del paquete",
@@ -15,7 +21,7 @@
   },
   "typescriptConfiguration": {
     "title": "Configuración de TypeScript",
-    "description": "SkyguardJS esta desarrollado con TypeScript y ofrece seguridad de tipos completa. Asegurate de que tu archivo <mark class=\"docs-highlight\">tsconfig.json</mark> incluya:"
+    "description": "Skyguard JS esta desarrollado con TypeScript y ofrece seguridad de tipos completa. Asegurate de que tu archivo <mark class=\"docs-highlight\">tsconfig.json</mark> incluya:"
   },
   "verify": {
     "title": "Verificar instalación",

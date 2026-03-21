@@ -42,6 +42,12 @@
       }
     ]
   },
+  "runtimes": {
+    "heading": "Ejecútalo en cualquier lugar",
+    "description": "Skyguard funciona sin fricción en los principales runtimes de JavaScript.",
+    "logosAria": "Runtimes compatibles",
+    "slogan": "La misma API y la misma experiencia de desarrollo, en cualquier entorno"
+  },
   "showcase": {
     "items": [
       {
@@ -68,7 +74,7 @@
         "points": [
           {
             "title": "Sin instalar dependencias",
-            "description": "Válida peticiones entrantes con esquemas integrados y no instales dependencias."
+            "description": "Válida peticiones entrantes con esquemas integrados sin instalar dependencias de terceros."
           },
           {
             "title": "Validación detallada",

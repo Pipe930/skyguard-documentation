@@ -42,6 +42,12 @@
       }
     ]
   },
+  "runtimes": {
+    "heading": "Run Anywhere",
+    "description": "Skyguard works seamlessly across the main JavaScript runtimes.",
+    "logosAria": "Compatible runtimes",
+    "slogan": "Same API, same developer experience, everywhere"
+  },
   "showcase": {
     "items": [
       {
@@ -68,7 +74,7 @@
         "points": [
           {
             "title": "No dependency installs",
-            "description": "Validate incoming requests with built-in schemas and avoid extra dependencies."
+            "description": "Validates incoming requests with built-in schemas without installing third-party dependencies."
           },
           {
             "title": "Detailed validation",
