@@ -19,6 +19,7 @@ const CsrfProtection = lazy(() => import("./pages/CsrfProtection"));
 const RateLimiting = lazy(() => import("./pages/RateLimiting"));
 const Configuration = lazy(() => import("./pages/Configuration"));
 const EngineTemplates = lazy(() => import("./pages/EngineTemplates"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
             <Route path="basic-configuration" element={<Configuration />} />
             <Route path="engine-templates" element={<EngineTemplates />} />
           </Route>
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </HashRouter>

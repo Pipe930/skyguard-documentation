@@ -22,6 +22,7 @@ import enConfiguration from "./locales/en/configuration.json";
 import enEngineTemplates from "./locales/en/engineTemplates.json";
 import enSearchModal from "./locales/en/searchModal.json";
 import enTableOfContents from "./locales/en/tableOfContents.json";
+import enNotFound from "./locales/en/notFound.json";
 import esNavbar from "./locales/es/navbar.json";
 import esHome from "./locales/es/home.json";
 import esFooter from "./locales/es/footer.json";
@@ -44,6 +45,7 @@ import esConfiguration from "./locales/es/configuration.json";
 import esEngineTemplates from "./locales/es/engineTemplates.json";
 import esSearchModal from "./locales/es/searchModal.json";
 import esTableOfContents from "./locales/es/tableOfContents.json";
+import esNotFound from "./locales/es/notFound.json";
 
 const resources = {
   en: {
@@ -70,6 +72,7 @@ const resources = {
       engineTemplates: enEngineTemplates,
       searchModal: enSearchModal,
       tableOfContents: enTableOfContents,
+      notFound: enNotFound,
     },
   },
   es: {
@@ -96,6 +99,7 @@ const resources = {
       engineTemplates: esEngineTemplates,
       searchModal: esSearchModal,
       tableOfContents: esTableOfContents,
+      notFound: esNotFound,
     },
   },
 };
